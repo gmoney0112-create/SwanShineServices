@@ -429,7 +429,7 @@
       <div class="success-icon">✦</div>
       <h3>You're All Set!</h3>
       <p>Thank you! We'll confirm your appointment within 2 hours via phone and email. We can't wait to make your home shine.</p>
-      <button class="btn-next" onclick="closeModal()" style="margin: 0 auto; display: inline-block;">Close</button>
+      <button class="btn-next" onclick="window.location.href='/SwanShineServices/thank-you.html'" style="margin: 0 auto; display: inline-block;">View Confirmation →</button>
     </div>
   </div>
 </div>
@@ -461,6 +461,10 @@
   }
 
   function closeModal() {
+    if (document.getElementById('successState').style.display === 'block') {
+      window.location.href = '/SwanShineServices/thank-you.html';
+      return;
+    }
     document.getElementById('modalOverlay').classList.remove('active');
     document.body.style.overflow = '';
   }
