@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed — Swan Shine Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0D2B3E;
+      --sky:#5BA4CF;
+      --white:#ffffff;
+      --gold:#C9A84C;
+      --gold2:#FFD166;
+      --ink:#0a1628;
+      --muted:rgba(13,43,62,0.70);
+      --card:rgba(255,255,255,0.96);
+      --border:rgba(13,43,62,0.12);
+      --r:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 18px;
+      color:var(--ink);
+      background:
+        radial-gradient(1100px 700px at 18% 12%, rgba(91,164,207,0.22), transparent 60%),
+        radial-gradient(900px 520px at 88% 18%, rgba(201,168,76,0.18), transparent 55%),
+        linear-gradient(180deg, #061622 0%, #0D2B3E 60%, #0A2231 100%);
+      font-family:'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap{width:100%; max-width:720px;}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      padding:34px 26px;
+      box-shadow:0 22px 60px rgba(0,0,0,0.30);
+      text-align:center;
+    }
+    .mark{
+      width:86px;height:86px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, var(--gold2), var(--gold));
+      box-shadow:0 10px 28px rgba(201,168,76,0.35);
+      font-size:38px;
+    }
+    h1{
+      font-family:'Cormorant Garamond', serif;
+      font-weight:600;
+      margin:0 0 10px;
+      font-size:44px;
+      color:var(--navy);
+      letter-spacing:0.2px;
+    }
+    p{
+      margin:0 auto 22px;
+      max-width:520px;
+      line-height:1.65;
+      font-size:16px;
+      color:var(--muted);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:600;
+      letter-spacing:0.2px;
+      color:var(--white);
+      background:linear-gradient(135deg, var(--navy), #061622);
+      border:1px solid rgba(255,255,255,0.22);
+      box-shadow:0 12px 34px rgba(0,0,0,0.28);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 16px 40px rgba(0,0,0,0.30);}
+    .fine{
+      margin-top:18px;
+      font-size:12px;
+      color:rgba(13,43,62,0.55);
+    }
+    .fine a{color:rgba(13,43,62,0.75)}
+    @media (max-width:520px){
+      h1{font-size:36px}
+      .card{padding:28px 18px}
+      .mark{width:78px;height:78px;font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="mark">🦢</div>
+      <h1>You're All Set!</h1>
+      <p>We'll confirm your appointment within 2 hours via phone and text. We can't wait to make your home shine.</p>
+      <a class="btn" href="/SwanShineServices/">
+        ← Back to Home
+      </a>
+      <div class="fine">
+        Questions? Email <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

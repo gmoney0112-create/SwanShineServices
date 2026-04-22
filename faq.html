@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Swan Shine Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0D2B3E;
+      --sky:#5BA4CF;
+      --white:#ffffff;
+      --gold:#C9A84C;
+      --ink:#0a1628;
+      --muted:rgba(10,22,40,0.72);
+      --border:rgba(13,43,62,0.12);
+      --r:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 520px at 20% 10%, rgba(91,164,207,0.16), transparent 60%),
+        radial-gradient(800px 520px at 88% 24%, rgba(201,168,76,0.12), transparent 55%),
+        #F8FBFF;
+    }
+    header{
+      padding:28px 18px 10px;
+      text-align:center;
+    }
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,0.85);
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+    .brand strong{
+      font-family:'Cormorant Garamond', serif;
+      font-weight:600;
+      font-size:18px;
+      color:var(--navy);
+      letter-spacing:0.2px;
+    }
+    .wrap{max-width:860px;margin:0 auto;padding:10px 18px 64px;}
+    h1{
+      font-family:'Cormorant Garamond', serif;
+      font-weight:600;
+      font-size:46px;
+      color:var(--navy);
+      text-align:center;
+      margin:16px 0 8px;
+    }
+    .sub{
+      text-align:center;
+      margin:0 auto 26px;
+      max-width:620px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .faq{
+      display:grid;
+      gap:12px;
+    }
+    details{
+      border:1px solid var(--border);
+      background:var(--white);
+      border-radius:var(--r);
+      padding:14px 16px;
+      box-shadow:0 10px 28px rgba(0,0,0,0.05);
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      font-weight:700;
+      color:var(--ink);
+    }
+    summary::-webkit-details-marker{display:none}
+    .chev{
+      width:28px;height:28px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(91,164,207,0.12);
+      color:var(--navy);
+      font-weight:900;
+      flex:0 0 auto;
+      transition:transform .15s ease;
+    }
+    details[open] .chev{transform:rotate(45deg)}
+    .answer{
+      margin-top:10px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .cta{
+      margin-top:28px;
+      text-align:center;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      background:linear-gradient(135deg, rgba(13,43,62,0.04), rgba(91,164,207,0.06));
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      color:var(--white);
+      background:linear-gradient(135deg, var(--navy), #061622);
+      border:1px solid rgba(13,43,62,0.18);
+      box-shadow:0 14px 34px rgba(0,0,0,0.14);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 18px 40px rgba(0,0,0,0.16);}
+    footer{
+      text-align:center;
+      padding:22px 18px 28px;
+      color:rgba(10,22,40,0.55);
+      font-size:12px;
+    }
+    footer a{color:rgba(10,22,40,0.75)}
+    @media (max-width:520px){
+      h1{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span aria-hidden="true">🦢</span>
+      <strong>Swan Shine Cleaning</strong>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>FAQ</h1>
+    <p class="sub">Quick answers to the most common questions. If you need anything else, email <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>.</p>
+
+    <section class="faq" aria-label="Frequently asked questions">
+      <details>
+        <summary>How far in advance do I need to book? <span class="chev">+</span></summary>
+        <div class="answer">We recommend booking at least 48 hours in advance, but same-day booking is available based on availability.</div>
+      </details>
+      <details>
+        <summary>Do I need to be home during the cleaning? <span class="chev">+</span></summary>
+        <div class="answer">No. Many clients provide a key or access code. Our team is background-checked and bonded.</div>
+      </details>
+      <details>
+        <summary>What if I'm not satisfied? <span class="chev">+</span></summary>
+        <div class="answer">We offer a 100% satisfaction guarantee. Contact us within 24 hours and we'll re-clean at no charge.</div>
+      </details>
+      <details>
+        <summary>Do you bring your own supplies? <span class="chev">+</span></summary>
+        <div class="answer">Yes. We bring all equipment and eco-friendly cleaning products. Just let us in!</div>
+      </details>
+      <details>
+        <summary>How is pricing determined? <span class="chev">+</span></summary>
+        <div class="answer">Pricing is based on home size, service type, and frequency. Get an instant estimate using our booking form.</div>
+      </details>
+      <details>
+        <summary>Are you insured? <span class="chev">+</span></summary>
+        <div class="answer">Yes. Swan Shine Cleaning is fully insured and bonded. Every visit is covered.</div>
+      </details>
+    </section>
+
+    <div class="cta">
+      <a class="btn" href="/SwanShineServices/index.html#book">Book Now</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Swan Shine Cleaning Service · <a href="/SwanShineServices/privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>
+

@@ -328,7 +328,7 @@
   </div>
 </section>
 
-<section class="cta-section">
+<section class="cta-section" id="book">
   <h2>Ready for a Spotless Home?</h2>
   <p style="color: rgba(10,22,40,0.65); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Get your free, no-obligation estimate in under 2 minutes. Book today and we'll handle the rest.</p>
   <button class="btn-dark" onclick="openModal()">✦ Book Your Cleaning</button>
@@ -338,13 +338,13 @@
   <div class="footer-logo">Swan <span>Shine</span> Cleaning</div>
   <div class="footer-tagline">Spotless. Every Time.</div>
   <div class="footer-links">
-    <a href="tel:+12105550100">(210) 555-0100</a>
-    <a href="mailto:hello@swanshinecleaning.com">hello@swanshinecleaning.com</a>
+    <a href="tel:+12102381583">(210) 238-1583</a>
+    <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
     <a href="#services">Services</a>
-    <a href="#">FAQ</a>
-    <a href="#">Privacy Policy</a>
+    <a href="/SwanShineServices/faq.html">FAQ</a>
+    <a href="/SwanShineServices/privacy.html">Privacy Policy</a>
   </div>
-  <div class="footer-copy">© 2025 Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</div>
+  <div class="footer-copy">© 2026 Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</div>
 </footer>
 
 <!-- BOOKING MODAL -->
@@ -394,7 +394,14 @@
           <div class="form-group"><label>Preferred Date</label><input type="date" id="prefDate"></div>
           <div class="form-group"><label>Preferred Time</label><select id="prefTime"><option value="morning">Morning (8am – 12pm)</option><option value="afternoon">Afternoon (12pm – 5pm)</option><option value="flexible">I'm Flexible</option></select></div>
           <div class="form-group full"><label>Service Address</label><input type="text" id="address" placeholder="123 Main St, San Antonio, TX 78201"></div>
-          <div class="form-group full"><label>Additional Notes (optional)</label><textarea id="notes" placeholder="Pets at home? Specific areas to focus on? Gate code or access instructions?"></textarea></div>
+          <div class="form-group full">
+            <label for="booking-notes">Additional Notes (optional)</label>
+            <textarea
+              id="booking-notes"
+              name="notes"
+              placeholder="e.g. 3 bed / 2 bath, pets in home, gate code, parking instructions…"
+            ></textarea>
+          </div>
         </div>
         <div class="modal-actions"><button class="btn-back" onclick="goToStep(1)">← Back</button><button class="btn-next" onclick="goToStep(3)">Continue →</button></div>
       </div>
@@ -405,7 +412,7 @@
         <div class="form-grid">
           <div class="form-group"><label>First Name</label><input type="text" id="firstName" placeholder="Jane"></div>
           <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Smith"></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(210) 555-0100"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(210) 238-1583"></div>
           <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="jane@example.com"></div>
           <div class="form-group full"><label>How did you hear about us?</label><select id="referral"><option value="">Select one...</option><option>Google Search</option><option>Facebook / Instagram</option><option>Referral from a friend</option><option>Nextdoor</option><option>Other</option></select></div>
         </div>
@@ -413,7 +420,7 @@
           <div class="estimate-label">Booking Summary</div>
           <div id="summaryText" style="font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-top: 0.4rem;"></div>
         </div>
-        <div class="modal-actions"><button class="btn-back" onclick="goToStep(2)">← Back</button><button class="btn-next" onclick="submitForm()">✦ Confirm Booking</button></div>
+        <div class="modal-actions"><button class="btn-back" onclick="goToStep(2)">← Back</button><button class="btn-next" onclick="submitForm(this)">✦ Confirm Booking</button></div>
       </div>
     </div>
 
@@ -428,6 +435,19 @@
 </div>
 
 <script>
+  const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ucphPUkSafuQF0ZCZh1T/webhook-trigger/d7237974-4f39-44b6-a955-bcebe6fe708a';
+
+  // Minimal spinner + validation highlight styles (injected to avoid touching existing CSS blocks)
+  (function injectSpinnerCss() {
+    const style = document.createElement('style');
+    style.textContent = `
+      .btn-spinner{display:inline-block;width:14px;height:14px;margin-right:8px;border:2px solid rgba(255,255,255,0.55);border-top-color:#fff;border-radius:50%;animation:btnspin 0.8s linear infinite;vertical-align:-2px}
+      @keyframes btnspin{to{transform:rotate(360deg)}}
+      .field-error{border-color:#E53935 !important; box-shadow:0 0 0 3px rgba(229,57,53,0.12) !important; background:#fff !important;}
+    `;
+    document.head.appendChild(style);
+  })();
+
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('prefDate').min = today;
   document.getElementById('prefDate').value = today;
@@ -499,18 +519,90 @@
        <strong style="color:var(--gold)">Estimate:</strong> ${est}`;
   }
 
-  function submitForm() {
-    const first = document.getElementById('firstName').value.trim();
-    const last = document.getElementById('lastName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
-    if (!first || !last || !phone || !email) {
-      alert('Please fill in all required contact fields.');
-      return;
-    }
+  function showSuccessAndRedirect() {
     document.getElementById('formWrapper').style.display = 'none';
     document.getElementById('successState').style.display = 'block';
     document.getElementById('modal').scrollTop = 0;
+    setTimeout(() => {
+      const isGhPages = window.location.pathname.startsWith('/SwanShineServices/');
+      const target = isGhPages ? '/SwanShineServices/thank-you.html' : '/thank-you.html';
+      window.location.href = target;
+    }, 2500);
+  }
+
+  function clearFieldErrors() {
+    document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+  }
+
+  function markFieldError(el) {
+    if (!el) return;
+    el.classList.add('field-error');
+  }
+
+  async function submitForm(btn) {
+    clearFieldErrors();
+
+    const firstEl = document.getElementById('firstName');
+    const phoneEl = document.getElementById('phone');
+    const emailEl = document.getElementById('email');
+
+    const required = [firstEl, phoneEl, emailEl];
+    const missing = required.filter(el => !(el && el.value && el.value.trim()));
+    if (missing.length) {
+      missing.forEach(el => markFieldError(el));
+      missing[0].focus();
+      return;
+    }
+
+    const payload = {
+      first_name: (document.getElementById('firstName')?.value || '').trim(),
+      last_name: (document.getElementById('lastName')?.value || '').trim(),
+      phone: (document.getElementById('phone')?.value || '').trim(),
+      email: (document.getElementById('email')?.value || '').trim(),
+      address: (document.getElementById('address')?.value || '').trim(),
+      service_type: (function () {
+        const labels = {
+          standard: 'Standard Cleaning',
+          deep: 'Deep Cleaning',
+          moveinout: 'Move In / Move Out',
+          commercial: 'Commercial',
+        };
+        return labels[selectedService] || '';
+      })(),
+      preferred_date: (document.getElementById('prefDate')?.value || '').trim(),
+      preferred_time: (document.getElementById('prefTime')?.value || '').trim(),
+      estimate: (document.getElementById('estimateRange')?.textContent || '').trim(),
+      notes: (document.getElementById('booking-notes')?.value || '').trim(),
+    };
+
+    const originalHtml = btn ? btn.innerHTML : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span class="btn-spinner"></span>Sending…';
+    }
+
+    try {
+      const res = await fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        showSuccessAndRedirect();
+      } else {
+        console.error('[SwanShine] Webhook non-2xx:', res.status);
+        showSuccessAndRedirect(); // fail open
+      }
+    } catch (err) {
+      console.error('[SwanShine] Webhook error:', err);
+      showSuccessAndRedirect(); // fail open
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = originalHtml;
+      }
+    }
   }
 
   updateEstimate();
