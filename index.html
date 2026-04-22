@@ -559,12 +559,12 @@
     }
 
     const payload = {
-      first_name: (document.getElementById('firstName')?.value || '').trim(),
-      last_name: (document.getElementById('lastName')?.value || '').trim(),
+      firstName: (document.getElementById('firstName')?.value || '').trim(),
+      lastName: (document.getElementById('lastName')?.value || '').trim(),
       phone: (document.getElementById('phone')?.value || '').trim(),
       email: (document.getElementById('email')?.value || '').trim(),
       address: (document.getElementById('address')?.value || '').trim(),
-      service_type: (function () {
+      service: (function () {
         const labels = {
           standard: 'Standard Cleaning',
           deep: 'Deep Cleaning',
@@ -573,10 +573,10 @@
         };
         return labels[selectedService] || '';
       })(),
-      preferred_date: (document.getElementById('prefDate')?.value || '').trim(),
-      preferred_time: (document.getElementById('prefTime')?.value || '').trim(),
+      date: (document.getElementById('prefDate')?.value || '').trim(),
+      time: (document.getElementById('prefTime')?.value || '').trim(),
       estimate: (document.getElementById('estimateRange')?.textContent || '').trim(),
-      notes: (document.getElementById('booking-notes')?.value || '').trim(),
+      notes: (document.getElementById('booking-notes')?.value || '').trim(),           bedrooms: (document.getElementById('bedrooms')?.value || '').trim(),           bathrooms: (document.getElementById('bathrooms')?.value || '').trim(),           frequency: (document.getElementById('frequency')?.value || '').trim(),           source: (document.getElementById('referral')?.value || '').trim(),
     };
 
     const originalHtml = btn ? btn.innerHTML : '';
