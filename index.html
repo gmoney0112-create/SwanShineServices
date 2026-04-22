@@ -574,9 +574,19 @@
         return labels[selectedService] || '';
       })(),
       date: (document.getElementById('prefDate')?.value || '').trim(),
-      time: (document.getElementById('prefTime')?.value || '').trim(),
+      time: (function () {
+        const timeEl = document.getElementById('prefTime');
+        return timeEl ? (timeEl.options[timeEl.selectedIndex]?.text || '').trim() : '';
+      })(),
       estimate: (document.getElementById('estimateRange')?.textContent || '').trim(),
-      notes: (document.getElementById('booking-notes')?.value || '').trim(),           bedrooms: (document.getElementById('bedrooms')?.value || '').trim(),           bathrooms: (document.getElementById('bathrooms')?.value || '').trim(),           frequency: (document.getElementById('frequency')?.value || '').trim(),           source: (document.getElementById('referral')?.value || '').trim(),
+      notes: (document.getElementById('booking-notes')?.value || '').trim(),
+      bedrooms: (document.getElementById('bedrooms')?.value || '').trim(),
+      bathrooms: (document.getElementById('bathrooms')?.value || '').trim(),
+      frequency: (function () {
+        const freqEl = document.getElementById('frequency');
+        return freqEl ? (freqEl.options[freqEl.selectedIndex]?.text || '').trim() : '';
+      })(),
+      source: (document.getElementById('referral')?.value || '').trim(),
     };
 
     const originalHtml = btn ? btn.innerHTML : '';
