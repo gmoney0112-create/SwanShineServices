@@ -372,7 +372,7 @@
   <h2>Ready for a Spotless Home?</h2>
   <p style="color: rgba(10,22,40,0.65); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Get your free, no-obligation estimate in under 2 minutes. Book today and we'll handle the rest.</p>
   <button class="btn-dark" onclick="openModal()">✦ Book Your Cleaning</button>
-  <p class="sms-disclosure">By submitting your number, you agree to receive SMS messages from Swan Shine Cleaning Service regarding scheduling confirmations, estimates, and service updates. Reply STOP to unsubscribe. Reply HELP for help. Message &amp; data rates may apply. View our <a href="/SwanShineServices/privacy.html">Privacy Policy</a>.</p>
+  <p class="sms-disclosure">By submitting your number, you agree to receive SMS messages from Swan Shine Cleaning Service regarding scheduling confirmations, estimates, and service updates. Reply STOP to unsubscribe. Reply HELP for help. Message &amp; data rates may apply. View our <a href="privacy.html">Privacy Policy</a>.</p>
 </section>
 
 <footer>
@@ -382,10 +382,10 @@
     <a href="tel:+12104613153">(210) 461-3153</a>
     <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
     <a href="#services">Services</a>
-    <a href="/SwanShineServices/faq.html">FAQ</a>
-    <a href="/SwanShineServices/privacy.html">Privacy Policy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy Policy</a>
   </div>
-  <div class="footer-copy">© 2026 Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</div>
+  <div class="footer-copy">© <span id="yr"></span> Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</div>
 </footer>
 
 <!-- BOOKING MODAL -->
@@ -507,7 +507,7 @@
 
   function closeModal() {
     if (document.getElementById('successState').style.display === 'block') {
-      window.location.href = '/SwanShineServices/thank-you.html';
+      window.location.href = 'thank-you.html';
       return;
     }
     document.getElementById('modalOverlay').classList.remove('active');
@@ -717,6 +717,7 @@
   }
 
   updateEstimate();
+  document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
