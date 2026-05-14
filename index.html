@@ -811,7 +811,7 @@ function showFormError(msg){const el=document.getElementById('formError');el.tex
 function hideFormError(){document.getElementById('formError').style.display='none';}
 
 // ── SUBMIT ────────────────────────────────────────────────────
-async function submitForm(btn){
+function normalizePhoneToE164(raw){const digits=String(raw||'').replace(/\D/g,'');if(digits.length===10)return '+1'+digits;if(digits.length===11&&digits.startsWith('1'))return '+'+digits;if(String(raw||'').trim().startsWith('+'))return String(raw).trim();return raw;}async function submitForm(btn){
   if(!GHL_WEBHOOK_URL){showFormError('No webhook target is configured yet.');return;}
   clearFieldErrors();hideFormError();
   if((document.getElementById('website')?.value||'')!=='')return;
@@ -822,11 +822,11 @@ async function submitForm(btn){
   if(missing.length){missing.forEach(markFieldError);missing[0].focus();showFormError('Please fill in your name, phone, and email to continue.');return;}
   const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};
   const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');
-  const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:(phoneEl?.value||'').trim(),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',source:(document.getElementById('referral')?.value||'').trim()};
+  const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:normalizePhoneToE164(phoneEl?.value||''),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',source:'Swan Shine Website Booking Form',referral_source:(document.getElementById('referral')?.value||'').trim(),workflow_debug_source:'github-pages-booking-form',submitted_at:new Date().toISOString()};
   const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
   try{
-    const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    if(!res.ok)throw new Error('Webhook '+res.status);
+    console.info('[SwanShine] Sending booking payload',payload);const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    console.info('[SwanShine] Webhook response status',res.status);if(!res.ok)throw new Error('Webhook '+res.status);
     localStorage.setItem('swanshine_last_submit',String(Date.now()));
     localStorage.removeItem('swanshine_draft');
     try{localStorage.setItem('swanshine_booking_summary',JSON.stringify({name:[payload.firstName,payload.lastName].filter(Boolean).join(' '),service:payload.service_type,estimate:payload.estimate,date:payload.preferred_date,time:payload.preferred_time,frequency:payload.frequency,phone:payload.phone,email:payload.email,stripeDepositUrl:STRIPE_DEPOSIT_URL,walkthroughBookingUrl:WALKTHROUGH_BOOKING_URL,walkthroughEmbedUrl:WALKTHROUGH_EMBED_URL}));}catch(e){}
@@ -842,7 +842,7 @@ async function submitForm(btn){
     const freq=freqEl?freqEl.options[freqEl.selectedIndex]?.value:'';
     if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');},1800);}
     else{setTimeout(doRedirect,2500);}
-  }catch(err){console.error('[SwanShine]',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
+  }catch(err){console.error('[SwanShine] Webhook error:',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
 }
 
 // ── UPSELL ────────────────────────────────────────────────────
