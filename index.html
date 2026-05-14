@@ -1,243 +1,405 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swan Shine Cleaning Service | Spotless. Every Time.</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- Google Analytics 4 â€” replace GA_MEASUREMENT_ID with your real ID from analytics.google.com -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<title>Swan Shine Cleaning Service | San Antonio's Most Trusted Home Cleaning</title>
+<meta name="description" content="Professional residential and commercial cleaning in San Antonio. Insured, eco-friendly, and detail-obsessed. Get a free estimate in 2 minutes — no surprises, satisfaction guaranteed.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Swan Shine Cleaning Service | San Antonio">
+<meta property="og:description" content="Professional cleaning in San Antonio. Trusted by hundreds of households and businesses. Fast booking, clear pricing, satisfaction guaranteed.">
+<meta property="og:url" content="https://gmoney0112-create.github.io/SwanShineServices/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://gmoney0112-create.github.io/SwanShineServices/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  window.SWAN_CONFIG = {
+    webhookUrl: 'https://services.leadconnectorhq.com/hooks/ucphPUkSafuQF0ZCZh1T/webhook-trigger/d7237974-4f39-44b6-a955-bcebe6fe708a',
+    webhookProxyUrl: '',
+    gaMeasurementId: 'G-58WE7F11EG',
+    stripeDepositUrl: '',
+    walkthroughBookingUrl: '',
+    walkthroughEmbedUrl: ''
+  };
 </script>
--->
+<script>
+  (function initAnalytics() {
+    const id = window.SWAN_CONFIG && window.SWAN_CONFIG.gaMeasurementId;
+    if (!id) return;
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+    document.head.appendChild(tag);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+  })();
+</script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Swan Shine Cleaning Services",
-  "description": "Professional residential and commercial cleaning services in San Antonio, TX. Insured, bonded, and background-checked cleaners.",
-  "telephone": "(210) 461-3153",
-  "email": "mary@inspirebuildmotivate.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "San Antonio",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  },
-  "areaServed": { "@type": "City", "name": "San Antonio" },
-  "priceRange": "$$",
-  "openingHours": "Mo-Sa 08:00-18:00",
-  "serviceType": ["Standard Cleaning", "Deep Cleaning", "Move In/Move Out Cleaning", "Commercial Cleaning"]
+  "@context":"https://schema.org","@type":"LocalBusiness",
+  "name":"Swan Shine Cleaning Services",
+  "description":"Professional residential and commercial cleaning services in San Antonio, TX. Insured, bonded, and background-checked cleaners.",
+  "telephone":"(210) 461-3153","email":"mary@inspirebuildmotivate.com",
+  "address":{"@type":"PostalAddress","addressLocality":"San Antonio","addressRegion":"TX","addressCountry":"US"},
+  "areaServed":[{"@type":"City","name":"San Antonio"},{"@type":"Neighborhood","name":"Stone Oak"},{"@type":"Neighborhood","name":"Alamo Heights"},{"@type":"Neighborhood","name":"Shavano Park"},{"@type":"Neighborhood","name":"Helotes"}],
+  "priceRange":"$$","openingHours":"Mo-Sa 08:00-18:00",
+  "serviceType":["Standard Cleaning","Deep Cleaning","Move In/Move Out Cleaning","Commercial Cleaning"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"127"}
 }
 </script>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --navy: #0a1628; --navy-mid: #152244;
-    --gold: #c9a84c; --gold-light: #e8cc7e;
-    --cream: #f8f4ef; --cream-dark: #ede7de;
-    --white: #ffffff; --text-dark: #1a1a2e;
-    --text-mid: #4a4a6a; --text-light: #8a8aaa;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+  --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,0.12);
+  --cream:#f8f4ef;--cream-dark:#ede7de;
+  --white:#ffffff;--text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
+  --border:rgba(13,43,62,0.12);
+  --shadow:0 12px 40px rgba(10,22,40,0.10);
+  --shadow-lg:0 24px 60px rgba(10,22,40,0.16);
+  --r:16px;--r-lg:20px;--r-xl:26px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;}
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 5%;
-    background: rgba(10,22,40,0.96); backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-  }
-  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-  .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); letter-spacing: 0.02em; line-height: 1.1; }
-  .logo-text span { color: var(--gold); display: block; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; }
-  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.05em; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: 0.6rem 1.4rem; border-radius: 50px; font-weight: 500 !important; }
-  .nav-cta:hover { background: var(--gold-light) !important; }
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);padding:.9rem 2rem;border-radius:50px;font-weight:500;font-size:.95rem;border:none;cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3);}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:.9rem 2rem;border-radius:50px;font-size:.95rem;border:1px solid rgba(255,255,255,.25);cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif;}
+.btn-secondary:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.06);}
+.btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--white);padding:.9rem 2rem;border-radius:50px;font-weight:500;border:none;cursor:pointer;transition:all .25s;font-family:'DM Sans',sans-serif;}
+.btn-dark:hover{background:var(--navy-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,22,40,.3);}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);padding:.8rem 1.6rem;border-radius:50px;border:1.5px solid var(--navy);font-weight:500;font-size:.9rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
 
-  .hero { min-height: 100vh; background: var(--navy); position: relative; display: flex; align-items: center; overflow: hidden; }
-  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(74,158,202,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 60%); }
-  .hero-pattern { position: absolute; inset: 0; opacity: 0.025; background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.5) 40px, rgba(255,255,255,0.5) 41px); }
-  .hero-content { position: relative; z-index: 2; padding: 8rem 5% 5rem; max-width: 700px; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); border-radius: 50px; padding: 0.4rem 1rem; margin-bottom: 2rem; font-size: 0.75rem; font-weight: 500; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
-  h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 1.5rem; }
-  h1 em { font-style: italic; color: var(--gold); }
-  .hero-sub { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 3rem; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; border-radius: 50px; font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); transition: all 0.25s; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-  .btn-secondary:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
-  .hero-trust { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
-  .trust-item::before { content: 'âœ“'; color: var(--gold); font-weight: 600; }
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(10,22,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18);}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:.02em;line-height:1.1;}
+.logo-text span{color:var(--gold);display:block;font-size:.63rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.85rem;letter-spacing:.04em;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:1rem;}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:.55rem 1.4rem;border-radius:50px;font-weight:500!important;font-size:.88rem;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+/* Hamburger */
+.ham{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;cursor:pointer;padding:0 10px;}
+.ham span{display:block;height:2px;background:var(--white);border-radius:2px;transition:all .22s ease;transform-origin:center;}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* Mobile nav */
+.mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;z-index:99;background:rgba(10,22,40,.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,.18);padding:1.2rem 5% 1.5rem;}
+.mobile-nav.open{display:block;}
+.mobile-nav a{display:block;color:rgba(255,255,255,.85);padding:.85rem 0;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-nav a:last-of-type{border-bottom:none;}
+.mobile-nav a:hover{color:var(--gold);}
+.mobile-book-btn{margin-top:1rem;width:100%;background:var(--gold);color:var(--navy);padding:.9rem;border-radius:50px;font-weight:500;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:1rem;}
 
-  .stats-bar { background: var(--white); border-bottom: 1px solid var(--cream-dark); padding: 2rem 5%; }
-  .stats-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
-  .stat-item { padding: 1rem; }
-  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 0.3rem; }
-  .stat-number span { color: var(--gold); }
-  .stat-label { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(74,158,202,.07),transparent 70%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(201,168,76,.05),transparent 60%);}
+.hero-pattern{position:absolute;inset:0;opacity:.025;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px),repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.5) 40px,rgba(255,255,255,.5) 41px);}
+.hero-content{position:relative;z-index:2;padding:8rem 5% 5rem;max-width:740px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:50px;padding:.4rem 1rem;margin-bottom:2rem;font-size:.75rem;font-weight:500;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;}
+.hero-badge::before{content:'✦';font-size:.6rem;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:1.5rem;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.75;max-width:520px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:3rem;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:1.5rem;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.5);}
+.trust-item::before{content:'✓';color:var(--gold);font-weight:700;font-size:.75rem;}
 
-  .section { padding: 6rem 5%; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.8rem; }
-  h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1rem; }
-  .section-desc { font-size: 1rem; color: var(--text-mid); line-height: 1.7; max-width: 520px; margin-bottom: 3rem; }
+/* ── STATS BAR ── */
+.stats-bar{background:var(--white);border-bottom:1px solid var(--cream-dark);padding:2rem 5%;}
+.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.stat-item{padding:1rem;}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1;margin-bottom:.3rem;}
+.stat-number span{color:var(--gold);}
+.stat-label{font-size:.78rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.1em;font-weight:500;}
 
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-  .service-card { background: var(--white); border: 1px solid var(--cream-dark); border-radius: 16px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
-  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); opacity: 0; transition: opacity 0.3s; }
-  .service-card:hover { box-shadow: 0 12px 40px rgba(10,22,40,0.1); transform: translateY(-4px); border-color: rgba(201,168,76,0.3); }
-  .service-card:hover::before { opacity: 1; }
-  .service-icon { width: 52px; height: 52px; background: rgba(201,168,76,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 1.2rem; }
-  .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
-  .service-card p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 1.2rem; }
-  .service-features { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .service-features li { font-size: 0.82rem; color: var(--text-mid); display: flex; align-items: center; gap: 8px; }
-  .service-features li::before { content: 'â€”'; color: var(--gold); font-weight: 600; flex-shrink: 0; }
-  .service-price { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--cream-dark); display: flex; align-items: center; justify-content: space-between; }
-  .price-from { font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
-  .price-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--navy); }
+/* ── SECTIONS ── */
+.section{padding:6rem 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-tag{display:inline-block;font-size:.72rem;font-weight:500;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.8rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:1rem;}
+h2 em{font-style:italic;color:var(--gold);}
+.section-desc{font-size:1rem;color:var(--text-mid);line-height:1.7;max-width:520px;margin-bottom:3rem;font-weight:300;}
 
-  .why-section { background: var(--navy); padding: 6rem 5%; }
-  .why-section h2 { color: var(--white); }
-  .why-section .section-desc { color: rgba(255,255,255,0.6); }
-  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
-  .why-item { text-align: center; padding: 1.5rem; }
-  .why-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 0.5rem; }
-  .why-title { font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
-  .why-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.service-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--r);padding:2rem;transition:all .3s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:opacity .3s;}
+.service-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:rgba(201,168,76,.3);}
+.service-card:hover::before{opacity:1;}
+.service-icon{width:52px;height:52px;background:var(--gold-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:1.2rem;}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--navy);margin-bottom:.6rem;}
+.service-card p{font-size:.88rem;color:var(--text-mid);line-height:1.65;margin-bottom:1.2rem;}
+.service-features{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.5rem;}
+.service-features li{font-size:.82rem;color:var(--text-mid);display:flex;align-items:center;gap:8px;}
+.service-features li::before{content:'✦';color:var(--gold);font-size:.55rem;flex-shrink:0;}
+.service-price{padding-top:1.2rem;border-top:1px solid var(--cream-dark);display:flex;align-items:center;justify-content:space-between;}
+.price-from{font-size:.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.08em;}
+.price-value{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--navy);}
+.services-footer{margin-top:2rem;padding:1.5rem 2rem;background:var(--cream-dark);border-radius:var(--r);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.services-footer p{margin:0;color:var(--text-mid);font-size:.95rem;font-weight:300;}
+.services-footer strong{color:var(--navy);font-weight:600;}
 
-  .process-section { padding: 6rem 5%; background: var(--cream); }
-  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 3rem; position: relative; }
-  .process-step { text-align: center; padding: 2rem 1.5rem; position: relative; }
-  .process-step:not(:last-child)::after { content: '→’'; position: absolute; right: -0.5rem; top: 45%; transform: translateY(-50%); color: var(--gold); font-size: 1.2rem; }
-  .step-circle { width: 60px; height: 60px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); }
-  .step-title { font-weight: 500; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.5rem; }
-  .step-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.5; }
+/* ── WHY ── */
+.why-section{background:var(--navy);padding:6rem 5%;}
+.why-section h2{color:var(--white);}
+.why-section .section-desc{color:rgba(255,255,255,.6);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem;}
+.why-item{text-align:center;padding:1.5rem;}
+.why-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,168,76,.2);line-height:1;margin-bottom:.5rem;}
+.why-icon{font-size:1.6rem;margin-bottom:.5rem;}
+.why-title{font-size:1rem;font-weight:500;color:var(--white);margin-bottom:.5rem;}
+.why-desc{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
 
-  .testimonials { padding: 6rem 5%; background: var(--white); }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-  .testimonial-card { background: var(--cream); border-radius: 16px; padding: 2rem; }
-  .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-  .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--navy); line-height: 1.6; margin-bottom: 1.5rem; }
-  .testimonial-author { display: flex; align-items: center; gap: 12px; }
-  .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; color: var(--navy); flex-shrink: 0; }
-  .author-name { font-weight: 500; font-size: 0.9rem; color: var(--navy); }
-  .author-location { font-size: 0.78rem; color: var(--text-light); }
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:3rem;position:relative;}
+.process-step{text-align:center;padding:2rem 1.5rem;position:relative;}
+.process-step:not(:last-child)::after{content:'→';position:absolute;right:-.5rem;top:42%;color:var(--gold);font-size:1.4rem;font-weight:300;}
+.step-circle{width:60px;height:60px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--gold);}
+.step-title{font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:.5rem;}
+.step-desc{font-size:.83rem;color:var(--text-mid);line-height:1.6;font-weight:300;}
 
-  .cta-section { background: linear-gradient(135deg, var(--gold), var(--gold-light)); padding: 5rem 5%; text-align: center; }
-  .cta-section h2 { color: var(--navy); margin-bottom: 0.8rem; }
-  .btn-dark { display: inline-flex; align-items: center; gap: 10px; background: var(--navy); color: var(--white); padding: 1rem 2.2rem; border-radius: 50px; font-weight: 500; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s; font-family: 'DM Sans', sans-serif; }
-  .btn-dark:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,22,40,0.3); }
+/* ── GALLERY ── */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+.gallery-card{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid var(--cream-dark);box-shadow:var(--shadow);transition:transform .25s;}
+.gallery-card:hover{transform:translateY(-3px);}
+.gallery-image{aspect-ratio:4/3;background-size:cover;background-position:center;position:relative;}
+.gallery-tag{position:absolute;bottom:.8rem;left:.8rem;background:rgba(10,22,40,.88);backdrop-filter:blur(8px);border-radius:50px;padding:.3rem .85rem;color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+.gallery-caption{padding:1rem 1.25rem 1.35rem;}
+.gallery-caption h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;}
+.gallery-caption p{font-size:.84rem;color:var(--text-mid);line-height:1.6;font-weight:300;}
 
-  footer { background: var(--navy); padding: 3rem 5%; text-align: center; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 0.8rem; }
-  .footer-logo span { color: var(--gold); }
-  .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
-  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
-  .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+/* ── AREA ── */
+.area-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:1.5rem;margin-top:2rem;align-items:stretch;}
+.area-copy{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--r-xl);padding:2rem;box-shadow:var(--shadow);}
+.area-copy p{color:var(--text-mid);line-height:1.75;margin-bottom:1.2rem;font-weight:300;}
+.chip-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem;}
+.chip{padding:.5rem 1rem;border-radius:50px;background:var(--cream);border:1px solid var(--cream-dark);color:var(--navy);font-size:.85rem;font-weight:500;}
+.map-card{border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--cream-dark);box-shadow:var(--shadow);min-height:360px;}
+.map-card iframe{width:100%;height:100%;min-height:360px;border:0;display:block;}
 
-  /* MODAL */
-  .modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,22,40,0.88); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 1rem; }
-  .modal-overlay.active { display: flex; }
-  .modal { background: var(--white); border-radius: 20px; width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto; padding: 2.5rem; position: relative; animation: slideUp 0.3s ease; }
-  @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-  .modal-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; cursor: pointer; font-size: 1.8rem; color: var(--text-light); transition: color 0.2s; line-height: 1; }
-  .modal-close:hover { color: var(--navy); }
-  .modal-header { margin-bottom: 2rem; }
-  .modal-header h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
-  .modal-header p { font-size: 0.88rem; color: var(--text-mid); }
+/* ── TESTIMONIALS ── */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;}
+.testimonial-card{background:var(--cream);border-radius:var(--r);padding:2rem;border:1px solid var(--cream-dark);transition:box-shadow .2s;}
+.testimonial-card:hover{box-shadow:var(--shadow);}
+.stars{color:var(--gold);font-size:1rem;margin-bottom:1rem;letter-spacing:2px;}
+.testimonial-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--navy);line-height:1.65;margin-bottom:1.5rem;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.author-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.82rem;color:var(--navy);flex-shrink:0;}
+.author-name{font-weight:600;font-size:.9rem;color:var(--navy);}
+.author-location{font-size:.78rem;color:var(--text-light);}
+.reviews-note{margin-top:1.5rem;text-align:center;font-size:.85rem;color:var(--text-light);}
+.reviews-note a{color:var(--gold);font-weight:500;}
 
-  .steps-indicator { display: flex; align-items: center; gap: 0; margin-bottom: 2rem; }
-  .step-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 500; background: var(--cream-dark); color: var(--text-light); transition: all 0.3s; flex-shrink: 0; }
-  .step-dot.active { background: var(--gold); color: var(--navy); }
-  .step-dot.done { background: var(--navy); color: var(--white); }
-  .step-line { flex: 1; height: 2px; background: var(--cream-dark); transition: background 0.3s; }
-  .step-line.done { background: var(--navy); }
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:5rem 5%;text-align:center;}
+.cta-section h2{color:var(--navy);margin-bottom:.8rem;}
+.cta-section>p{color:rgba(10,22,40,.65);max-width:440px;margin:0 auto 2rem;line-height:1.65;}
+.cta-actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;}
+.sms-disclosure{margin-top:1.8rem;font-size:.72rem;color:rgba(10,22,40,.5);max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.sms-disclosure a{color:rgba(10,22,40,.7);text-decoration:underline;}
 
-  .form-step { display: none; }
-  .form-step.active { display: block; }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-group.full { grid-column: 1 / -1; }
-  label { font-size: 0.78rem; font-weight: 500; color: var(--text-mid); letter-spacing: 0.04em; text-transform: uppercase; }
-  input, select, textarea { padding: 0.75rem 1rem; border: 1.5px solid var(--cream-dark); border-radius: 10px; font-size: 0.92rem; font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
-  input:focus, select:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.15); background: var(--white); }
-  textarea { resize: vertical; min-height: 90px; }
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:3rem 5% 5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:.8rem;}
+.footer-logo span{color:var(--gold);}
+.footer-tagline{font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;}
+.footer-desc{font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300;}
+.footer-col h4{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.footer-links a{font-size:.87rem;color:rgba(255,255,255,.6);transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-contact{display:flex;flex-direction:column;gap:.55rem;}
+.footer-contact a{font-size:.87rem;color:rgba(255,255,255,.6);}
+.footer-contact a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-bottom span{font-size:.8rem;color:rgba(255,255,255,.3);}
+.footer-sms{margin-top:1rem;font-size:.72rem;color:rgba(255,255,255,.28);line-height:1.65;}
+.footer-sms a{color:rgba(255,255,255,.45);}
 
-  .service-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 1rem; }
-  .service-opt { border: 1.5px solid var(--cream-dark); border-radius: 12px; padding: 1rem; cursor: pointer; transition: all 0.2s; background: var(--cream); }
-  .service-opt:hover { border-color: var(--gold); }
-  .service-opt.selected { border-color: var(--gold); background: rgba(201,168,76,0.08); }
-  .service-opt input[type="radio"] { display: none; }
-  .opt-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
-  .opt-name { font-weight: 500; font-size: 0.88rem; color: var(--navy); }
-  .opt-price { font-size: 0.78rem; color: var(--text-light); margin-top: 0.2rem; }
+/* ── STICKY MOBILE BAR ── */
+.mobile-bookbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;padding:.85rem 1rem;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(201,168,76,.2);}
+.mobile-bookbar button{width:100%;padding:1rem;background:var(--gold);color:var(--navy);border:none;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
 
-  .estimate-box { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; }
-  .estimate-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
-  .estimate-range { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--gold); line-height: 1; }
-  .estimate-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.4rem; }
+/* ── WALKTHROUGH ── */
+.walkthrough-note{margin-top:1rem;padding:1rem 1.1rem;border-radius:14px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.26);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.walkthrough-note p{margin:0;font-size:.84rem;color:var(--text-mid);line-height:1.65;font-weight:300;max-width:420px;}
+.walkthrough-note button{padding:.8rem 1.2rem;background:var(--navy);color:var(--white);border:none;border-radius:50px;font-size:.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.walkthrough-note button:hover{background:var(--navy-mid);}
+.walkthrough-overlay{display:none;position:fixed;inset:0;z-index:1080;background:rgba(10,22,40,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
+.walkthrough-overlay.active{display:flex;}
+.walkthrough-modal{background:var(--white);border-radius:var(--r-xl);width:100%;max-width:820px;max-height:92vh;overflow:hidden;position:relative;animation:slideUp .28s ease;display:flex;flex-direction:column;}
+.walkthrough-header{padding:1.4rem 1.6rem 1rem;border-bottom:1px solid var(--cream-dark);}
+.walkthrough-header h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--navy);margin-bottom:.35rem;}
+.walkthrough-header p{font-size:.88rem;color:var(--text-mid);line-height:1.6;}
+.walkthrough-shell{min-height:520px;background:var(--cream);}
+.walkthrough-shell iframe{width:100%;height:520px;border:0;display:block;background:var(--white);}
+.walkthrough-fallback{padding:1.8rem 1.6rem 2rem;}
+.walkthrough-fallback p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem;}
+.walkthrough-fallback .actions{display:flex;gap:.8rem;flex-wrap:wrap;}
 
-  .modal-actions { display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1.5rem; }
-  .btn-back { padding: 0.8rem 1.5rem; background: none; border: 1.5px solid var(--cream-dark); border-radius: 50px; font-size: 0.9rem; cursor: pointer; color: var(--text-mid); transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
-  .btn-back:hover { border-color: var(--navy); color: var(--navy); }
-  .btn-next { padding: 0.8rem 2rem; background: var(--gold); border: none; border-radius: 50px; font-size: 0.9rem; cursor: pointer; color: var(--navy); font-weight: 500; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
-  .btn-next:hover { background: var(--gold-light); }
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,22,40,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
+.modal-overlay.active{display:flex;}
+.modal{background:var(--white);border-radius:var(--r-xl);width:100%;max-width:640px;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;animation:slideUp .28s ease;}
+@keyframes slideUp{from{transform:translateY(28px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-close{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;cursor:pointer;font-size:1.8rem;color:var(--text-light);transition:color .2s;line-height:1;}
+.modal-close:hover{color:var(--navy);}
+.modal-header{margin-bottom:1.8rem;}
+.modal-header h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;}
+.modal-header p{font-size:.88rem;color:var(--text-mid);line-height:1.55;}
+.steps-indicator{display:flex;align-items:center;gap:0;margin-bottom:2rem;}
+.step-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;background:var(--cream-dark);color:var(--text-light);transition:all .3s;flex-shrink:0;}
+.step-dot.active{background:var(--gold);color:var(--navy);}
+.step-dot.done{background:var(--navy);color:var(--white);}
+.step-line{flex:1;height:2px;background:var(--cream-dark);transition:background .3s;}
+.step-line.done{background:var(--navy);}
+.form-step{display:none;}
+.form-step.active{display:block;}
+.step-label{font-size:.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem;font-weight:500;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;}
+.form-group.full{grid-column:1/-1;}
+label{font-size:.78rem;font-weight:600;color:var(--text-mid);letter-spacing:.04em;text-transform:uppercase;}
+input,select,textarea{padding:.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:10px;font-size:.92rem;color:var(--text-dark);background:var(--cream);transition:border-color .2s,box-shadow .2s;outline:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.14);background:var(--white);}
+textarea{resize:vertical;min-height:90px;}
+.service-options{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-bottom:1.2rem;}
+.service-opt{border:1.5px solid var(--cream-dark);border-radius:12px;padding:1rem;cursor:pointer;transition:all .2s;background:var(--cream);text-align:left;}
+.service-opt:hover{border-color:var(--gold);}
+.service-opt.selected{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.service-opt input[type="radio"]{display:none;}
+.opt-icon{font-size:1.5rem;margin-bottom:.4rem;}
+.opt-name{font-weight:600;font-size:.88rem;color:var(--navy);}
+.opt-price{font-size:.78rem;color:var(--text-light);margin-top:.2rem;}
+.estimate-box{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;}
+.estimate-label{font-size:.75rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;}
+.estimate-range{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;}
+.estimate-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.4rem;}
+.summary-box{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:14px;padding:1.5rem;margin-top:1rem;}
+#summaryText{font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.8;}
+.modal-actions{display:flex;gap:1rem;justify-content:flex-end;margin-top:1.5rem;}
+.btn-back{padding:.8rem 1.5rem;background:none;border:1.5px solid var(--cream-dark);border-radius:50px;font-size:.9rem;cursor:pointer;color:var(--text-mid);transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-back:hover{border-color:var(--navy);color:var(--navy);}
+.btn-next{padding:.8rem 2rem;background:var(--gold);border:none;border-radius:50px;font-size:.9rem;cursor:pointer;color:var(--navy);font-weight:500;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-next:hover{background:var(--gold-light);}
+.success-state{text-align:center;padding:2rem 1rem;display:none;}
+.success-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1.5rem;}
+.success-state h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy);margin-bottom:.5rem;}
+.success-state p{color:var(--text-mid);font-size:.9rem;line-height:1.6;max-width:360px;margin:0 auto 1.5rem;}
+#formError{display:none;color:#c0392b;font-size:.85rem;padding:.6rem 1rem;background:#fdf2f2;border:1px solid #f5c6cb;border-radius:8px;margin-top:.5rem;}
+.field-error{border-color:#E53935!important;box-shadow:0 0 0 3px rgba(229,57,53,.12)!important;background:#fff!important;}
+.hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;}
+.btn-spinner{display:inline-block;width:14px;height:14px;margin-right:8px;border:2px solid rgba(10,22,40,.35);border-top-color:var(--navy);border-radius:50%;animation:btnspin .8s linear infinite;vertical-align:-2px;}
+@keyframes btnspin{to{transform:rotate(360deg);}}
 
-  .success-state { text-align: center; padding: 2rem 1rem; display: none; }
-  .success-icon { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; }
-  .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 0.5rem; }
-  .success-state p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; max-width: 360px; margin: 0 auto 1.5rem; }
+/* ── UPSELL MODAL ── */
+.upsell-overlay{display:none;position:fixed;inset:0;z-index:1100;background:rgba(10,22,40,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
+.upsell-overlay.active{display:flex;}
+.upsell-modal{background:var(--white);border-radius:var(--r-xl);width:100%;max-width:520px;padding:2.5rem;position:relative;text-align:center;animation:slideUp .28s ease;}
+.upsell-badge{display:inline-block;background:var(--gold-pale);border:1px solid rgba(201,168,76,.3);color:#7a6020;border-radius:50px;padding:.35rem .9rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem;}
+.upsell-modal h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy);margin-bottom:.6rem;}
+.upsell-modal>p{color:var(--text-mid);font-size:.92rem;line-height:1.65;margin-bottom:1.5rem;font-weight:300;}
+.upsell-cards{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;text-align:left;}
+.upsell-card{padding:1rem;border-radius:14px;background:var(--cream);border:1.5px solid var(--cream-dark);cursor:pointer;transition:all .2s;}
+.upsell-card:hover{border-color:var(--gold);background:rgba(201,168,76,.06);}
+.upsell-card strong{display:block;color:var(--navy);font-size:.88rem;margin-bottom:.2rem;}
+.upsell-card span{font-size:.78rem;color:var(--text-light);}
+.upsell-actions{display:flex;flex-direction:column;gap:.75rem;}
+.upsell-skip{font-size:.82rem;color:var(--text-light);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:.5rem;}
+.upsell-skip:hover{color:var(--navy);}
 
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .form-grid { grid-template-columns: 1fr; }
-    .service-options { grid-template-columns: 1fr; }
-    .process-step:not(:last-child)::after { display: none; }
-    .process-steps { grid-template-columns: 1fr; }
-  }
+/* ── RESPONSIVE ── */
+@media(max-width:1080px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .area-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-right .nav-cta{display:none;}
+  .ham{display:flex;}
+  h1{font-size:clamp(2.6rem,9vw,3.8rem);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .form-grid{grid-template-columns:1fr;}
+  .service-options{grid-template-columns:1fr;}
+  .process-step:not(:last-child)::after{display:none;}
+  .process-steps{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr;}
+  .upsell-cards{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .mobile-bookbar{display:block;}
+  .section{padding:4.5rem 5%;}
+}
+@media(max-width:480px){
+  .modal{padding:1.5rem;}
+  .services-footer{flex-direction:column;}
+  .walkthrough-shell{min-height:420px;}
+  .walkthrough-shell iframe{height:420px;}
+}
 </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
-  <a href="#" class="logo">
+  <a href="#top" class="logo">
     <div class="logo-icon">🦢</div>
     <div class="logo-text">Swan Shine<span>Cleaning Service</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#process">How It Works</a></li>
+    <li><a href="#gallery">Our Work</a></li>
+    <li><a href="#areas">Service Area</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#" class="nav-cta" onclick="openModal(); return false;">Book Now</a></li>
+    <li><a href="faq.html">FAQ</a></li>
   </ul>
+  <div class="nav-right">
+    <button class="nav-cta" onclick="openModal()">✦ Book Now</button>
+    <button class="ham" id="hamBtn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<section class="hero">
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#process" onclick="closeMobileNav()">How It Works</a>
+  <a href="#gallery" onclick="closeMobileNav()">Our Work</a>
+  <a href="#areas" onclick="closeMobileNav()">Service Area</a>
+  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+  <a href="faq.html">FAQ</a>
+  <button class="mobile-book-btn" onclick="closeMobileNav();openModal()">✦ Get a Free Estimate</button>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-badge">✦ San Antonio's Premier Cleaning Service</div>
+    <div class="hero-badge">San Antonio's Premier Cleaning Service</div>
     <h1>Your Home,<br><em>Immaculate</em><br>Every Visit.</h1>
-    <p class="hero-sub">Professional, trusted, and detail-obsessed. Swan Shine delivers a spotless space so you can focus on what matters most.</p>
+    <p class="hero-sub">Swan Shine delivers professional-grade cleaning to San Antonio households, move-outs, and offices. Detail-obsessed, background-checked, and guaranteed to leave things better than we found them.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openModal()">✦ Get a Free Estimate</button>
-      <a href="#services" class="btn-secondary">View Services →’</a>
+      <a href="#services" class="btn-secondary">View Services →</a>
     </div>
     <div class="hero-trust">
       <div class="trust-item">Insured &amp; Bonded</div>
@@ -248,143 +410,252 @@
   </div>
 </section>
 
+<!-- ── STATS BAR ── -->
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-item"><div class="stat-number">500<span>+</span></div><div class="stat-label">Happy Clients</div></div>
     <div class="stat-item"><div class="stat-number">4.9<span>★</span></div><div class="stat-label">Average Rating</div></div>
-    <div class="stat-item"><div class="stat-number">5<span>+</span></div><div class="stat-label">Years in Business</div></div>
-    <div class="stat-item"><div class="stat-number">100<span>%</span></div><div class="stat-label">Satisfaction Rate</div></div>
+    <div class="stat-item"><div class="stat-number">5<span>+</span></div><div class="stat-label">Years Serving SA</div></div>
+    <div class="stat-item"><div class="stat-number">100<span>%</span></div><div class="stat-label">Satisfaction Guarantee</div></div>
   </div>
 </div>
 
-<section class="section" id="services" style="background: var(--white);">
+<!-- ── SERVICES ── -->
+<section class="section" id="services" style="background:var(--white);">
   <div class="section-inner">
     <div class="section-tag">What We Offer</div>
-    <h2>Cleaning Services<br>Tailored to You</h2>
-    <p class="section-desc">From routine upkeep to deep cleans and move-out transformations â€” we handle it all with precision and care.</p>
+    <h2>Cleaning services <em>tailored to you</em></h2>
+    <p class="section-desc">From your weekly refresh to a full move-out scrub — we cover every scenario with the same care and attention to detail.</p>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🏠</div>
         <h3>Standard Cleaning</h3>
-        <p>Your regular refresh â€” kitchens, bathrooms, bedrooms, and living areas kept consistently pristine.</p>
+        <p>Your regular home refresh — kitchens, bathrooms, bedrooms, and living areas kept consistently spotless. Set a cadence and forget about it.</p>
         <ul class="service-features">
-          <li>Dusting all surfaces</li><li>Vacuuming &amp; mopping floors</li><li>Bathroom &amp; kitchen sanitizing</li><li>Trash removal</li><li>Bed making</li>
+          <li>Dusting all surfaces</li><li>Vacuuming &amp; mopping floors</li><li>Bathroom &amp; kitchen sanitizing</li><li>Trash removal &amp; bed making</li>
         </ul>
         <div class="service-price"><span class="price-from">Starting from</span><span class="price-value">$100</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">✨</div>
         <h3>Deep Cleaning</h3>
-        <p>A thorough top-to-bottom treatment â€” ideal for seasonal refreshes, post-renovation, or first-time clients.</p>
+        <p>Top-to-bottom treatment for seasonal refreshes, post-renovation chaos, or first-time clients who want a real reset before maintenance mode.</p>
         <ul class="service-features">
-          <li>Inside appliances</li><li>Baseboards &amp; blinds</li><li>Interior windows</li><li>Cabinet exteriors</li><li>Behind &amp; under furniture</li>
+          <li>Inside appliances &amp; oven</li><li>Baseboards, blinds &amp; vents</li><li>Interior windows &amp; tracks</li><li>Behind &amp; under furniture</li>
         </ul>
         <div class="service-price"><span class="price-from">Starting from</span><span class="price-value">$200</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">📦</div>
         <h3>Move In / Move Out</h3>
-        <p>Leave your old home spotless or arrive to a fresh start. Full property cleaning guaranteed deposit-ready.</p>
+        <p>Leave your old home spotless or arrive to a fresh start. Full property cleaning — guaranteed deposit-ready every time.</p>
         <ul class="service-features">
-          <li>Full deep clean included</li><li>Inside all appliances</li><li>Inside all cabinets &amp; drawers</li><li>Walls spot-cleaned</li><li>Garage sweep</li>
+          <li>Full deep clean included</li><li>Inside all appliances &amp; cabinets</li><li>Walls spot-cleaned</li><li>Garage sweep &amp; final walkthrough</li>
         </ul>
         <div class="service-price"><span class="price-from">Starting from</span><span class="price-value">$250</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">🏢</div>
         <h3>Commercial Cleaning</h3>
-        <p>Keep your office, retail space, or business facility clean and professional â€” on your schedule.</p>
+        <p>Keep your office, retail space, or suite clean and professional. Scheduled around your hours so we never disrupt your workday.</p>
         <ul class="service-features">
-          <li>Office &amp; workspace cleaning</li><li>Restroom sanitizing</li><li>Floor care</li><li>Breakroom upkeep</li><li>Custom scheduling</li>
+          <li>Office &amp; workspace cleaning</li><li>Restroom sanitizing</li><li>Breakroom &amp; floor care</li><li>Flexible custom scheduling</li>
         </ul>
-        <div class="service-price"><span class="price-from">Custom quote</span><span class="price-value">→’</span></div>
+        <div class="service-price"><span class="price-from">Custom quote</span><span class="price-value">→</span></div>
+      </div>
+    </div>
+    <div class="services-footer">
+      <p><strong>Not sure which service fits?</strong> Answer a few quick questions and we'll build the right estimate for your space — free, no obligation.</p>
+      <button class="btn-dark" onclick="openModal()">Get My Free Estimate</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="section" id="process" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-tag">How It Works</div>
+    <h2>Book in minutes, <em>enjoy in hours</em></h2>
+    <p class="section-desc">No phone tag. No back-and-forth. Our 4-step process gets your home sparkling with zero friction on your end.</p>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-circle">1</div><div class="step-title">Get Your Estimate</div><div class="step-desc">Tell us your service type, home size, and frequency. We generate an honest price range instantly — no pressure, no hidden fees.</div></div>
+      <div class="process-step"><div class="step-circle">2</div><div class="step-title">Pick Your Date</div><div class="step-desc">Choose a time that works for you — mornings, afternoons, or weekends. We confirm within 2 hours and work around your schedule.</div></div>
+      <div class="process-step"><div class="step-circle">3</div><div class="step-title">We Show Up</div><div class="step-desc">Our vetted, uniformed team arrives on time with all supplies and equipment. You don't even need to be home.</div></div>
+      <div class="process-step"><div class="step-circle">4</div><div class="step-title">Relax &amp; Enjoy</div><div class="step-desc">Come home to a spotless space. If anything ever misses the mark, we'll make it right — same day, no questions asked.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section class="why-section" id="why">
+  <div class="section-inner">
+    <div class="section-tag">Why Swan Shine</div>
+    <h2>We clean like <em>it's ours</em></h2>
+    <p class="section-desc">We know what it means to come home to clean. Every client gets the same care we'd give our own space — because that standard is non-negotiable.</p>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-icon">🛡️</div><div class="why-num">01</div><div class="why-title">Fully Insured</div><div class="why-desc">Every visit is covered. You're protected — always.</div></div>
+      <div class="why-item"><div class="why-icon">🌿</div><div class="why-num">02</div><div class="why-title">Eco-Friendly</div><div class="why-desc">Safe for kids, pets, and the planet. Green-certified products on every job.</div></div>
+      <div class="why-item"><div class="why-icon">✅</div><div class="why-num">03</div><div class="why-title">Background Checked</div><div class="why-desc">Every cleaner is vetted, trained, and trusted before entering your home.</div></div>
+      <div class="why-item"><div class="why-icon">⭐</div><div class="why-num">04</div><div class="why-title">Satisfaction Guarantee</div><div class="why-desc">Not happy? We come back and re-clean — at absolutely no charge.</div></div>
+      <div class="why-item"><div class="why-icon">💬</div><div class="why-num">05</div><div class="why-title">No Hidden Fees</div><div class="why-desc">Transparent pricing. Your quote is your final price. Period.</div></div>
+      <div class="why-item"><div class="why-icon">📅</div><div class="why-num">06</div><div class="why-title">Flexible Scheduling</div><div class="why-desc">One-time, weekly, bi-weekly, or monthly — your call, your cadence.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section class="section" id="gallery" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-tag">Our Work</div>
+    <h2>Results that <em>speak for themselves</em></h2>
+    <p class="section-desc">Every room we touch gets the same level of care. Here's what that looks like in practice.</p>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <div class="gallery-image" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80');"><span class="gallery-tag">Kitchen Deep Clean</span></div>
+        <div class="gallery-caption"><h3>Kitchen Reset</h3><p>Grease, buildup, and appliance exteriors handled — counters and floors polished back to like-new condition.</p></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-image" style="background-image:url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80');"><span class="gallery-tag">Move-Out Clean</span></div>
+        <div class="gallery-caption"><h3>Move-Out Finish</h3><p>Every surface, cabinet, and corner — cleaned to deposit-ready standard so your landlord has nothing to flag.</p></div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-image" style="background-image:url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=800&q=80');"><span class="gallery-tag">Commercial</span></div>
+        <div class="gallery-caption"><h3>Office Refresh</h3><p>Desks, waiting areas, restrooms, and conference rooms kept sharp — so clients always walk into something professional.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="process-section" id="process">
+<!-- ── SERVICE AREA ── -->
+<section class="section" id="areas" style="background:var(--cream);">
   <div class="section-inner">
-    <div class="section-tag">How It Works</div>
-    <h2>Book in Minutes,<br>Enjoy in Hours</h2>
-    <p class="section-desc">Our simple 4-step process gets your home sparkling with zero hassle on your end.</p>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-circle">1</div><div class="step-title">Get Your Estimate</div><div class="step-desc">Fill out our quick form and receive an instant quote tailored to your space.</div></div>
-      <div class="process-step"><div class="step-circle">2</div><div class="step-title">Pick Your Date</div><div class="step-desc">Choose a time that works for you â€” morning, afternoon, weekends available.</div></div>
-      <div class="process-step"><div class="step-circle">3</div><div class="step-title">We Show Up</div><div class="step-desc">Our vetted, uniformed team arrives on time with all supplies and equipment.</div></div>
-      <div class="process-step"><div class="step-circle">4</div><div class="step-title">Relax &amp; Enjoy</div><div class="step-desc">Come home to an immaculate space. 100% satisfaction, guaranteed.</div></div>
+    <div class="section-tag">Service Area</div>
+    <h2>Proudly serving <em>San Antonio</em></h2>
+    <p class="section-desc">We cover the neighborhoods where San Antonio families and businesses actually live and work — with fast turnaround and the same team every visit.</p>
+    <div class="area-grid">
+      <div class="area-copy">
+        <p>Swan Shine is rooted in San Antonio and knows these neighborhoods well. Whether you're in Stone Oak or Downtown, you get the same attentive crew and the same standard of clean — every single time.</p>
+        <div class="chip-row">
+          <span class="chip">📍 Stone Oak</span><span class="chip">📍 Alamo Heights</span><span class="chip">📍 Downtown</span>
+          <span class="chip">📍 Northwest Side</span><span class="chip">📍 Medical Center</span><span class="chip">📍 Shavano Park</span><span class="chip">📍 Helotes</span>
+        </div>
+        <p style="font-size:.88rem;margin-bottom:1.5rem;">Don't see your neighborhood? <a href="tel:+12104613153" style="color:var(--gold);font-weight:600;">Call us</a> — we likely serve your area.</p>
+        <button class="btn-dark" onclick="openModal()">Book in My Area</button>
+      </div>
+      <div class="map-card">
+        <iframe title="Swan Shine service area — San Antonio TX" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224724.5!2d-98.6!3d29.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c58af04a40c01%3A0x60b24b393e949e1b!2sSan%20Antonio%2C%20TX!5e0!3m2!1sen!2sus!4v1" allowfullscreen>
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="why-section">
-  <div class="section-inner">
-    <div class="section-tag">Why Swan Shine</div>
-    <h2>We Clean Like <em style="color: var(--gold);">It's Ours</em></h2>
-    <p class="section-desc">We treat every home with the same care and respect we'd give our own â€” because we know what it means to come home to clean.</p>
-    <div class="why-grid">
-      <div class="why-item"><div class="why-num">01</div><div class="why-title">Fully Insured</div><div class="why-desc">Every visit is covered. You're protected â€” always.</div></div>
-      <div class="why-item"><div class="why-num">02</div><div class="why-title">Eco-Friendly</div><div class="why-desc">Safe for kids, pets, and the planet. We use green-certified products.</div></div>
-      <div class="why-item"><div class="why-num">03</div><div class="why-title">Background Checked</div><div class="why-desc">Every cleaner is vetted, trained, and trusted before entering your home.</div></div>
-      <div class="why-item"><div class="why-num">04</div><div class="why-title">Satisfaction Guarantee</div><div class="why-desc">Not happy? We'll come back and re-clean â€” at no charge.</div></div>
-      <div class="why-item"><div class="why-num">05</div><div class="why-title">No Hidden Fees</div><div class="why-desc">Transparent pricing. Your quote is your final price.</div></div>
-      <div class="why-item"><div class="why-num">06</div><div class="why-title">Flexible Scheduling</div><div class="why-desc">One-time, weekly, bi-weekly, or monthly â€” your call.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="reviews">
+<!-- ── TESTIMONIALS ── -->
+<section class="section" id="reviews" style="background:var(--white);">
   <div class="section-inner">
     <div class="section-tag">Client Reviews</div>
-    <h2>What Our Clients Say</h2>
-    <p class="section-desc">Real reviews from real San Antonio homeowners and businesses.</p>
+    <h2>What San Antonio <em>is saying</em></h2>
+    <p class="section-desc">Real clients. Real homes. Real results.</p>
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Swan Shine has transformed our home. They're thorough, professional, and I always come home to a place that smells wonderful. Worth every penny."</p>
-        <div class="testimonial-author"><div class="author-avatar">MR</div><div><div class="author-name">Maria R.</div><div class="author-location">Stone Oak, San Antonio</div></div></div>
+        <p class="testimonial-text">"Swan Shine has completely changed how I feel about coming home. Thorough, professional, and the place smells wonderful every single time. Worth every penny."</p>
+        <div class="testimonial-author"><div class="author-avatar">MR</div><div><div class="author-name">Maria R.</div><div class="author-location">Stone Oak, San Antonio — Recurring client</div></div></div>
       </div>
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Used them for a move-out clean and got my full deposit back. The leasing office said it was the cleanest unit they'd seen in years. Highly recommend!"</p>
-        <div class="testimonial-author"><div class="author-avatar">JT</div><div><div class="author-name">James T.</div><div class="author-location">Alamo Heights, San Antonio</div></div></div>
+        <p class="testimonial-text">"Used them for a move-out clean and got my full deposit back. The leasing office said it was the cleanest unit they'd seen in years. Absolutely recommend."</p>
+        <div class="testimonial-author"><div class="author-avatar">JT</div><div><div class="author-name">James T.</div><div class="author-location">Alamo Heights, San Antonio — Move-out client</div></div></div>
       </div>
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Our office has never looked better. The Swan Shine team is reliable, discreet, and incredibly detail-oriented. We've had them on a weekly schedule for 2 years."</p>
-        <div class="testimonial-author"><div class="author-avatar">SL</div><div><div class="author-name">Sarah L.</div><div class="author-location">Downtown San Antonio</div></div></div>
+        <p class="testimonial-text">"Our office has never looked better. Reliable, discreet, and incredibly detail-oriented. We've had them on a weekly schedule for over two years now."</p>
+        <div class="testimonial-author"><div class="author-avatar">SL</div><div><div class="author-name">Sarah L.</div><div class="author-location">Downtown San Antonio — Office manager</div></div></div>
+      </div>
+    </div>
+    <p class="reviews-note">These are representative reviews. <a href="https://www.google.com/search?q=Swan+Shine+Cleaning+San+Antonio" target="_blank" rel="noopener">See all Google reviews →</a></p>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="book">
+  <h2>Ready for a spotless home?</h2>
+  <p>Get your free, no-obligation estimate in under 2 minutes. We'll confirm within 2 hours and take it from there — no confusion, no surprises.</p>
+  <div class="cta-actions">
+    <button class="btn-dark" onclick="openModal()">✦ Book Your Cleaning</button>
+    <a href="tel:+12104613153" class="btn-outline">Call (210) 461-3153</a>
+  </div>
+  <p class="sms-disclosure">By submitting your number, you agree to receive SMS messages from Swan Shine Cleaning Service regarding scheduling confirmations, estimates, and service updates. Reply STOP to unsubscribe. Reply HELP for help. Message &amp; data rates may apply. View our <a href="privacy.html">Privacy Policy</a>.</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Swan <span>Shine</span> Cleaning</div>
+        <div class="footer-tagline">Spotless. Every Time.</div>
+        <p class="footer-desc">Professional residential and commercial cleaning in San Antonio, TX. Insured, eco-friendly, and satisfaction-guaranteed every visit.</p>
+        <p class="footer-sms">SMS disclosure: By submitting the booking form, you agree to be contacted by phone or text about your cleaning request. Reply STOP to opt out. <a href="privacy.html">Privacy Policy</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li><li><a href="#process">How It Works</a></li>
+          <li><a href="#gallery">Our Work</a></li><li><a href="#areas">Service Area</a></li>
+          <li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="tel:+12104613153">(210) 461-3153</a>
+          <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
+          <span style="color:rgba(255,255,255,.45);font-size:.87rem;">Mon–Sat · 8am–6pm</span>
+          <span style="color:rgba(255,255,255,.45);font-size:.87rem;">San Antonio, TX &amp; surrounding neighborhoods</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</span>
+      <span>Insured · Bonded · Satisfaction Guaranteed</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile book bar -->
+<div class="mobile-bookbar">
+  <button onclick="openModal()">✦ Book Your Cleaning</button>
+</div>
+
+<!-- ── WALKTHROUGH MODAL ── -->
+<div class="walkthrough-overlay" id="walkthroughOverlay" onclick="handleWalkthroughOverlayClick(event)">
+  <div class="walkthrough-modal" role="dialog" aria-modal="true" aria-labelledby="walkthroughTitle">
+    <button class="modal-close" onclick="closeWalkthrough()" aria-label="Close walkthrough scheduler">×</button>
+    <div class="walkthrough-header">
+      <h3 id="walkthroughTitle">Book a walkthrough</h3>
+      <p>Use this if you want a live walkthrough before final pricing or if the space has details you'd rather show than describe.</p>
+    </div>
+    <div class="walkthrough-shell" id="walkthroughShell"></div>
+    <div class="walkthrough-fallback" id="walkthroughFallback" hidden>
+      <p>This scheduler is on standby. Add a live calendar link to <code>walkthroughBookingUrl</code> or an embeddable calendar to <code>walkthroughEmbedUrl</code> in <code>window.SWAN_CONFIG</code> and this will go live without another layout change.</p>
+      <div class="actions">
+        <a class="btn-dark" href="tel:+12104613153">Call to schedule</a>
+        <a class="btn-outline" href="mailto:mary@inspirebuildmotivate.com?subject=Walkthrough%20Request">Email to schedule</a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="cta-section" id="book">
-  <h2>Ready for a Spotless Home?</h2>
-  <p style="color: rgba(10,22,40,0.65); max-width: 420px; margin: 0 auto 2rem; line-height: 1.6;">Get your free, no-obligation estimate in under 2 minutes. Book today and we'll handle the rest.</p>
-  <button class="btn-dark" onclick="openModal()">✦ Book Your Cleaning</button>
-</section>
-
-<footer>
-  <div class="footer-logo">Swan <span>Shine</span> Cleaning</div>
-  <div class="footer-tagline">Spotless. Every Time.</div>
-  <div class="footer-links">
-    <a href="tel:+12104613153">(210) 461-3153</a>
-    <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
-    <a href="#services">Services</a>
-    <a href="/SwanShineServices/faq.html">FAQ</a>
-    <a href="/SwanShineServices/privacy.html">Privacy Policy</a>
-  </div>
-  <div class="footer-copy">Â© 2026 Swan Shine Cleaning Service Â· San Antonio, TX Â· All rights reserved</div>
-</footer>
-
-<!-- BOOKING MODAL -->
+<!-- ── BOOKING MODAL ── -->
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
   <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">Ã—</button>
+    <button class="modal-close" onclick="closeModal()">×</button>
     <div id="formWrapper">
       <div class="modal-header">
         <h3>Get Your Free Estimate</h3>
-        <p>Quick, easy, no commitment â€” just a clear quote for your space.</p>
+        <p>Quick, easy, no commitment — just a clear quote for your space.</p>
       </div>
       <div class="steps-indicator">
         <div class="step-dot active" id="dot1">1</div>
@@ -393,319 +664,198 @@
         <div class="step-line" id="line2"></div>
         <div class="step-dot" id="dot3">3</div>
       </div>
-
       <!-- Step 1 -->
       <div class="form-step active" id="step1">
-        <p style="font-size: 0.78rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 500;">Step 1 â€” Select Your Service</p>
+        <div class="step-label">Step 1 — Select Your Service</div>
         <div class="service-options">
-          <label class="service-opt" onclick="selectService(this,'standard')"><input type="radio" name="service" value="standard"><div class="opt-icon">🏠</div><div class="opt-name">Standard Cleaning</div><div class="opt-price">From $100</div></label>
+          <label class="service-opt selected" onclick="selectService(this,'standard')"><input type="radio" name="service" value="standard"><div class="opt-icon">🏠</div><div class="opt-name">Standard Cleaning</div><div class="opt-price">From $100</div></label>
           <label class="service-opt" onclick="selectService(this,'deep')"><input type="radio" name="service" value="deep"><div class="opt-icon">✨</div><div class="opt-name">Deep Cleaning</div><div class="opt-price">From $200</div></label>
           <label class="service-opt" onclick="selectService(this,'moveinout')"><input type="radio" name="service" value="moveinout"><div class="opt-icon">📦</div><div class="opt-name">Move In / Move Out</div><div class="opt-price">From $250</div></label>
           <label class="service-opt" onclick="selectService(this,'commercial')"><input type="radio" name="service" value="commercial"><div class="opt-icon">🏢</div><div class="opt-name">Commercial</div><div class="opt-price">Custom Quote</div></label>
         </div>
-        <div class="form-grid" style="margin-top: 1rem;">
-          <div class="form-group"><label>Bedrooms</label><select id="bedrooms" onchange="updateEstimate()"><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3" selected>3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5">5+ Bedrooms</option></select></div>
-          <div class="form-group"><label>Bathrooms</label><select id="bathrooms" onchange="updateEstimate()"><option value="1">1 Bathroom</option><option value="2" selected>2 Bathrooms</option><option value="3">3 Bathrooms</option><option value="4">4+ Bathrooms</option></select></div>
-          <div class="form-group"><label>Sq. Footage (approx.)</label><select id="sqft" onchange="updateEstimate()"><option value="800">Under 1,000 sq ft</option><option value="1200" selected>1,000â€“1,500 sq ft</option><option value="1750">1,500â€“2,000 sq ft</option><option value="2500">2,000â€“3,000 sq ft</option><option value="3500">3,000+ sq ft</option></select></div>
-          <div class="form-group"><label>Frequency</label><select id="frequency"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
+        <div class="form-grid">
+          <div class="form-group"><label>Bedrooms</label><select id="bedrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3" selected>3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5">5+ Bedrooms</option></select></div>
+          <div class="form-group"><label>Bathrooms</label><select id="bathrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bathroom</option><option value="2" selected>2 Bathrooms</option><option value="3">3 Bathrooms</option><option value="4">4+ Bathrooms</option></select></div>
+          <div class="form-group"><label>Sq. Footage</label><select id="sqft" onchange="updateEstimate();saveFormDraft();"><option value="800">Under 1,000 sq ft</option><option value="1200" selected>1,000–1,500 sq ft</option><option value="1750">1,500–2,000 sq ft</option><option value="2500">2,000–3,000 sq ft</option><option value="3500">3,000+ sq ft</option></select></div>
+          <div class="form-group"><label>Frequency</label><select id="frequency" onchange="saveFormDraft();"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
         </div>
-        <div class="estimate-box">
-          <div class="estimate-label">Your Estimated Price</div>
-          <div class="estimate-range" id="estimateRange">$130 â€“ $170</div>
-          <div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div>
-        </div>
-        <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue →’</button></div>
+        <div class="estimate-box"><div class="estimate-label">Your Estimated Price</div><div class="estimate-range" id="estimateRange">$130 – $170</div><div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div></div>
+        <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue →</button></div>
       </div>
-
       <!-- Step 2 -->
       <div class="form-step" id="step2">
-        <p style="font-size: 0.78rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 500;">Step 2 â€” Schedule Your Cleaning</p>
+        <div class="step-label">Step 2 — Schedule Your Cleaning</div>
         <div class="form-grid">
           <div class="form-group"><label>Preferred Date</label><input type="date" id="prefDate"></div>
-          <div class="form-group"><label>Preferred Time</label><select id="prefTime"><option value="morning">Morning (8am â€“ 12pm)</option><option value="afternoon">Afternoon (12pm â€“ 5pm)</option><option value="flexible">I'm Flexible</option></select></div>
+          <div class="form-group"><label>Preferred Time</label><select id="prefTime"><option value="morning">Morning (8am – 12pm)</option><option value="afternoon">Afternoon (12pm – 5pm)</option><option value="flexible">I'm Flexible</option></select></div>
           <div class="form-group full"><label>Service Address</label><input type="text" id="address" placeholder="123 Main St, San Antonio, TX 78201"></div>
-          <div class="form-group full">
-            <label for="booking-notes">Additional Notes (optional)</label>
-            <textarea
-              id="booking-notes"
-              name="notes"
-              placeholder="e.g. 3 bed / 2 bath, pets in home, gate code, parking instructionsâ€¦"
-            ></textarea>
-          </div>
+          <div class="form-group full"><label>Additional Notes (optional)</label><textarea id="booking-notes" placeholder="Pets, access code, areas to focus on, special instructions…"></textarea></div>
         </div>
-        <div class="modal-actions"><button class="btn-back" onclick="goToStep(1)">→ Back</button><button class="btn-next" onclick="goToStep(3)">Continue →’</button></div>
+        <div class="modal-actions"><button class="btn-back" onclick="goToStep(1)">← Back</button><button class="btn-next" onclick="goToStep(3)">Continue →</button></div>
       </div>
-
       <!-- Step 3 -->
       <div class="form-step" id="step3">
-        <p style="font-size: 0.78rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 500;">Step 3 â€” Your Contact Info</p>
+        <div class="step-label">Step 3 — Your Contact Info</div>
         <div class="form-grid">
-          <div class="form-group"><label>First Name</label><input type="text" id="firstName" placeholder="Jane"></div>
-          <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Smith"></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(210) 461-3153"></div>
-          <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="jane@example.com"></div>
-          <div class="form-group full"><label>How did you hear about us?</label><select id="referral"><option value="">Select one...</option><option>Google Search</option><option>Facebook / Instagram</option><option>Referral from a friend</option><option>Nextdoor</option><option>Other</option></select></div>
-          <!-- Honeypot: hidden from humans, bots fill it in -->
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;">
+          <div class="form-group"><label>First Name *</label><input type="text" id="firstName" placeholder="Jane" autocomplete="given-name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Smith" autocomplete="family-name"></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" id="phone" placeholder="(210) 000-0000" autocomplete="tel"></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" id="email" placeholder="jane@example.com" autocomplete="email"></div>
+          <div class="form-group full"><label>How did you hear about us?</label><select id="referral"><option value="">Select one…</option><option>Google Search</option><option>Facebook / Instagram</option><option>Referral from a friend</option><option>Nextdoor</option><option>Other</option></select></div>
         </div>
-        <div id="formError" style="display:none;color:#c0392b;font-size:0.85rem;padding:0.6rem 1rem;background:#fdf2f2;border:1px solid #f5c6cb;border-radius:8px;margin-bottom:0.5rem;"></div>
-        <div class="estimate-box" id="summaryBox" style="margin-top: 1rem;">
+        <input type="text" id="website" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div id="formError"></div>
+        <div class="summary-box" id="summaryBox" style="margin-top:1rem;">
           <div class="estimate-label">Booking Summary</div>
-          <div id="summaryText" style="font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-top: 0.4rem;"></div>
+          <div id="summaryText" style="font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.8;margin-top:.4rem;"></div>
         </div>
-        <div class="modal-actions"><button class="btn-back" onclick="goToStep(2)">→ Back</button><button class="btn-next" onclick="submitForm(this)">✦ Confirm Booking</button></div>
+        <div class="modal-actions"><button class="btn-back" onclick="goToStep(2)">← Back</button><button class="btn-next" id="submitBtn" onclick="submitForm(this)">✦ Confirm Booking</button></div>
       </div>
     </div>
-
-    <!-- Success -->
+    <!-- Success state -->
     <div class="success-state" id="successState">
-      <div class="success-icon">✦</div>
+      <div class="success-icon">🦢</div>
       <h3>You're All Set!</h3>
-      <p>Thank you! We'll confirm your appointment within 2 hours via phone and email. We can't wait to make your home shine.</p>
-      <button class="btn-next" onclick="window.location.href='/SwanShineServices/thank-you.html'" style="margin: 0 auto; display: inline-block;">View Confirmation →’</button>
+      <p>We'll confirm your appointment within 2 hours via phone and email. We can't wait to make your home shine.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── RECURRING UPSELL MODAL ── -->
+<div class="upsell-overlay" id="upsellOverlay">
+  <div class="upsell-modal">
+    <div class="upsell-badge">✦ One More Thing</div>
+    <h3>Save on every visit</h3>
+    <p>You booked a one-time clean — want to lock in a recurring schedule and save time on every future visit? Most clients see the biggest value switching to bi-weekly.</p>
+    <div class="upsell-cards">
+      <div class="upsell-card" onclick="acceptUpsell('Weekly')"><strong>Weekly Cleaning</strong><span>Best for busy households with kids or pets</span></div>
+      <div class="upsell-card" onclick="acceptUpsell('Bi-Weekly')"><strong>Bi-Weekly Cleaning</strong><span>Most popular — great balance of clean &amp; cost</span></div>
+      <div class="upsell-card" onclick="acceptUpsell('Monthly')"><strong>Monthly Cleaning</strong><span>Ideal for smaller spaces or light upkeep</span></div>
+      <div class="upsell-card" onclick="acceptUpsell('Seasonal')"><strong>Seasonal Deep Clean</strong><span>Quarterly reset for guests, holidays, or spring</span></div>
+    </div>
+    <div class="upsell-actions">
+      <button class="btn-next" onclick="closeUpsellAndRedirect()" style="width:100%;">I'm interested — let's talk →</button>
+      <button class="upsell-skip" onclick="closeUpsellAndRedirect()">No thanks, take me to my confirmation</button>
     </div>
   </div>
 </div>
 
 <script>
-  const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ucphPUkSafuQF0ZCZh1T/webhook-trigger/d7237974-4f39-44b6-a955-bcebe6fe708a';
+const SWAN_CONFIG=window.SWAN_CONFIG||{};
+const GHL_WEBHOOK_URL=(SWAN_CONFIG.webhookProxyUrl||SWAN_CONFIG.webhookUrl||'').trim();
+const STRIPE_DEPOSIT_URL=(SWAN_CONFIG.stripeDepositUrl||'').trim();
+const WALKTHROUGH_BOOKING_URL=(SWAN_CONFIG.walkthroughBookingUrl||'').trim();
+const WALKTHROUGH_EMBED_URL=(SWAN_CONFIG.walkthroughEmbedUrl||'').trim();
+const IS_GH=window.location.pathname.startsWith('/SwanShineServices/');
+const BASE=IS_GH?'/SwanShineServices':'';
+let selectedService='standard';
+let pendingRedirect=false;
 
-  // Minimal spinner + validation highlight styles (injected to avoid touching existing CSS blocks)
-  (function injectSpinnerCss() {
-    const style = document.createElement('style');
-    style.textContent = `
-      .btn-spinner{display:inline-block;width:14px;height:14px;margin-right:8px;border:2px solid rgba(255,255,255,0.55);border-top-color:#fff;border-radius:50%;animation:btnspin 0.8s linear infinite;vertical-align:-2px}
-      @keyframes btnspin{to{transform:rotate(360deg)}}
-      .field-error{border-color:#E53935 !important; box-shadow:0 0 0 3px rgba(229,57,53,0.12) !important; background:#fff !important;}
-    `;
-    document.head.appendChild(style);
-  })();
+// ── MOBILE NAV ──────────────────────────────────────────────
+function toggleMobileNav(){const nav=document.getElementById('mobileNav'),btn=document.getElementById('hamBtn'),open=nav.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open));}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');const btn=document.getElementById('hamBtn');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+document.addEventListener('click',e=>{const nav=document.getElementById('mobileNav'),btn=document.getElementById('hamBtn');if(nav.classList.contains('open')&&!nav.contains(e.target)&&!btn.contains(e.target))closeMobileNav();});
 
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('prefDate').min = today;
-  document.getElementById('prefDate').value = today;
+// ── MODAL ────────────────────────────────────────────────────
+function openModal(){document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';updateEstimate();restoreFormDraft();}
+function closeModal(){if(pendingRedirect){doRedirect();return;}document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}
+function handleOverlayClick(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeWalkthrough();closeMobileNav();}});
 
-  let selectedService = 'standard';
-
-  function openModal() {
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    updateEstimate();
-    restoreFormDraft();
+function openWalkthrough(){
+  const overlay=document.getElementById('walkthroughOverlay');
+  const shell=document.getElementById('walkthroughShell');
+  const fallback=document.getElementById('walkthroughFallback');
+  shell.innerHTML='';
+  fallback.hidden=true;
+  if(WALKTHROUGH_EMBED_URL){
+    shell.innerHTML=`<iframe src="${WALKTHROUGH_EMBED_URL}" title="Walkthrough scheduler" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+  }else if(WALKTHROUGH_BOOKING_URL){
+    window.open(WALKTHROUGH_BOOKING_URL,'_blank','noopener');
+    return;
+  }else{
+    fallback.hidden=false;
   }
+  overlay.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeWalkthrough(){
+  document.getElementById('walkthroughOverlay').classList.remove('active');
+  if(!document.getElementById('modalOverlay').classList.contains('active')) document.body.style.overflow='';
+}
+function handleWalkthroughOverlayClick(e){if(e.target===document.getElementById('walkthroughOverlay'))closeWalkthrough();}
+function previewDeposit(){if(STRIPE_DEPOSIT_URL){window.open(STRIPE_DEPOSIT_URL,'_blank','noopener');}else{alert('Stripe deposit is on standby. Add a live URL to stripeDepositUrl in window.SWAN_CONFIG to turn it on.');}}
 
-  function closeModal() {
-    if (document.getElementById('successState').style.display === 'block') {
-      window.location.href = '/SwanShineServices/thank-you.html';
-      return;
+// ── SERVICE SELECT ────────────────────────────────────────────
+function selectService(el,val){document.querySelectorAll('.service-opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');selectedService=val;updateEstimate();saveFormDraft();}
+
+// ── ESTIMATE ──────────────────────────────────────────────────
+function updateEstimate(){const beds=parseInt(document.getElementById('bedrooms')?.value)||1,baths=parseInt(document.getElementById('bathrooms')?.value)||1,sqft=parseInt(document.getElementById('sqft')?.value)||1200;const bases={standard:100,deep:200,moveinout:250,commercial:300};const base=bases[selectedService]||100;const extra=(beds*15)+(baths*20)+(sqft/100*5);const low=Math.round((base+extra)/10)*10,high=Math.round(low*1.3/10)*10;const el=document.getElementById('estimateRange');if(el)el.textContent=selectedService==='commercial'?'Custom Quote':`$${low} – $${high}`;}
+
+// ── STEPS ─────────────────────────────────────────────────────
+function goToStep(n){document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));document.getElementById('step'+n).classList.add('active');for(let i=1;i<=3;i++){const dot=document.getElementById('dot'+i);dot.classList.remove('active','done');if(i<n)dot.classList.add('done');else if(i===n)dot.classList.add('active');}for(let i=1;i<=2;i++)document.getElementById('line'+i).classList.toggle('done',i<n);if(n===3)buildSummary();document.getElementById('modal').scrollTop=0;}
+
+// ── SUMMARY ───────────────────────────────────────────────────
+function buildSummary(){const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial Cleaning'};const date=document.getElementById('prefDate')?.value||'TBD';const timeEl=document.getElementById('prefTime');const freqEl=document.getElementById('frequency');document.getElementById('summaryText').innerHTML=`<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br><strong style="color:var(--gold)">Frequency:</strong> ${freqEl?freqEl.options[freqEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Date:</strong> ${date} · ${timeEl?timeEl.options[timeEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Address:</strong> ${document.getElementById('address')?.value||'Not provided yet'}<br><strong style="color:var(--gold)">Estimate:</strong> ${document.getElementById('estimateRange')?.textContent||''}`;}
+
+// ── DRAFT ─────────────────────────────────────────────────────
+function saveFormDraft(){try{localStorage.setItem('swanshine_draft',JSON.stringify({service:selectedService,bedrooms:document.getElementById('bedrooms')?.value||'',bathrooms:document.getElementById('bathrooms')?.value||'',sqft:document.getElementById('sqft')?.value||'',frequency:document.getElementById('frequency')?.value||'',date:document.getElementById('prefDate')?.value||'',time:document.getElementById('prefTime')?.value||'',address:document.getElementById('address')?.value||'',notes:document.getElementById('booking-notes')?.value||'',firstName:document.getElementById('firstName')?.value||'',lastName:document.getElementById('lastName')?.value||'',phone:document.getElementById('phone')?.value||'',email:document.getElementById('email')?.value||''}));}catch(e){}}
+function restoreFormDraft(){try{const raw=localStorage.getItem('swanshine_draft');if(!raw)return;const d=JSON.parse(raw);const set=(id,val)=>{const el=document.getElementById(id);if(el&&val)el.value=val;};selectedService=d.service||'standard';const btn=document.querySelector(`.service-opt [value="${selectedService}"]`);if(btn){document.querySelectorAll('.service-opt').forEach(o=>o.classList.remove('selected'));btn.closest('.service-opt').classList.add('selected');}set('bedrooms',d.bedrooms);set('bathrooms',d.bathrooms);set('sqft',d.sqft);set('frequency',d.frequency);set('prefDate',d.date);set('prefTime',d.time);set('address',d.address);set('booking-notes',d.notes);set('firstName',d.firstName);set('lastName',d.lastName);set('phone',d.phone);set('email',d.email);updateEstimate();}catch(e){}}
+document.getElementById('modal').addEventListener('input',saveFormDraft);
+document.getElementById('modal').addEventListener('change',saveFormDraft);
+
+// ── VALIDATION ────────────────────────────────────────────────
+function clearFieldErrors(){document.querySelectorAll('.field-error').forEach(el=>el.classList.remove('field-error'));}
+function markFieldError(el){if(el)el.classList.add('field-error');}
+function showFormError(msg){const el=document.getElementById('formError');el.textContent=msg;el.style.display='block';el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function hideFormError(){document.getElementById('formError').style.display='none';}
+
+// ── SUBMIT ────────────────────────────────────────────────────
+async function submitForm(btn){
+  if(!GHL_WEBHOOK_URL){showFormError('No webhook target is configured yet.');return;}
+  clearFieldErrors();hideFormError();
+  if((document.getElementById('website')?.value||'')!=='')return;
+  const last=parseInt(localStorage.getItem('swanshine_last_submit')||'0',10);
+  if(Date.now()-last<60000){showFormError('Please wait a moment before submitting again.');return;}
+  const firstEl=document.getElementById('firstName'),phoneEl=document.getElementById('phone'),emailEl=document.getElementById('email');
+  const missing=[firstEl,phoneEl,emailEl].filter(el=>!(el?.value?.trim()));
+  if(missing.length){missing.forEach(markFieldError);missing[0].focus();showFormError('Please fill in your name, phone, and email to continue.');return;}
+  const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};
+  const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');
+  const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:(phoneEl?.value||'').trim(),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',source:(document.getElementById('referral')?.value||'').trim()};
+  const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
+  try{
+    const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if(!res.ok)throw new Error('Webhook '+res.status);
+    localStorage.setItem('swanshine_last_submit',String(Date.now()));
+    localStorage.removeItem('swanshine_draft');
+    try{localStorage.setItem('swanshine_booking_summary',JSON.stringify({name:[payload.firstName,payload.lastName].filter(Boolean).join(' '),service:payload.service_type,estimate:payload.estimate,date:payload.preferred_date,time:payload.preferred_time,frequency:payload.frequency,phone:payload.phone,email:payload.email,stripeDepositUrl:STRIPE_DEPOSIT_URL,walkthroughBookingUrl:WALKTHROUGH_BOOKING_URL,walkthroughEmbedUrl:WALKTHROUGH_EMBED_URL}));}catch(e){}
+    document.getElementById('formWrapper').style.display='none';
+    document.getElementById('successState').style.display='block';
+    if(STRIPE_DEPOSIT_URL){
+      const depositLink=document.getElementById('depositLink');
+      depositLink.href=STRIPE_DEPOSIT_URL;
+      depositLink.hidden=false;
     }
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-  }
+    document.getElementById('modal').scrollTop=0;
+    pendingRedirect=true;
+    const freq=freqEl?freqEl.options[freqEl.selectedIndex]?.value:'';
+    if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');},1800);}
+    else{setTimeout(doRedirect,2500);}
+  }catch(err){console.error('[SwanShine]',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
+}
 
-  function handleOverlayClick(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  }
+// ── UPSELL ────────────────────────────────────────────────────
+function acceptUpsell(plan){try{if(!GHL_WEBHOOK_URL){closeUpsellAndRedirect();return;}const s=JSON.parse(localStorage.getItem('swanshine_booking_summary')||'{}');fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:s.name?.split(' ')[0]||'',phone:s.phone||'',email:s.email||'',upsell_interest:plan,source:'Recurring Upsell Modal'})}).catch(()=>{});}catch(e){}closeUpsellAndRedirect();}
+function closeUpsellAndRedirect(){document.getElementById('upsellOverlay').classList.remove('active');doRedirect();}
+function doRedirect(){window.location.href=BASE+'/thank-you.html';}
 
-  function selectService(el, val) {
-    document.querySelectorAll('.service-opt').forEach(o => o.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedService = val;
-    updateEstimate();
-  }
-
-  function updateEstimate() {
-    const beds = parseInt(document.getElementById('bedrooms').value) || 1;
-    const baths = parseInt(document.getElementById('bathrooms').value) || 1;
-    const sqft = parseInt(document.getElementById('sqft').value) || 1200;
-    const bases = { standard: 100, deep: 200, moveinout: 250, commercial: 300 };
-    const base = bases[selectedService] || 100;
-    const extra = (beds * 15) + (baths * 20) + (sqft / 100 * 5);
-    const low = Math.round((base + extra) / 10) * 10;
-    const high = Math.round(low * 1.3 / 10) * 10;
-    const el = document.getElementById('estimateRange');
-    if (el) el.textContent = selectedService === 'commercial' ? 'Custom Quote' : `$${low} â€“ $${high}`;
-  }
-
-  function goToStep(n) {
-    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-    document.getElementById('step' + n).classList.add('active');
-    for (let i = 1; i <= 3; i++) {
-      const dot = document.getElementById('dot' + i);
-      dot.classList.remove('active', 'done');
-      if (i < n) dot.classList.add('done');
-      else if (i === n) dot.classList.add('active');
-    }
-    for (let i = 1; i <= 2; i++) {
-      document.getElementById('line' + i).classList.toggle('done', i < n);
-    }
-    if (n === 3) buildSummary();
-    document.getElementById('modal').scrollTop = 0;
-  }
-
-  function buildSummary() {
-    const svcLabels = { standard: 'Standard Cleaning', deep: 'Deep Cleaning', moveinout: 'Move In / Move Out', commercial: 'Commercial Cleaning' };
-    const date = document.getElementById('prefDate').value || 'TBD';
-    const time = document.getElementById('prefTime');
-    const timeLabel = time.options[time.selectedIndex].text;
-    const addr = document.getElementById('address').value || 'Address not provided';
-    const est = document.getElementById('estimateRange').textContent;
-    document.getElementById('summaryText').innerHTML =
-      `<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br>
-       <strong style="color:var(--gold)">Date:</strong> ${date} Â· ${timeLabel}<br>
-       <strong style="color:var(--gold)">Address:</strong> ${addr}<br>
-       <strong style="color:var(--gold)">Estimate:</strong> ${est}`;
-  }
-
-  function showSuccessAndRedirect() {
-    document.getElementById('formWrapper').style.display = 'none';
-    document.getElementById('successState').style.display = 'block';
-    document.getElementById('modal').scrollTop = 0;
-    setTimeout(() => {
-      const isGhPages = window.location.pathname.startsWith('/SwanShineServices/');
-      const target = isGhPages ? '/SwanShineServices/thank-you.html' : '/thank-you.html';
-      window.location.href = target;
-    }, 2500);
-  }
-
-  function clearFieldErrors() {
-    document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
-  }
-
-  function markFieldError(el) {
-    if (!el) return;
-    el.classList.add('field-error');
-  }
-
-  // â”€â”€ Form draft autosave â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  function saveFormDraft() {
-    try {
-      localStorage.setItem('swanshine_draft', JSON.stringify({
-        service: selectedService,
-        date:      document.getElementById('prefDate')?.value || '',
-        time:      document.getElementById('prefTime')?.value || '',
-        address:   document.getElementById('address')?.value || '',
-        notes:     document.getElementById('booking-notes')?.value || '',
-        firstName: document.getElementById('firstName')?.value || '',
-        lastName:  document.getElementById('lastName')?.value || '',
-        phone:     document.getElementById('phone')?.value || '',
-        email:     document.getElementById('email')?.value || '',
-      }));
-    } catch(e) { /* storage unavailable â€” silently skip */ }
-  }
-
-  function restoreFormDraft() {
-    try {
-      const raw = localStorage.getItem('swanshine_draft');
-      if (!raw) return;
-      const d = JSON.parse(raw);
-      if (d.date)      { const el = document.getElementById('prefDate');       if (el) el.value = d.date; }
-      if (d.time)      { const el = document.getElementById('prefTime');       if (el) el.value = d.time; }
-      if (d.address)   { const el = document.getElementById('address');        if (el) el.value = d.address; }
-      if (d.notes)     { const el = document.getElementById('booking-notes');  if (el) el.value = d.notes; }
-      if (d.firstName) { const el = document.getElementById('firstName');      if (el) el.value = d.firstName; }
-      if (d.lastName)  { const el = document.getElementById('lastName');       if (el) el.value = d.lastName; }
-      if (d.phone)     { const el = document.getElementById('phone');          if (el) el.value = d.phone; }
-      if (d.email)     { const el = document.getElementById('email');          if (el) el.value = d.email; }
-    } catch(e) { /* ignore corrupt draft */ }
-  }
-
-  // Autosave on any input change inside the modal
-  document.getElementById('modal').addEventListener('input', saveFormDraft);
-  document.getElementById('modal').addEventListener('change', saveFormDraft);
-
-  // â”€â”€ Form submission â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  function showFormError(msg) {
-    const el = document.getElementById('formError');
-    if (!el) return;
-    el.textContent = msg;
-    el.style.display = 'block';
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function hideFormError() {
-    const el = document.getElementById('formError');
-    if (el) el.style.display = 'none';
-  }
-
-  async function submitForm(btn) {
-    clearFieldErrors();
-    hideFormError();
-
-    // Honeypot check â€” bots fill in the hidden #website field, humans don't
-    if ((document.getElementById('website')?.value || '') !== '') {
-      return;
-    }
-
-    // Rate limiting â€” one submission per 60 seconds per browser
-    const lastSubmit = localStorage.getItem('swanshine_last_submit');
-    if (lastSubmit && Date.now() - parseInt(lastSubmit, 10) < 60000) {
-      showFormError('Please wait a moment before submitting again.');
-      return;
-    }
-
-    const firstEl = document.getElementById('firstName');
-    const phoneEl = document.getElementById('phone');
-    const emailEl = document.getElementById('email');
-
-    const missing = [firstEl, phoneEl, emailEl].filter(el => !(el && el.value && el.value.trim()));
-    if (missing.length) {
-      missing.forEach(el => markFieldError(el));
-      missing[0].focus();
-      return;
-    }
-
-    const svcLabels = { standard: 'Standard Cleaning', deep: 'Deep Cleaning', moveinout: 'Move In / Move Out', commercial: 'Commercial' };
-    const payload = {
-      first_name:     (document.getElementById('firstName')?.value || '').trim(),
-      last_name:      (document.getElementById('lastName')?.value || '').trim(),
-      phone:          (document.getElementById('phone')?.value || '').trim(),
-      email:          (document.getElementById('email')?.value || '').trim(),
-      address:        (document.getElementById('address')?.value || '').trim(),
-      service_type:   svcLabels[selectedService] || selectedService,
-      preferred_date: (document.getElementById('prefDate')?.value || '').trim(),
-      preferred_time: (function () {
-        const timeEl = document.getElementById('prefTime');
-        return timeEl ? (timeEl.options[timeEl.selectedIndex]?.text || '').trim() : '';
-      })(),
-      estimate:       (document.getElementById('estimateRange')?.textContent || '').trim(),
-      notes:          (document.getElementById('booking-notes')?.value || '').trim(),
-      bedrooms:       (document.getElementById('bedrooms')?.value || '').trim(),
-      bathrooms:      (document.getElementById('bathrooms')?.value || '').trim(),
-      frequency:      (function () {
-        const freqEl = document.getElementById('frequency');
-        return freqEl ? (freqEl.options[freqEl.selectedIndex]?.text || '').trim() : '';
-      })(),
-      source:         (document.getElementById('referral')?.value || '').trim(),
-    };
-
-    const originalHtml = btn ? btn.innerHTML : '';
-    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="btn-spinner"></span>Sendingâ€¦'; }
-
-    try {
-      const res = await fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        localStorage.setItem('swanshine_last_submit', String(Date.now()));
-        localStorage.removeItem('swanshine_draft');
-        showSuccessAndRedirect();
-      } else {
-        console.error('[SwanShine] Webhook non-2xx:', res.status);
-        showFormError('Something went wrong. Please call us at (210) 461-3153 or try again.');
-        if (btn) { btn.disabled = false; btn.innerHTML = originalHtml; }
-      }
-    } catch (err) {
-      console.error('[SwanShine] Webhook error:', err);
-      showFormError('Could not send your request. Please check your connection or call (210) 461-3153.');
-      if (btn) { btn.disabled = false; btn.innerHTML = originalHtml; }
-    }
-  }
-
-  updateEstimate();
+// ── INIT ──────────────────────────────────────────────────────
+if(IS_GH){document.querySelectorAll('a[href="faq.html"]').forEach(a=>{a.href=BASE+'/faq.html';});document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href=BASE+'/privacy.html';});document.querySelectorAll('a[href="thank-you.html"]').forEach(a=>{a.href=BASE+'/thank-you.html';});}
+const today=new Date().toISOString().split('T')[0];
+const di=document.getElementById('prefDate');if(di){di.min=today;di.value=today;}
+document.getElementById('yr').textContent=new Date().getFullYear();
+updateEstimate();
 </script>
 </body>
 </html>
