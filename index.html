@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -670,13 +670,13 @@ textarea{resize:vertical;min-height:90px;}
 
 <!-- Sticky mobile book bar -->
 <div class="mobile-bookbar">
-  <button onclick="openModal()">✦ Book Your Cleaning</button>
+  <button onclick="openModal()">&#x2726; Book Your Cleaning</button>
 </div>
 
 <!-- â”€â”€ WALKTHROUGH MODAL â”€â”€ -->
 <div class="walkthrough-overlay" id="walkthroughOverlay" onclick="handleWalkthroughOverlayClick(event)">
   <div class="walkthrough-modal" role="dialog" aria-modal="true" aria-labelledby="walkthroughTitle">
-    <button class="modal-close" onclick="closeWalkthrough()" aria-label="Close walkthrough scheduler">×</button>
+    <button class="modal-close" onclick="closeWalkthrough()" aria-label="Close walkthrough scheduler">&times;</button>
     <div class="walkthrough-header">
       <h3 id="walkthroughTitle">Book a walkthrough</h3>
       <p>Use this if you want a live walkthrough before final pricing or if the space has details you'd rather show than describe.</p>
@@ -712,10 +712,10 @@ textarea{resize:vertical;min-height:90px;}
       <div class="form-step active" id="step1">
         <div class="step-label">Step 1 &mdash; Select Your Service</div>
         <div class="service-options">
-          <label class="service-opt selected" onclick="selectService(this,'standard')"><input type="radio" name="service" value="standard"><div class="opt-icon">ðŸ </div><div class="opt-name">Standard Cleaning</div><div class="opt-price">From $100</div></label>
-          <label class="service-opt" onclick="selectService(this,'deep')"><input type="radio" name="service" value="deep"><div class="opt-icon">✨</div><div class="opt-name">Deep Cleaning</div><div class="opt-price">From $200</div></label>
-          <label class="service-opt" onclick="selectService(this,'moveinout')"><input type="radio" name="service" value="moveinout"><div class="opt-icon">ðŸ“¦</div><div class="opt-name">Move In / Move Out</div><div class="opt-price">From $250</div></label>
-          <label class="service-opt" onclick="selectService(this,'commercial')"><input type="radio" name="service" value="commercial"><div class="opt-icon">ðŸ¢</div><div class="opt-name">Commercial</div><div class="opt-price">Custom Quote</div></label>
+          <label class="service-opt selected" onclick="selectService(this,'standard')"><input type="radio" name="service" value="standard"><div class="opt-icon">&#x1F3E0;</div><div class="opt-name">Standard Cleaning</div><div class="opt-price">From $100</div></label>
+          <label class="service-opt" onclick="selectService(this,'deep')"><input type="radio" name="service" value="deep"><div class="opt-icon">&#x2728;</div><div class="opt-name">Deep Cleaning</div><div class="opt-price">From $200</div></label>
+          <label class="service-opt" onclick="selectService(this,'moveinout')"><input type="radio" name="service" value="moveinout"><div class="opt-icon">&#x1F4E6;</div><div class="opt-name">Move In / Move Out</div><div class="opt-price">From $250</div></label>
+          <label class="service-opt" onclick="selectService(this,'commercial')"><input type="radio" name="service" value="commercial"><div class="opt-icon">&#x1F3E2;</div><div class="opt-name">Commercial</div><div class="opt-price">Custom Quote</div></label>
         </div>
         <div class="form-grid">
           <div class="form-group"><label>Bedrooms</label><select id="bedrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3" selected>3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5">5+ Bedrooms</option></select></div>
@@ -750,7 +750,7 @@ textarea{resize:vertical;min-height:90px;}
       <input type="radio" name="condition" id="cond-normal" value="0" checked> Normal condition (baseline)
     </label>
     <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
-      <input type="radio" name="condition" id="cond-extra" value="20"> Needs extra attention — not cleaned in 2+ months (+20%)
+      <input type="radio" name="condition" id="cond-extra" value="20"> Needs extra attention &mdash; not cleaned in 2+ months (+20%)
     </label>
     <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
       <input type="radio" name="condition" id="cond-heavy" value="40"> Post-construction or heavy buildup (+40%)
@@ -758,15 +758,15 @@ textarea{resize:vertical;min-height:90px;}
   </div>
 </div>
 <label class="pets-row" id="petsRow" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-  <input type="checkbox" id="addon-pets"> <span class="pets-label">ðŸ¾ Pets in home (+$15 pet hair surcharge)</span>
+  <input type="checkbox" id="addon-pets"> <span class="pets-label">&#x1F43E; Pets in home (+$15 pet hair surcharge)</span>
 </label>
 <div class="estimate-box">
   <div class="estimate-label">Your Estimated Price</div>
   <div class="estimate-breakdown" id="estimateBreakdown"></div>
-  <div class="estimate-range" id="estimateRange">$130 – $170</div>
+  <div class="estimate-range" id="estimateRange">$130 &ndash; $170</div>
   <div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div>
 </div>
-        <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue →</button></div>
+        <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue &#x2192;</button></div>
       </div>
       <!-- Step 2 -->
       <div class="form-step" id="step2">
@@ -800,7 +800,7 @@ textarea{resize:vertical;min-height:90px;}
     </div>
     <!-- Success state -->
     <div class="success-state" id="successState">
-      <div class="success-icon">ðŸ¦¢</div>
+      <div class="success-icon">&#x1F9A2;</div>
       <h3>You're All Set!</h3>
       <p>We'll confirm your appointment within 2 hours via phone and email. We can't wait to make your home shine.</p>
     </div>
@@ -830,21 +830,21 @@ textarea{resize:vertical;min-height:90px;}
 <!-- â”€â”€ SOCIAL PROOF TICKER â”€â”€ -->
 <div class="sp-ticker" id="spTicker">
   <div class="sp-notif" id="spNotif">
-    <span class="sp-icon">ðŸ¦¢</span>
+    <span class="sp-icon">&#x1F9A2;</span>
     <span class="sp-text" id="spText"></span>
-    <button class="sp-x" onclick="dismissTicker()" aria-label="Dismiss">✕</button>
+    <button class="sp-x" onclick="dismissTicker()" aria-label="Dismiss">&#x2715;</button>
   </div>
 </div>
 
 <!-- â”€â”€ CALLBACK REQUEST WIDGET â”€â”€ -->
 <div class="cb-widget" id="cbWidget">
   <div class="cb-label-tag">Call me back</div>
-  <button class="cb-btn" onclick="openCbPanel()" aria-label="Request a callback">ðŸ“ž</button>
+  <button class="cb-btn" onclick="openCbPanel()" aria-label="Request a callback">&#x1F4DE;</button>
 </div>
 <div class="cb-panel" id="cbPanel">
   <div class="cb-panel-header">
-    <span class="cb-panel-title">ðŸ¦¢ We'll call you back</span>
-    <button class="cb-close-btn" onclick="closeCbPanel()" aria-label="Close">×</button>
+    <span class="cb-panel-title">&#x1F9A2; We'll call you back</span>
+    <button class="cb-close-btn" onclick="closeCbPanel()" aria-label="Close">&times;</button>
   </div>
   <input type="text" id="cbFirstName" class="cb-input" placeholder="Your First Name" autocomplete="given-name">
   <input type="tel" id="cbPhone" class="cb-input" placeholder="Your Phone Number" autocomplete="tel">
@@ -855,10 +855,10 @@ textarea{resize:vertical;min-height:90px;}
 
 <!-- â”€â”€ ABANDONMENT RECOVERY TOAST â”€â”€ -->
 <div class="abandon-toast" id="abandonToast" role="alert">
-  <p>Still thinking? Your estimate is saved — pick up where you left off.</p>
+  <p>Still thinking? Your estimate is saved &mdash; pick up where you left off.</p>
   <div class="abandon-toast-actions">
     <button class="abandon-resume" onclick="resumeFromToast()">Resume Booking</button>
-    <button class="abandon-dismiss" onclick="dismissAbandonToast()" aria-label="Dismiss">✕</button>
+    <button class="abandon-dismiss" onclick="dismissAbandonToast()" aria-label="Dismiss">&#x2715;</button>
   </div>
 </div>
 
@@ -947,7 +947,7 @@ function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)
     google_click_id:trackingParams.gclid,
     fbclid:trackingParams.fbclid
   };
-  const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
+  const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending&hellip;';
   try{
     const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     if(!res.ok)throw new Error('Webhook '+res.status);
@@ -979,12 +979,12 @@ try{updateEstimate();}catch(err){console.error('[SwanShine] updateEstimate faile
 // â”€â”€ SOCIAL PROOF TICKER â”€â”€
 const SP_ENTRIES=[
   'Maria R. in Stone Oak just booked a Standard Cleaning',
-  'James T. in Alamo Heights left a ⭐⭐⭐⭐⭐ review',
+  'James T. in Alamo Heights left a &#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50; review',
   'Sarah L. in Downtown just booked a Deep Cleaning',
   'New client in Shavano Park booked a Move-Out Clean',
   'Lisa M. in Stone Oak switched to bi-weekly cleaning',
   'Robert K. in Helotes just booked a Commercial Clean',
-  'Amanda S. in NW Side left a ⭐⭐⭐⭐⭐ review',
+  'Amanda S. in NW Side left a &#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50; review',
   'Jennifer L. in Medical Center just booked a Deep Cleaning'
 ];
 let _spIdx=0,_spTimer=null,_spDone=false;
