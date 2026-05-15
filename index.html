@@ -325,6 +325,18 @@ textarea{resize:vertical;min-height:90px;}
 .upsell-skip{font-size:.82rem;color:var(--text-light);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:.5rem;}
 .upsell-skip:hover{color:var(--navy);}
 
+
+/* ── ABANDONMENT TOAST ── */
+.abandon-toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1200;background:var(--white);border-radius:var(--r);box-shadow:0 16px 48px rgba(10,22,40,.18);padding:1.2rem 1.5rem;max-width:320px;width:calc(100% - 3rem);border-left:4px solid var(--gold);transform:translateY(120%);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none;}
+.abandon-toast.show{transform:translateY(0);opacity:1;pointer-events:auto;}
+.abandon-toast p{font-size:.88rem;color:var(--text-dark);line-height:1.55;margin-bottom:1rem;}
+.abandon-toast-actions{display:flex;gap:.75rem;align-items:center;}
+.abandon-resume{background:var(--gold);color:var(--navy);border:none;border-radius:50px;padding:.55rem 1.2rem;font-size:.83rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.abandon-resume:hover{background:var(--gold-light);}
+.abandon-dismiss{background:none;border:none;color:var(--text-light);font-size:1rem;cursor:pointer;padding:.2rem .4rem;line-height:1;}
+.abandon-dismiss:hover{color:var(--navy);}
+@media(max-width:768px){.abandon-toast{bottom:0;right:0;left:0;max-width:100%;width:100%;border-radius:var(--r) var(--r) 0 0;border-left:none;border-top:4px solid var(--gold);}}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1080px){
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -740,6 +752,16 @@ textarea{resize:vertical;min-height:90px;}
   </div>
 </div>
 
+
+<!-- ── ABANDONMENT RECOVERY TOAST ── -->
+<div class="abandon-toast" id="abandonToast" role="alert">
+  <p>Still thinking? Your estimate is saved — pick up where you left off.</p>
+  <div class="abandon-toast-actions">
+    <button class="abandon-resume" onclick="resumeFromToast()">Resume Booking</button>
+    <button class="abandon-dismiss" onclick="dismissAbandonToast()" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
 <script>
 const SWAN_CONFIG=window.SWAN_CONFIG||{};
 const GHL_WEBHOOK_URL=(SWAN_CONFIG.webhookProxyUrl||SWAN_CONFIG.webhookUrl||'').trim();
@@ -856,6 +878,26 @@ const today=new Date().toISOString().split('T')[0];
 const di=document.getElementById('prefDate');if(di){di.min=today;di.value=today;}
 document.getElementById('yr').textContent=new Date().getFullYear();
 updateEstimate();
+
+// ── ABANDONMENT RECOVERY TOAST ──
+let _abandonTimer=null;
+document.addEventListener('mouseleave',function(e){
+  if(e.clientY>0)return;
+  if(!document.getElementById('modalOverlay').classList.contains('active'))return;
+  if(sessionStorage.getItem('swan_abandon'))return;
+  sessionStorage.setItem('swan_abandon','1');
+  showAbandonToast();
+});
+function showAbandonToast(){const t=document.getElementById('abandonToast');if(!t)return;t.classList.add('show');_abandonTimer=setTimeout(dismissAbandonToast,8000);}
+function dismissAbandonToast(){clearTimeout(_abandonTimer);const t=document.getElementById('abandonToast');if(t)t.classList.remove('show');}
+function resumeFromToast(){
+  let step=1;
+  if(document.getElementById('dot3')?.classList.contains('active'))step=3;
+  else if(document.getElementById('dot2')?.classList.contains('active'))step=2;
+  dismissAbandonToast();
+  if(!document.getElementById('modalOverlay').classList.contains('active'))openModal();
+  setTimeout(()=>goToStep(step),60);
+}
 </script>
 </body>
 </html>
