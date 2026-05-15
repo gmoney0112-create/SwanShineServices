@@ -13,30 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://gmoney0112-create.github.io/SwanShineServices/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<script>
-  window.SWAN_CONFIG = {
-    webhookUrl: 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609',
-    webhookProxyUrl: '',
-    gaMeasurementId: 'G-58WE7F11EG',
-    stripeDepositUrl: '',
-    walkthroughBookingUrl: '',
-    walkthroughEmbedUrl: ''
-  };
-</script>
-<script>
-  (function initAnalytics() {
-    const id = window.SWAN_CONFIG && window.SWAN_CONFIG.gaMeasurementId;
-    if (!id) return;
-    const tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
-    document.head.appendChild(tag);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){ window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', id);
-  })();
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-58WE7F11EG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-58WE7F11EG');</script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"LocalBusiness",
@@ -237,23 +215,6 @@ footer{background:var(--navy);padding:3rem 5% 5rem;}
 .mobile-bookbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;padding:.85rem 1rem;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(201,168,76,.2);}
 .mobile-bookbar button{width:100%;padding:1rem;background:var(--gold);color:var(--navy);border:none;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
 
-/* ── WALKTHROUGH ── */
-.walkthrough-note{margin-top:1rem;padding:1rem 1.1rem;border-radius:14px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.26);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
-.walkthrough-note p{margin:0;font-size:.84rem;color:var(--text-mid);line-height:1.65;font-weight:300;max-width:420px;}
-.walkthrough-note button{padding:.8rem 1.2rem;background:var(--navy);color:var(--white);border:none;border-radius:50px;font-size:.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.walkthrough-note button:hover{background:var(--navy-mid);}
-.walkthrough-overlay{display:none;position:fixed;inset:0;z-index:1080;background:rgba(10,22,40,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
-.walkthrough-overlay.active{display:flex;}
-.walkthrough-modal{background:var(--white);border-radius:var(--r-xl);width:100%;max-width:820px;max-height:92vh;overflow:hidden;position:relative;animation:slideUp .28s ease;display:flex;flex-direction:column;}
-.walkthrough-header{padding:1.4rem 1.6rem 1rem;border-bottom:1px solid var(--cream-dark);}
-.walkthrough-header h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--navy);margin-bottom:.35rem;}
-.walkthrough-header p{font-size:.88rem;color:var(--text-mid);line-height:1.6;}
-.walkthrough-shell{min-height:520px;background:var(--cream);}
-.walkthrough-shell iframe{width:100%;height:520px;border:0;display:block;background:var(--white);}
-.walkthrough-fallback{padding:1.8rem 1.6rem 2rem;}
-.walkthrough-fallback p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:1rem;}
-.walkthrough-fallback .actions{display:flex;gap:.8rem;flex-wrap:wrap;}
-
 /* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,22,40,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
 .modal-overlay.active{display:flex;}
@@ -325,73 +286,6 @@ textarea{resize:vertical;min-height:90px;}
 .upsell-skip{font-size:.82rem;color:var(--text-light);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:.5rem;}
 .upsell-skip:hover{color:var(--navy);}
 
-
-/* ── SOCIAL PROOF TICKER ── */
-.sp-ticker{position:fixed;bottom:1.5rem;left:1.5rem;z-index:85;max-width:285px;display:none;}
-@media(min-width:769px){.sp-ticker{display:block;}}
-.sp-notif{background:var(--white);border-radius:var(--r);box-shadow:0 8px 28px rgba(10,22,40,.12);padding:.85rem 1rem;display:flex;align-items:flex-start;gap:.7rem;opacity:0;transform:translateX(-16px);transition:opacity .38s ease,transform .38s ease;}
-.sp-notif.show{opacity:1;transform:translateX(0);}
-.sp-icon{font-size:1.25rem;flex-shrink:0;line-height:1.3;}
-.sp-text{font-size:.79rem;color:var(--text-dark);line-height:1.45;flex:1;}
-.sp-x{background:none;border:none;color:var(--text-light);font-size:.82rem;cursor:pointer;padding:0;line-height:1;flex-shrink:0;}
-.sp-x:hover{color:var(--navy);}
-
-/* ── CALLBACK WIDGET ── */
-.cb-widget{display:none;position:fixed;bottom:5.5rem;right:1rem;z-index:90;flex-direction:column;align-items:flex-end;gap:.4rem;}
-@media(max-width:768px){.cb-widget{display:flex;}}
-.cb-btn{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--white);border:2px solid rgba(201,168,76,.4);cursor:pointer;font-size:1.3rem;box-shadow:0 4px 16px rgba(10,22,40,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s;}
-.cb-btn:active{transform:scale(1.08);}
-.cb-label-tag{font-size:.68rem;font-weight:600;background:var(--navy);color:var(--gold);padding:.2rem .6rem;border-radius:50px;letter-spacing:.04em;white-space:nowrap;}
-.cb-panel{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--white);border-radius:var(--r) var(--r) 0 0;padding:1.5rem 1.5rem 2rem;box-shadow:0 -8px 32px rgba(10,22,40,.16);transform:translateY(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);display:block;}
-.cb-panel.open{transform:translateY(0);}
-.cb-panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;}
-.cb-panel-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--navy);font-weight:600;}
-.cb-close-btn{background:none;border:none;font-size:1.6rem;color:var(--text-light);cursor:pointer;line-height:1;padding:.1rem;}
-.cb-panel .cb-input{width:100%;padding:.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:10px;font-size:.92rem;margin-bottom:.75rem;background:var(--cream);font-family:'DM Sans',sans-serif;display:block;box-sizing:border-box;}
-.cb-panel .cb-input:focus{border-color:var(--gold);outline:none;background:var(--white);}
-.cb-submit-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy);border:none;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.cb-submit-btn:hover{background:var(--gold-light);}
-.cb-msg{font-size:.88rem;padding:.75rem 1rem;border-radius:10px;margin-top:.75rem;text-align:center;display:none;}
-.cb-msg.success{background:rgba(201,168,76,.12);color:#5a4010;}
-.cb-msg.error{background:#fdf2f2;color:#c0392b;}
-
-/* ── ABANDONMENT TOAST ── */
-.abandon-toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1200;background:var(--white);border-radius:var(--r);box-shadow:0 16px 48px rgba(10,22,40,.18);padding:1.2rem 1.5rem;max-width:320px;width:calc(100% - 3rem);border-left:4px solid var(--gold);transform:translateY(120%);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none;}
-.abandon-toast.show{transform:translateY(0);opacity:1;pointer-events:auto;}
-.abandon-toast p{font-size:.88rem;color:var(--text-dark);line-height:1.55;margin-bottom:1rem;}
-.abandon-toast-actions{display:flex;gap:.75rem;align-items:center;}
-.abandon-resume{background:var(--gold);color:var(--navy);border:none;border-radius:50px;padding:.55rem 1.2rem;font-size:.83rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.abandon-resume:hover{background:var(--gold-light);}
-.abandon-dismiss{background:none;border:none;color:var(--text-light);font-size:1rem;cursor:pointer;padding:.2rem .4rem;line-height:1;}
-.abandon-dismiss:hover{color:var(--navy);}
-@media(max-width:768px){.abandon-toast{bottom:0;right:0;left:0;max-width:100%;width:100%;border-radius:var(--r) var(--r) 0 0;border-left:none;border-top:4px solid var(--gold);}}
-
-/* ── DYNAMIC PRICING INPUTS ── */
-.addons-section{margin-top:1rem;margin-bottom:1rem;}
-.addons-title{font-size:.75rem;font-weight:600;color:var(--text-mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;}
-.addon-list{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;}
-@media(max-width:480px){.addon-list{grid-template-columns:1fr;}}
-.addon-item{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;cursor:pointer;transition:border-color .18s,background .18s;background:var(--cream);font-size:.84rem;color:var(--text-dark);}
-.addon-item:hover{border-color:var(--gold);}
-.addon-item input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;}
-.addon-item.checked{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.condition-group{margin-top:.85rem;margin-bottom:.85rem;}
-.condition-opts{display:flex;flex-direction:column;gap:.4rem;}
-.condition-opt{display:flex;align-items:flex-start;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;cursor:pointer;background:var(--cream);font-size:.84rem;color:var(--text-dark);transition:border-color .18s,background .18s;}
-.condition-opt:hover{border-color:var(--gold);}
-.condition-opt input[type=radio]{accent-color:var(--gold);margin-top:2px;flex-shrink:0;}
-.condition-opt.selected{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.pets-row{display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;background:var(--cream);margin-bottom:.85rem;cursor:pointer;transition:border-color .18s;}
-.pets-row:hover{border-color:var(--gold);}
-.pets-row input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;}
-.pets-row.checked{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.pets-label{font-size:.84rem;color:var(--text-dark);}
-.estimate-breakdown{font-size:.82rem;color:rgba(255,255,255,.72);line-height:2;margin-bottom:.3rem;}
-.estimate-breakdown .eb-line{display:flex;justify-content:space-between;}
-.estimate-breakdown .eb-line.discount{color:var(--gold-light);}
-.estimate-breakdown .eb-line.total{color:var(--white);font-weight:600;border-top:1px solid rgba(255,255,255,.18);padding-top:.3rem;margin-top:.3rem;}
-.discount-badge{display:inline-block;background:rgba(201,168,76,.18);color:var(--gold-light);font-size:.72rem;padding:.15rem .6rem;border-radius:50px;margin-left:.4rem;vertical-align:middle;}
-
 /* ── RESPONSIVE ── */
 @media(max-width:1080px){
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -416,8 +310,6 @@ textarea{resize:vertical;min-height:90px;}
 @media(max-width:480px){
   .modal{padding:1.5rem;}
   .services-footer{flex-direction:column;}
-  .walkthrough-shell{min-height:420px;}
-  .walkthrough-shell iframe{height:420px;}
 }
 </style>
 </head>
@@ -431,8 +323,8 @@ textarea{resize:vertical;min-height:90px;}
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#process">How It Works</a></li>
-    <li><a href="#gallery">Our Work</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="#areas">Service Area</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="faq.html">FAQ</a></li>
@@ -448,11 +340,12 @@ textarea{resize:vertical;min-height:90px;}
 <!-- Mobile nav drawer -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="closeMobileNav()">Services</a>
-  <a href="#process" onclick="closeMobileNav()">How It Works</a>
-  <a href="#gallery" onclick="closeMobileNav()">Our Work</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About Us</a>
   <a href="#areas" onclick="closeMobileNav()">Service Area</a>
   <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
   <a href="faq.html">FAQ</a>
+  <a href="referral.html">Refer a Friend — Get $25</a>
   <button class="mobile-book-btn" onclick="closeMobileNav();openModal()">✦ Get a Free Estimate</button>
 </div>
 
@@ -669,8 +562,8 @@ textarea{resize:vertical;min-height:90px;}
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="#services">Services</a></li><li><a href="#process">How It Works</a></li>
-          <li><a href="#gallery">Our Work</a></li><li><a href="#areas">Service Area</a></li>
+          <li><a href="#services">Services</a></li><li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About Us</a></li><li><a href="referral.html">Refer a Friend</a></li>
           <li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
@@ -694,25 +587,6 @@ textarea{resize:vertical;min-height:90px;}
 <!-- Sticky mobile book bar -->
 <div class="mobile-bookbar">
   <button onclick="openModal()">✦ Book Your Cleaning</button>
-</div>
-
-<!-- ── WALKTHROUGH MODAL ── -->
-<div class="walkthrough-overlay" id="walkthroughOverlay" onclick="handleWalkthroughOverlayClick(event)">
-  <div class="walkthrough-modal" role="dialog" aria-modal="true" aria-labelledby="walkthroughTitle">
-    <button class="modal-close" onclick="closeWalkthrough()" aria-label="Close walkthrough scheduler">×</button>
-    <div class="walkthrough-header">
-      <h3 id="walkthroughTitle">Book a walkthrough</h3>
-      <p>Use this if you want a live walkthrough before final pricing or if the space has details you'd rather show than describe.</p>
-    </div>
-    <div class="walkthrough-shell" id="walkthroughShell"></div>
-    <div class="walkthrough-fallback" id="walkthroughFallback" hidden>
-      <p>This scheduler is on standby. Add a live calendar link to <code>walkthroughBookingUrl</code> or an embeddable calendar to <code>walkthroughEmbedUrl</code> in <code>window.SWAN_CONFIG</code> and this will go live without another layout change.</p>
-      <div class="actions">
-        <a class="btn-dark" href="tel:+12104613153">Call to schedule</a>
-        <a class="btn-outline" href="mailto:mary@inspirebuildmotivate.com?subject=Walkthrough%20Request">Email to schedule</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- ── BOOKING MODAL ── -->
@@ -744,51 +618,9 @@ textarea{resize:vertical;min-height:90px;}
           <div class="form-group"><label>Bedrooms</label><select id="bedrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3" selected>3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5">5+ Bedrooms</option></select></div>
           <div class="form-group"><label>Bathrooms</label><select id="bathrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bathroom</option><option value="2" selected>2 Bathrooms</option><option value="3">3 Bathrooms</option><option value="4">4+ Bathrooms</option></select></div>
           <div class="form-group"><label>Sq. Footage</label><select id="sqft" onchange="updateEstimate();saveFormDraft();"><option value="800">Under 1,000 sq ft</option><option value="1200" selected>1,000–1,500 sq ft</option><option value="1750">1,500–2,000 sq ft</option><option value="2500">2,000–3,000 sq ft</option><option value="3500">3,000+ sq ft</option></select></div>
-          <div class="form-group"><label>Frequency</label><select id="frequency" onchange="updateEstimate();saveFormDraft();"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
+          <div class="form-group"><label>Frequency</label><select id="frequency" onchange="saveFormDraft();"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
         </div>
-        <div class="addons-section">
-  <div class="addons-title">Add-Ons <span style="color:var(--text-light);font-weight:400;">(optional)</span></div>
-  <div class="addon-list">
-    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-      <input type="checkbox" id="addon-fridge" value="25"> Inside Refrigerator (+$25)
-    </label>
-    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-      <input type="checkbox" id="addon-oven" value="25"> Inside Oven (+$25)
-    </label>
-    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-      <input type="checkbox" id="addon-windows" value="35"> Interior Windows (+$35)
-    </label>
-    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-      <input type="checkbox" id="addon-laundry" value="30"> Laundry (wash+fold, 2 loads) (+$30)
-    </label>
-    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-      <input type="checkbox" id="addon-garage" value="20"> Garage Sweep (+$20)
-    </label>
-  </div>
-</div>
-<div class="condition-group">
-  <div class="addons-title">Home Condition</div>
-  <div class="condition-opts">
-    <label class="condition-opt selected" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
-      <input type="radio" name="condition" id="cond-normal" value="0" checked> Normal condition (baseline)
-    </label>
-    <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
-      <input type="radio" name="condition" id="cond-extra" value="20"> Needs extra attention — not cleaned in 2+ months (+20%)
-    </label>
-    <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
-      <input type="radio" name="condition" id="cond-heavy" value="40"> Post-construction or heavy buildup (+40%)
-    </label>
-  </div>
-</div>
-<label class="pets-row" id="petsRow" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
-  <input type="checkbox" id="addon-pets"> <span class="pets-label">🐾 Pets in home (+$15 pet hair surcharge)</span>
-</label>
-<div class="estimate-box">
-  <div class="estimate-label">Your Estimated Price</div>
-  <div class="estimate-breakdown" id="estimateBreakdown"></div>
-  <div class="estimate-range" id="estimateRange">$130 – $170</div>
-  <div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div>
-</div>
+        <div class="estimate-box"><div class="estimate-label">Your Estimated Price</div><div class="estimate-range" id="estimateRange">$130 – $170</div><div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div></div>
         <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue →</button></div>
       </div>
       <!-- Step 2 -->
@@ -844,53 +676,13 @@ textarea{resize:vertical;min-height:90px;}
     </div>
     <div class="upsell-actions">
       <button class="btn-next" onclick="closeUpsellAndRedirect()" style="width:100%;">I'm interested — let's talk →</button>
-      <button class="upsell-skip" onclick="skipUpsell()">No thanks, take me to my confirmation</button>
+      <button class="upsell-skip" onclick="closeUpsellAndRedirect()">No thanks, take me to my confirmation</button>
     </div>
   </div>
 </div>
 
-
-<!-- ── SOCIAL PROOF TICKER ── -->
-<div class="sp-ticker" id="spTicker">
-  <div class="sp-notif" id="spNotif">
-    <span class="sp-icon">🦢</span>
-    <span class="sp-text" id="spText"></span>
-    <button class="sp-x" onclick="dismissTicker()" aria-label="Dismiss">✕</button>
-  </div>
-</div>
-
-<!-- ── CALLBACK REQUEST WIDGET ── -->
-<div class="cb-widget" id="cbWidget">
-  <div class="cb-label-tag">Call me back</div>
-  <button class="cb-btn" onclick="openCbPanel()" aria-label="Request a callback">📞</button>
-</div>
-<div class="cb-panel" id="cbPanel">
-  <div class="cb-panel-header">
-    <span class="cb-panel-title">🦢 We'll call you back</span>
-    <button class="cb-close-btn" onclick="closeCbPanel()" aria-label="Close">×</button>
-  </div>
-  <input type="text" id="cbFirstName" class="cb-input" placeholder="Your First Name" autocomplete="given-name">
-  <input type="tel" id="cbPhone" class="cb-input" placeholder="Your Phone Number" autocomplete="tel">
-  <input type="text" id="cb-website" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <button class="cb-submit-btn" id="cbSubmitBtn" onclick="submitCallback(this)">Request a Callback</button>
-  <div class="cb-msg" id="cbMsg"></div>
-</div>
-
-<!-- ── ABANDONMENT RECOVERY TOAST ── -->
-<div class="abandon-toast" id="abandonToast" role="alert">
-  <p>Still thinking? Your estimate is saved — pick up where you left off.</p>
-  <div class="abandon-toast-actions">
-    <button class="abandon-resume" onclick="resumeFromToast()">Resume Booking</button>
-    <button class="abandon-dismiss" onclick="dismissAbandonToast()" aria-label="Dismiss">✕</button>
-  </div>
-</div>
-
 <script>
-const SWAN_CONFIG=window.SWAN_CONFIG||{};
-const GHL_WEBHOOK_URL=(SWAN_CONFIG.webhookProxyUrl||SWAN_CONFIG.webhookUrl||'').trim();
-const STRIPE_DEPOSIT_URL=(SWAN_CONFIG.stripeDepositUrl||'').trim();
-const WALKTHROUGH_BOOKING_URL=(SWAN_CONFIG.walkthroughBookingUrl||'').trim();
-const WALKTHROUGH_EMBED_URL=(SWAN_CONFIG.walkthroughEmbedUrl||'').trim();
+const GHL_WEBHOOK_URL='https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609';
 const IS_GH=window.location.pathname.startsWith('/SwanShineServices/');
 const BASE=IS_GH?'/SwanShineServices':'';
 let selectedService='standard';
@@ -905,43 +697,19 @@ document.addEventListener('click',e=>{const nav=document.getElementById('mobileN
 function openModal(){document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';updateEstimate();restoreFormDraft();}
 function closeModal(){if(pendingRedirect){doRedirect();return;}document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}
 function handleOverlayClick(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeWalkthrough();closeMobileNav();}});
-
-function openWalkthrough(){
-  const overlay=document.getElementById('walkthroughOverlay');
-  const shell=document.getElementById('walkthroughShell');
-  const fallback=document.getElementById('walkthroughFallback');
-  shell.innerHTML='';
-  fallback.hidden=true;
-  if(WALKTHROUGH_EMBED_URL){
-    shell.innerHTML=`<iframe src="${WALKTHROUGH_EMBED_URL}" title="Walkthrough scheduler" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-  }else if(WALKTHROUGH_BOOKING_URL){
-    window.open(WALKTHROUGH_BOOKING_URL,'_blank','noopener');
-    return;
-  }else{
-    fallback.hidden=false;
-  }
-  overlay.classList.add('active');
-  document.body.style.overflow='hidden';
-}
-function closeWalkthrough(){
-  document.getElementById('walkthroughOverlay').classList.remove('active');
-  if(!document.getElementById('modalOverlay').classList.contains('active')) document.body.style.overflow='';
-}
-function handleWalkthroughOverlayClick(e){if(e.target===document.getElementById('walkthroughOverlay'))closeWalkthrough();}
-function previewDeposit(){if(STRIPE_DEPOSIT_URL){window.open(STRIPE_DEPOSIT_URL,'_blank','noopener');}else{alert('Stripe deposit is on standby. Add a live URL to stripeDepositUrl in window.SWAN_CONFIG to turn it on.');}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMobileNav();}});
 
 // ── SERVICE SELECT ────────────────────────────────────────────
 function selectService(el,val){document.querySelectorAll('.service-opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');selectedService=val;updateEstimate();saveFormDraft();}
 
 // ── ESTIMATE ──────────────────────────────────────────────────
-function updateEstimate(){if(selectedService==='commercial'){const el=document.getElementById('estimateRange');if(el)el.textContent='Custom Quote';const bd=document.getElementById('estimateBreakdown');if(bd)bd.innerHTML='';return;}const beds=parseInt(document.getElementById('bedrooms')?.value)||1,baths=parseInt(document.getElementById('bathrooms')?.value)||1,sqft=parseInt(document.getElementById('sqft')?.value)||1200;const bases={standard:100,deep:200,moveinout:250};const base=bases[selectedService]||100;const sizeExtra=(beds*15)+(baths*20)+(sqft/100*5);const condVal=parseInt(document.querySelector('input[name="condition"]:checked')?.value||0);const condPct=condVal/100;const condAdd=Math.round((base+sizeExtra)*condPct/10)*10;const addonMap={['addon-fridge']:25,['addon-oven']:25,['addon-windows']:35,['addon-laundry']:30,['addon-garage']:20};let addonTotal=0,addonLines=[];Object.entries(addonMap).forEach(([id,price])=>{if(document.getElementById(id)?.checked){addonTotal+=price;addonLines.push({name:document.getElementById(id).closest('label')?.textContent?.trim().replace(/\s*\(\+\$\d+\)/,'').trim()||id,price});}});const hasPets=document.getElementById('addon-pets')?.checked;const petAdd=hasPets?15:0;const freqEl=document.getElementById('frequency');const freq=freqEl?.value||'onetime';const discountMap={weekly:15,biweekly:10,monthly:5,onetime:0};const discountPct=discountMap[freq]||0;const subtotal=base+sizeExtra+condAdd+addonTotal+petAdd;const discountAmt=Math.round(subtotal*discountPct/100/5)*5;const total=subtotal-discountAmt;const low=Math.round(total*0.85/5)*5,high=Math.round(total*1.15/5)*5;const el=document.getElementById('estimateRange');if(el)el.textContent=`$${low} – $${high}`;const bd=document.getElementById('estimateBreakdown');if(bd){let html=`<div class="eb-line"><span>Base service (${document.querySelector('.service-opt.selected .opt-name')?.textContent||selectedService})</span><span>$${base+sizeExtra}</span></div>`;if(addonLines.length)addonLines.forEach(a=>html+=`<div class="eb-line"><span>${a.name}</span><span>+$${a.price}</span></div>`);if(condAdd>0){const condLabel=condPct===0.4?'Post-construction':'Extra attention';html+=`<div class="eb-line"><span>Condition (${condLabel})</span><span>+$${condAdd}</span></div>`;}if(petAdd)html+=`<div class="eb-line"><span>Pet surcharge</span><span>+$${petAdd}</span></div>`;if(discountAmt>0)html+=`<div class="eb-line discount"><span>Recurring discount (${discountPct}%)</span><span>-$${discountAmt}</span></div>`;html+=`<div class="eb-line total"><span>Estimated total</span><span>$${low} – $${high}</span></div>`;bd.innerHTML=html;}}
+function updateEstimate(){const beds=parseInt(document.getElementById('bedrooms')?.value)||1,baths=parseInt(document.getElementById('bathrooms')?.value)||1,sqft=parseInt(document.getElementById('sqft')?.value)||1200;const bases={standard:100,deep:200,moveinout:250,commercial:300};const base=bases[selectedService]||100;const extra=(beds*15)+(baths*20)+(sqft/100*5);const low=Math.round((base+extra)/10)*10,high=Math.round(low*1.3/10)*10;const el=document.getElementById('estimateRange');if(el)el.textContent=selectedService==='commercial'?'Custom Quote':`$${low} – $${high}`;}
 
 // ── STEPS ─────────────────────────────────────────────────────
 function goToStep(n){document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));document.getElementById('step'+n).classList.add('active');for(let i=1;i<=3;i++){const dot=document.getElementById('dot'+i);dot.classList.remove('active','done');if(i<n)dot.classList.add('done');else if(i===n)dot.classList.add('active');}for(let i=1;i<=2;i++)document.getElementById('line'+i).classList.toggle('done',i<n);if(n===3)buildSummary();document.getElementById('modal').scrollTop=0;}
 
 // ── SUMMARY ───────────────────────────────────────────────────
-function buildSummary(){const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial Cleaning'};const date=document.getElementById('prefDate')?.value||'TBD';const timeEl=document.getElementById('prefTime');const freqEl=document.getElementById('frequency');const bkd=document.getElementById('estimateBreakdown')?.innerHTML||'';let html=`<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br><strong style="color:var(--gold)">Frequency:</strong> ${freqEl?freqEl.options[freqEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Date:</strong> ${date} · ${timeEl?timeEl.options[timeEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Address:</strong> ${document.getElementById('address')?.value||'Not provided yet'}<br><strong style="color:var(--gold)">Estimate:</strong> ${document.getElementById('estimateRange')?.textContent||''}`;if(bkd){html+=`<br><br><span style="font-size:.78rem;opacity:.7;text-transform:uppercase;letter-spacing:.08em;">Price Breakdown</span><div style="font-size:.8rem;line-height:1.9;margin-top:.25rem;">${bkd.replace(/<div class="eb-line[^"]*">/g,'<div style="display:flex;justify-content:space-between;">').replace(/<\/div>/g,'</div>')}</div>`;}document.getElementById('summaryText').innerHTML=html;}
+function buildSummary(){const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial Cleaning'};const date=document.getElementById('prefDate')?.value||'TBD';const timeEl=document.getElementById('prefTime');const freqEl=document.getElementById('frequency');document.getElementById('summaryText').innerHTML=`<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br><strong style="color:var(--gold)">Frequency:</strong> ${freqEl?freqEl.options[freqEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Date:</strong> ${date} · ${timeEl?timeEl.options[timeEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Address:</strong> ${document.getElementById('address')?.value||'Not provided yet'}<br><strong style="color:var(--gold)">Estimate:</strong> ${document.getElementById('estimateRange')?.textContent||''}`;}
 
 // ── DRAFT ─────────────────────────────────────────────────────
 function saveFormDraft(){try{localStorage.setItem('swanshine_draft',JSON.stringify({service:selectedService,bedrooms:document.getElementById('bedrooms')?.value||'',bathrooms:document.getElementById('bathrooms')?.value||'',sqft:document.getElementById('sqft')?.value||'',frequency:document.getElementById('frequency')?.value||'',date:document.getElementById('prefDate')?.value||'',time:document.getElementById('prefTime')?.value||'',address:document.getElementById('address')?.value||'',notes:document.getElementById('booking-notes')?.value||'',firstName:document.getElementById('firstName')?.value||'',lastName:document.getElementById('lastName')?.value||'',phone:document.getElementById('phone')?.value||'',email:document.getElementById('email')?.value||''}));}catch(e){}}
@@ -956,145 +724,315 @@ function showFormError(msg){const el=document.getElementById('formError');el.tex
 function hideFormError(){document.getElementById('formError').style.display='none';}
 
 // ── SUBMIT ────────────────────────────────────────────────────
-function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)return '';if(input.startsWith('+'))return input;const digits=input.replace(/\D/g,'');if(digits.length===10)return '+1'+digits;if(digits.length===11&&digits.startsWith('1'))return '+'+digits;return input;} function getTrackingParams(){const p=new URLSearchParams(window.location.search);const keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];const t={};keys.forEach(function(k){t[k]=p.get(k)||'';});return t;} function getPersistedTrackingParams(){const keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];const p=new URLSearchParams(window.location.search);let stored={};try{stored=JSON.parse(localStorage.getItem('swanshine_tracking_params')||'{}');}catch(e){stored={};}let changed=false;keys.forEach(function(k){const v=p.get(k);if(v&&!stored[k]){stored[k]=v;changed=true;}});if(changed){try{localStorage.setItem('swanshine_tracking_params',JSON.stringify(stored));}catch(e){}}const out={};keys.forEach(function(k){out[k]=stored[k]||p.get(k)||'';});return out;}async function submitForm(btn){
-  if(!GHL_WEBHOOK_URL){showFormError('No webhook target is configured yet.');return;}
+async function submitForm(btn){
   clearFieldErrors();hideFormError();
-  if((document.getElementById('website')?.value||'')!=='')return;if(typeof gtag==='function')gtag('event','form_submit_attempt',{service_type:selectedService});
+  if((document.getElementById('website')?.value||'')!=='')return;
   const last=parseInt(localStorage.getItem('swanshine_last_submit')||'0',10);
   if(Date.now()-last<60000){showFormError('Please wait a moment before submitting again.');return;}
   const firstEl=document.getElementById('firstName'),phoneEl=document.getElementById('phone'),emailEl=document.getElementById('email');
   const missing=[firstEl,phoneEl,emailEl].filter(el=>!(el?.value?.trim()));
   if(missing.length){missing.forEach(markFieldError);missing[0].focus();showFormError('Please fill in your name, phone, and email to continue.');return;}
-  const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');const trackingParams=getPersistedTrackingParams();const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:normalizePhoneToE164(phoneEl?.value||''),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',addons:['addon-fridge','addon-oven','addon-windows','addon-laundry','addon-garage'].filter(id=>document.getElementById(id)?.checked).map(id=>document.getElementById(id)?.closest('label')?.textContent?.trim().replace(/\s*\(\+\$\d+\)/,'').trim()||id).join(', ')||'None',condition:(document.querySelector('input[name="condition"]:checked')?.closest('label')?.textContent?.trim()||'Normal'),pets:document.getElementById('addon-pets')?.checked||false,discount_applied:(({weekly:'15%',biweekly:'10%',monthly:'5%',onetime:'0%'})[document.getElementById('frequency')?.value]||'0%'),source:'Swan Shine Website',referral_source:(document.getElementById('referral')?.value||'').trim(),workflow_debug_source:'github-pages-booking-form',submitted_at:new Date().toISOString(),utm_source:trackingParams.utm_source,utm_medium:trackingParams.utm_medium,utm_campaign:trackingParams.utm_campaign,utm_term:trackingParams.utm_term,utm_content:trackingParams.utm_content,google_click_id:trackingParams.gclid,fbclid:trackingParams.fbclid};
+  const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};
   const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');
-  submitted_at:new Date().toISOString(), utm_source:trackingParams.utm_source, utm_medium:trackingParams.utm_medium, utm_campaign:trackingParams.utm_campaign, utm_term:trackingParams.utm_term, utm_content:trackingParams.utm_content, google_click_id:trackingParams.gclid, fbclid:trackingParams.fbclid};
+  const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:(phoneEl?.value||'').trim(),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',source:(document.getElementById('referral')?.value||'').trim()};
   const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
   try{
-    console.info('[SwanShine] Sending booking payload',payload);const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    console.info('[SwanShine] Webhook response status',res.status);if(!res.ok)throw new Error('Webhook '+res.status);if(typeof gtag==='function'){const _frq=document.getElementById('frequency');gtag('event','form_submit_success',{service_type:svcLabels[selectedService]||selectedService,estimated_price:document.getElementById('estimateRange')?.textContent||'',frequency:_frq?_frq.options[_frq.selectedIndex]?.text||'':'',source:'Swan Shine Website'});}
+    const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if(!res.ok)throw new Error('Webhook '+res.status);
     localStorage.setItem('swanshine_last_submit',String(Date.now()));
     localStorage.removeItem('swanshine_draft');
-    try{localStorage.setItem('swanshine_booking_summary',JSON.stringify({name:[payload.firstName,payload.lastName].filter(Boolean).join(' '),service:payload.service_type,estimate:payload.estimate,date:payload.preferred_date,time:payload.preferred_time,frequency:payload.frequency,phone:payload.phone,email:payload.email,stripeDepositUrl:STRIPE_DEPOSIT_URL,walkthroughBookingUrl:WALKTHROUGH_BOOKING_URL,walkthroughEmbedUrl:WALKTHROUGH_EMBED_URL}));}catch(e){}
+    try{localStorage.setItem('swanshine_booking_summary',JSON.stringify({name:[payload.firstName,payload.lastName].filter(Boolean).join(' '),service:payload.service_type,estimate:payload.estimate,date:payload.preferred_date,time:payload.preferred_time,frequency:payload.frequency,phone:payload.phone,email:payload.email}));}catch(e){}
     document.getElementById('formWrapper').style.display='none';
     document.getElementById('successState').style.display='block';
-    if(STRIPE_DEPOSIT_URL){
-      const depositLink=document.getElementById('depositLink');
-      depositLink.href=STRIPE_DEPOSIT_URL;
-      depositLink.hidden=false;
-    }
     document.getElementById('modal').scrollTop=0;
     pendingRedirect=true;
     const freq=freqEl?freqEl.options[freqEl.selectedIndex]?.value:'';
-    if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');if(typeof gtag==='function')gtag('event','upsell_shown',{service_type:svcLabels[selectedService]||selectedService,frequency:'one-time'});},1800);}
+    if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');},1800);}
     else{setTimeout(doRedirect,2500);}
-  }catch(err){if(typeof gtag==='function')gtag('event','form_submit_error',{error_status:err.message});console.error('[SwanShine] Webhook error:',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
+  }catch(err){console.error('[SwanShine]',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
 }
 
 // ── UPSELL ────────────────────────────────────────────────────
-function acceptUpsell(plan){try{if(!GHL_WEBHOOK_URL){closeUpsellAndRedirect();return;}const s=JSON.parse(localStorage.getItem('swanshine_booking_summary')||'{}');fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:s.name?.split(' ')[0]||'',phone:s.phone||'',email:s.email||'',upsell_interest:plan,source:'Recurring Upsell Modal'})}).catch(()=>{});}catch(e){}closeUpsellAndRedirect();}
+function acceptUpsell(plan){try{const s=JSON.parse(localStorage.getItem('swanshine_booking_summary')||'{}');fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:s.name?.split(' ')[0]||'',phone:s.phone||'',email:s.email||'',upsell_interest:plan,source:'Recurring Upsell Modal'})}).catch(()=>{});}catch(e){}closeUpsellAndRedirect();}
 function closeUpsellAndRedirect(){document.getElementById('upsellOverlay').classList.remove('active');doRedirect();}
 function doRedirect(){window.location.href=BASE+'/thank-you.html';}
 
 // ── INIT ──────────────────────────────────────────────────────
-if(IS_GH){document.querySelectorAll('a[href="faq.html"]').forEach(a=>{a.href=BASE+'/faq.html';});document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href=BASE+'/privacy.html';});document.querySelectorAll('a[href="thank-you.html"]').forEach(a=>{a.href=BASE+'/thank-you.html';});}
+if(IS_GH){
+  document.querySelectorAll('a[href="faq.html"]').forEach(a=>{a.href=BASE+'/faq.html';});
+  document.querySelectorAll('a[href="privacy.html"]').forEach(a=>{a.href=BASE+'/privacy.html';});
+  document.querySelectorAll('a[href="pricing.html"]').forEach(a=>{a.href=BASE+'/pricing.html';});
+  document.querySelectorAll('a[href="about.html"]').forEach(a=>{a.href=BASE+'/about.html';});
+  document.querySelectorAll('a[href="referral.html"]').forEach(a=>{a.href=BASE+'/referral.html';});
+}
 const today=new Date().toISOString().split('T')[0];
 const di=document.getElementById('prefDate');if(di){di.min=today;di.value=today;}
 document.getElementById('yr').textContent=new Date().getFullYear();
 updateEstimate();
 
-// ── SOCIAL PROOF TICKER ──
-const SP_ENTRIES=[
-  'Maria R. in Stone Oak just booked a Standard Cleaning',
-  'James T. in Alamo Heights left a ⭐⭐⭐⭐⭐ review',
-  'Sarah L. in Downtown just booked a Deep Cleaning',
-  'New client in Shavano Park booked a Move-Out Clean',
-  'Lisa M. in Stone Oak switched to bi-weekly cleaning',
-  'Robert K. in Helotes just booked a Commercial Clean',
-  'Amanda S. in NW Side left a ⭐⭐⭐⭐⭐ review',
-  'Jennifer L. in Medical Center just booked a Deep Cleaning'
-];
-let _spIdx=0,_spTimer=null,_spDone=false;
-function showNextTicker(){
-  if(_spDone)return;
-  const notif=document.getElementById('spNotif'),txt=document.getElementById('spText');
-  if(!notif||!txt)return;
-  notif.classList.remove('show');
-  setTimeout(()=>{txt.textContent=SP_ENTRIES[_spIdx%SP_ENTRIES.length];_spIdx++;notif.classList.add('show');_spTimer=setTimeout(showNextTicker,8000);},400);
-}
-function dismissTicker(){_spDone=true;clearTimeout(_spTimer);const n=document.getElementById('spNotif');if(n)n.classList.remove('show');}
-setTimeout(showNextTicker,4000);
-
-// ── CALLBACK REQUEST WIDGET ──
-function openCbPanel(){
-  const p=document.getElementById('cbPanel');
-  p.style.display='block';
-  requestAnimationFrame(()=>requestAnimationFrame(()=>p.classList.add('open')));
-  if(typeof gtag==='function')gtag('event','callback_widget_open',{});
-}
-function closeCbPanel(){
-  const p=document.getElementById('cbPanel');
-  p.classList.remove('open');
-  setTimeout(()=>{p.style.display='none';},320);
-}
-document.addEventListener('click',function(e){
-  const panel=document.getElementById('cbPanel'),widget=document.getElementById('cbWidget');
-  if(panel&&panel.classList.contains('open')&&!panel.contains(e.target)&&!widget?.contains(e.target))closeCbPanel();
+// ── GA4 FUNNEL TRACKING ────────────────────────────────────────
+function ga(eventName,params){try{if(typeof gtag==='function')gtag('event',eventName,params||{});}catch(e){}}
+// Patch openModal
+const _openModal=openModal;
+openModal=function(source){ga('modal_open',{source:source||'button'});_openModal();};
+// Patch goToStep
+const _goToStep=goToStep;
+goToStep=function(n){
+  if(n===2)ga('booking_step_1_complete',{service_type:selectedService,estimated_price:document.getElementById('estimateRange')?.textContent||''});
+  if(n===3){ga('booking_step_2_complete',{preferred_date:document.getElementById('prefDate')?.value||'',preferred_time:document.getElementById('prefTime')?.value||''});ga('booking_step_3_view',{service_type:selectedService});}
+  _goToStep(n);
+};
+// Patch submitForm
+const _submitForm=submitForm;
+submitForm=async function(btn){
+  ga('form_submit_attempt',{service_type:selectedService});
+  await _submitForm(btn);
+};
+// Patch acceptUpsell
+const _acceptUpsell=acceptUpsell;
+acceptUpsell=function(plan){ga('upsell_accepted',{upsell_plan:plan});_acceptUpsell(plan);};
+// Patch closeUpsellAndRedirect
+const _closeUpsellAndRedirect=closeUpsellAndRedirect;
+closeUpsellAndRedirect=function(){ga('upsell_skipped',{});_closeUpsellAndRedirect();};
+// Track upsell shown
+const _upsellOverlayObserver=new MutationObserver(()=>{
+  if(document.getElementById('upsellOverlay')?.classList.contains('active'))ga('upsell_shown',{service_type:selectedService,frequency:'one-time'});
 });
-async function submitCallback(btn){
-  if((document.getElementById('cb-website')?.value||'')!=='')return;
-  const name=(document.getElementById('cbFirstName')?.value||'').trim();
-  const phone=(document.getElementById('cbPhone')?.value||'').trim();
-  const msgEl=document.getElementById('cbMsg');
-  if(!name||!phone){msgEl.textContent='Please enter your name and phone number.';msgEl.className='cb-msg error';msgEl.style.display='block';return;}
-  const orig=btn?btn.innerHTML:'';
-  if(btn){btn.disabled=true;btn.textContent='Sending…';}
-  try{
-    if(GHL_WEBHOOK_URL){await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:name,phone:normalizePhoneToE164(phone),source:'Callback Widget',callback_request:true,submitted_at:new Date().toISOString()})});}
-    if(typeof gtag==='function')gtag('event','callback_submit_success',{});
-    msgEl.textContent='Got it! We\'ll call you within 2 hours.';
-    msgEl.className='cb-msg success';msgEl.style.display='block';
-    if(document.getElementById('cbFirstName'))document.getElementById('cbFirstName').value='';
-    if(document.getElementById('cbPhone'))document.getElementById('cbPhone').value='';
-  }catch(err){
-    msgEl.textContent='Something went wrong. Call us at (210) 461-3153.';
-    msgEl.className='cb-msg error';msgEl.style.display='block';
-  }
-  if(btn){btn.disabled=false;btn.innerHTML=orig;}
-}
+_upsellOverlayObserver.observe(document.getElementById('upsellOverlay'),{attributes:true,attributeFilter:['class']});
 
-// ── BOOKING FUNNEL ANALYTICS ──
+// ── DYNAMIC PRICING ENGINE ─────────────────────────────────────
 (function(){
-  function _ga(ev,p){if(typeof gtag==='function')gtag('event',ev,p||{});}
-  const _om=openModal;openModal=function(){_ga('modal_open',{method:'button'});return _om.apply(this,arguments);};
-  const _gs=goToStep;goToStep=function(n){
-    const estEl=document.getElementById('estimateRange'),dateEl=document.getElementById('prefDate'),tEl=document.getElementById('prefTime');
-    if(n===2)_ga('booking_step_1_complete',{service_type:selectedService,estimated_price:estEl?.textContent||''});
-    if(n===3){_ga('booking_step_2_complete',{preferred_date:dateEl?.value||'',preferred_time:tEl?tEl.options[tEl.selectedIndex]?.text||'':''});_ga('booking_step_3_view',{service_type:selectedService});}
-    return _gs.apply(this,arguments);
+  const step1=document.getElementById('step1');
+  if(!step1)return;
+  const addonsHtml=`
+<div class="addon-section" style="margin-top:1rem;">
+  <div style="font-size:.78rem;font-weight:600;color:var(--text-mid);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;">Add-Ons (optional)</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;" id="addonGrid">
+    <label class="addon-check"><input type="checkbox" value="25" data-label="Inside refrigerator"> Inside refrigerator <span class="addon-price">+$25</span></label>
+    <label class="addon-check"><input type="checkbox" value="25" data-label="Inside oven"> Inside oven <span class="addon-price">+$25</span></label>
+    <label class="addon-check"><input type="checkbox" value="35" data-label="Interior windows"> Interior windows <span class="addon-price">+$35</span></label>
+    <label class="addon-check"><input type="checkbox" value="30" data-label="Laundry (2 loads)"> Laundry (2 loads) <span class="addon-price">+$30</span></label>
+    <label class="addon-check"><input type="checkbox" value="20" data-label="Garage sweep"> Garage sweep <span class="addon-price">+$20</span></label>
+  </div>
+  <div style="margin-top:.75rem;">
+    <div style="font-size:.78rem;font-weight:600;color:var(--text-mid);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;">Home Condition</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;" id="conditionGroup">
+      <label class="cond-btn selected" data-mult="1" data-label="Normal"><input type="radio" name="condition" value="1" checked> Normal</label>
+      <label class="cond-btn" data-mult="1.2" data-label="Needs extra attention (+20%)"><input type="radio" name="condition" value="1.2"> Needs extra attention <span class="addon-price">+20%</span></label>
+      <label class="cond-btn" data-mult="1.4" data-label="Heavy buildup (+40%)"><input type="radio" name="condition" value="1.4"> Heavy buildup <span class="addon-price">+40%</span></label>
+    </div>
+  </div>
+  <div style="margin-top:.75rem;">
+    <label class="addon-check"><input type="checkbox" id="petCheck"> Pets in home <span class="addon-price">+$15</span></label>
+  </div>
+</div>`;
+  // Insert addons before estimate-box
+  const estimateBox=step1.querySelector('.estimate-box');
+  if(estimateBox){estimateBox.insertAdjacentHTML('beforebegin',addonsHtml);}
+  // Replace static estimate box with itemized version
+  if(estimateBox){
+    estimateBox.innerHTML=`
+<div class="estimate-label">Your Estimated Price</div>
+<div id="estimateBreakdown" style="font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.9;margin:.4rem 0 .5rem;"></div>
+<div style="border-top:1px solid rgba(255,255,255,.15);padding-top:.5rem;display:flex;align-items:baseline;justify-content:space-between;">
+  <span style="font-size:.75rem;color:rgba(255,255,255,.5);">Estimated Total</span>
+  <div class="estimate-range" id="estimateRange" style="font-size:1.8rem;">$130 – $170</div>
+</div>
+<div class="estimate-note">Confirmed after walkthrough. No hidden fees.</div>`;
+  }
+  // Style addons
+  const style=document.createElement('style');
+  style.textContent=`
+.addon-check{display:flex;align-items:center;gap:.5rem;padding:.5rem .65rem;border-radius:10px;border:1.5px solid var(--cream-dark);background:var(--cream);cursor:pointer;font-size:.84rem;transition:all .15s;}
+.addon-check:has(input:checked){border-color:var(--gold);background:rgba(201,168,76,.08);}
+.addon-check input{display:none;}
+.addon-price{margin-left:auto;font-size:.76rem;color:var(--gold);font-weight:600;}
+.cond-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .8rem;border-radius:999px;border:1.5px solid var(--cream-dark);background:var(--white);cursor:pointer;font-size:.82rem;transition:all .15s;}
+.cond-btn.selected,.cond-btn:has(input:checked){border-color:var(--gold);background:rgba(201,168,76,.1);}
+.cond-btn input{display:none;}
+`;
+  document.head.appendChild(style);
+  // Override updateEstimate with itemized version
+  updateEstimate=function(){
+    const beds=parseInt(document.getElementById('bedrooms')?.value)||1;
+    const baths=parseInt(document.getElementById('bathrooms')?.value)||1;
+    const sqft=parseInt(document.getElementById('sqft')?.value)||1200;
+    const bases={standard:100,deep:200,moveinout:250,commercial:300};
+    const base=bases[selectedService]||100;
+    const sizeExtra=(beds*15)+(baths*20)+(sqft/100*5);
+    // Condition multiplier
+    const condVal=parseFloat(document.querySelector('input[name="condition"]:checked')?.value||'1');
+    const condLabel=document.querySelector('.cond-btn.selected, .cond-btn:has(input:checked)')?.dataset.label||'Normal';
+    const baseAfterCond=Math.round((base+sizeExtra)*condVal/10)*10;
+    const condExtra=baseAfterCond-(Math.round((base+sizeExtra)/10)*10);
+    // Add-ons
+    let addonTotal=0;const addonLabels=[];
+    document.querySelectorAll('#addonGrid input:checked').forEach(cb=>{
+      addonTotal+=parseInt(cb.value)||0;addonLabels.push(cb.dataset.label);
+    });
+    // Pets
+    const pets=document.getElementById('petCheck')?.checked;
+    const petAmount=pets?15:0;
+    // Frequency discount
+    const freqEl=document.getElementById('frequency');
+    const freqVal=freqEl?.value||'onetime';
+    const discounts={onetime:0,weekly:.15,biweekly:.10,monthly:.05};
+    const discRate=discounts[freqVal]||0;
+    const discLabels={weekly:'15% weekly discount',biweekly:'10% bi-weekly discount',monthly:'5% monthly discount'};
+    const subtotal=baseAfterCond+addonTotal+petAmount;
+    const discAmount=Math.round(subtotal*discRate/10)*10;
+    const total=subtotal-discAmount;
+    const low=Math.round(total/10)*10;
+    const high=Math.round(total*1.15/10)*10;
+    // Build breakdown
+    const breakdown=[];
+    breakdown.push(`Base ${document.querySelector('.service-opt.selected .opt-name')?.textContent||'service'}: $${Math.round((base+sizeExtra)/10)*10}`);
+    if(condExtra>0)breakdown.push(`Condition (${condLabel}): +$${condExtra}`);
+    addonLabels.forEach((l,i)=>{const v=parseInt(document.querySelectorAll('#addonGrid input:checked')[i]?.value||0);if(v)breakdown.push(`${l}: +$${v}`);});
+    if(petAmount)breakdown.push(`Pet surcharge: +$${petAmount}`);
+    if(discAmount)breakdown.push(`${discLabels[freqVal]}: −$${discAmount}`);
+    const breakdownEl=document.getElementById('estimateBreakdown');
+    if(breakdownEl)breakdownEl.innerHTML=breakdown.map(l=>`<div>${l}</div>`).join('');
+    const rangeEl=document.getElementById('estimateRange');
+    if(rangeEl)rangeEl.textContent=selectedService==='commercial'?'Custom Quote':`$${low} – $${high}`;
+    // Save addons to draft
+    try{
+      const draft=JSON.parse(localStorage.getItem('swanshine_draft')||'{}');
+      draft.addons=addonLabels.join(', ');
+      draft.condition=condLabel;
+      draft.pets=pets?'true':'false';
+      draft.discount=discRate?(discRate*100)+'%':'none';
+      localStorage.setItem('swanshine_draft',JSON.stringify(draft));
+    }catch(e){}
   };
-  const _au=acceptUpsell;acceptUpsell=function(plan){_ga('upsell_accepted',{upsell_plan:plan});return _au.apply(this,arguments);};
+  // Wire up addon/condition change events
+  document.addEventListener('change',e=>{
+    if(e.target.closest('#addonGrid')||e.target.id==='petCheck'||e.target.name==='condition'){
+      document.querySelectorAll('.cond-btn').forEach(b=>b.classList.remove('selected'));
+      document.querySelector('.cond-btn:has(input:checked)')?.classList.add('selected');
+      updateEstimate();
+    }
+  });
+  updateEstimate();
 })();
-function skipUpsell(){if(typeof gtag==='function')gtag('event','upsell_skipped',{});closeUpsellAndRedirect();}
 
-// ── ABANDONMENT RECOVERY TOAST ──
-let _abandonTimer=null;
-document.addEventListener('mouseleave',function(e){
-  if(e.clientY>0)return;
-  if(!document.getElementById('modalOverlay').classList.contains('active'))return;
-  if(sessionStorage.getItem('swan_abandon'))return;
-  sessionStorage.setItem('swan_abandon','1');
-  showAbandonToast();
-});
-function showAbandonToast(){const t=document.getElementById('abandonToast');if(!t)return;t.classList.add('show');_abandonTimer=setTimeout(dismissAbandonToast,8000);}
-function dismissAbandonToast(){clearTimeout(_abandonTimer);const t=document.getElementById('abandonToast');if(t)t.classList.remove('show');}
-function resumeFromToast(){
-  let step=1;
-  if(document.getElementById('dot3')?.classList.contains('active'))step=3;
-  else if(document.getElementById('dot2')?.classList.contains('active'))step=2;
-  dismissAbandonToast();
-  if(!document.getElementById('modalOverlay').classList.contains('active'))openModal();
-  setTimeout(()=>goToStep(step),60);
-}
+// ── ABANDONMENT TOAST ──────────────────────────────────────────
+(function(){
+  let toastShown=false;let modalHasBeenOpened=false;
+  const toastHtml=`<div id="abandonToast" style="display:none;position:fixed;bottom:90px;right:1.25rem;z-index:500;max-width:300px;background:var(--white);border:1px solid var(--border);border-radius:18px;box-shadow:0 20px 50px rgba(10,22,40,.18);padding:1.1rem 1.25rem;animation:toastSlideUp .3s ease both;font-family:'DM Sans',sans-serif;">
+  <button onclick="document.getElementById('abandonToast').style.display='none'" style="position:absolute;top:.6rem;right:.75rem;background:none;border:none;cursor:pointer;color:var(--text-light);font-size:1.1rem;line-height:1;">×</button>
+  <div style="font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:.3rem;">✦ Still thinking?</div>
+  <div style="font-size:.92rem;color:var(--navy);font-weight:600;margin-bottom:.3rem;">Your estimate is saved.</div>
+  <div style="font-size:.83rem;color:var(--text-mid);margin-bottom:.85rem;">Pick up right where you left off.</div>
+  <button onclick="document.getElementById('abandonToast').style.display='none';openModal('toast');" style="width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:999px;padding:.65rem 1rem;font-weight:600;font-size:.88rem;cursor:pointer;font-family:'DM Sans',sans-serif;">Resume Booking →</button>
+</div>`;
+  const style=document.createElement('style');
+  style.textContent='@keyframes toastSlideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}';
+  document.head.appendChild(style);
+  document.body.insertAdjacentHTML('beforeend',toastHtml);
+  const _om=openModal;
+  openModal=function(src){modalHasBeenOpened=true;document.getElementById('abandonToast').style.display='none';_om(src);};
+  document.addEventListener('mouseleave',e=>{
+    if(e.clientY>0)return;
+    if(!modalHasBeenOpened||toastShown||sessionStorage.getItem('swanshine_toast_shown'))return;
+    const overlay=document.getElementById('modalOverlay');
+    if(!overlay?.classList.contains('active'))return;
+    toastShown=true;sessionStorage.setItem('swanshine_toast_shown','1');
+    const t=document.getElementById('abandonToast');
+    t.style.display='block';
+    setTimeout(()=>{if(t)t.style.display='none';},8000);
+    ga('abandonment_toast_shown',{});
+  });
+})();
+
+// ── CALLBACK WIDGET ────────────────────────────────────────────
+(function(){
+  const html=`
+<div id="cbWidget" style="display:none;position:fixed;bottom:85px;right:1rem;z-index:490;font-family:'DM Sans',sans-serif;">
+  <button id="cbBtn" onclick="toggleCbPanel()" style="width:50px;height:50px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);color:var(--white);font-size:1.2rem;cursor:pointer;box-shadow:0 8px 24px rgba(10,22,40,.28);display:flex;align-items:center;justify-content:center;" title="Request a callback">📞</button>
+  <div id="cbPanel" style="display:none;position:absolute;bottom:60px;right:0;width:260px;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:1.25rem;box-shadow:0 20px 50px rgba(10,22,40,.18);">
+    <div style="font-weight:700;color:var(--navy);margin-bottom:.25rem;font-size:.95rem;">Call me back</div>
+    <div style="font-size:.82rem;color:var(--text-mid);margin-bottom:.85rem;">We'll call within 2 hours.</div>
+    <input type="text" id="cbName" placeholder="Your first name" style="width:100%;padding:.65rem .8rem;border:1.5px solid var(--cream-dark);border-radius:10px;margin-bottom:.5rem;font-size:.88rem;background:var(--cream);">
+    <input type="tel" id="cbPhone" placeholder="(210) 000-0000" style="width:100%;padding:.65rem .8rem;border:1.5px solid var(--cream-dark);border-radius:10px;margin-bottom:.75rem;font-size:.88rem;background:var(--cream);">
+    <input type="text" id="cbHp" style="position:absolute;left:-9999px;opacity:0;" tabindex="-1" autocomplete="off">
+    <div id="cbError" style="display:none;font-size:.8rem;color:#c0392b;margin-bottom:.5rem;"></div>
+    <div id="cbSuccess" style="display:none;font-size:.85rem;color:var(--navy);font-weight:600;text-align:center;padding:.5rem 0;">🦢 Got it! We'll call you within 2 hours.</div>
+    <button onclick="submitCb()" id="cbSubmit" style="width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:999px;padding:.7rem;font-weight:600;font-size:.88rem;cursor:pointer;font-family:'DM Sans',sans-serif;">Request Callback</button>
+  </div>
+</div>`;
+  document.body.insertAdjacentHTML('beforeend',html);
+  // Show only on mobile
+  function checkCbVisibility(){
+    const w=document.getElementById('cbWidget');
+    if(w)w.style.display=window.innerWidth<=768?'block':'none';
+  }
+  checkCbVisibility();window.addEventListener('resize',checkCbVisibility);
+  window.toggleCbPanel=function(){
+    const p=document.getElementById('cbPanel');
+    if(p)p.style.display=p.style.display==='none'?'block':'none';
+    ga('callback_widget_open',{});
+  };
+  window.submitCb=async function(){
+    if((document.getElementById('cbHp')?.value||'')!=='')return;
+    const name=(document.getElementById('cbName')?.value||'').trim();
+    const phone=(document.getElementById('cbPhone')?.value||'').trim();
+    const errEl=document.getElementById('cbError');
+    if(!name||!phone){if(errEl){errEl.textContent='Please enter your name and phone.';errEl.style.display='block';}return;}
+    if(errEl)errEl.style.display='none';
+    const btn=document.getElementById('cbSubmit');
+    if(btn)btn.disabled=true;
+    try{
+      await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:name,phone,source:'Swan Shine Website',referral_source:'Callback Widget',callback_request:true,submitted_at:new Date().toISOString()})});
+      document.getElementById('cbSuccess').style.display='block';
+      document.getElementById('cbSubmit').style.display='none';
+      document.getElementById('cbName').style.display='none';
+      document.getElementById('cbPhone').style.display='none';
+      ga('callback_submit_success',{});
+      setTimeout(()=>{document.getElementById('cbPanel').style.display='none';},3000);
+    }catch(e){
+      if(errEl){errEl.textContent='Something went wrong. Call (210) 461-3153 directly.';errEl.style.display='block';}
+      if(btn)btn.disabled=false;
+    }
+  };
+})();
+
+// ── SOCIAL PROOF TICKER ────────────────────────────────────────
+(function(){
+  const entries=[
+    'Maria R. in Stone Oak just booked a Standard Cleaning',
+    'James T. in Alamo Heights left a ⭐⭐⭐⭐⭐ review',
+    'Sarah L. in Downtown just booked a Deep Cleaning',
+    'New client in Shavano Park booked a Move-Out Clean',
+    'Lisa M. in Stone Oak switched to bi-weekly cleaning',
+    'Robert K. in Helotes just booked a Commercial Clean',
+    'Amanda S. on the NW Side left a ⭐⭐⭐⭐⭐ review',
+    'Jennifer L. near Medical Center just booked a Deep Cleaning',
+  ];
+  const html=`<div id="proofTicker" style="display:none;position:fixed;bottom:1.5rem;left:1.25rem;z-index:480;max-width:290px;font-family:'DM Sans',sans-serif;">
+  <div id="proofCard" style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:.75rem 1rem;box-shadow:0 12px 32px rgba(10,22,40,.12);display:flex;align-items:center;gap:.65rem;opacity:0;transition:opacity .5s ease;">
+    <span style="font-size:1.2rem;flex-shrink:0;">🦢</span>
+    <span id="proofText" style="font-size:.83rem;color:var(--navy);line-height:1.45;"></span>
+    <button onclick="document.getElementById('proofTicker').style.display='none'" style="background:none;border:none;cursor:pointer;color:var(--text-light);font-size:1rem;margin-left:auto;flex-shrink:0;padding:0 0 0 .25rem;">×</button>
+  </div>
+</div>`;
+  document.body.insertAdjacentHTML('beforeend',html);
+  let idx=0;
+  function showEntry(){
+    if(window.innerWidth<=768)return; // desktop only
+    document.getElementById('proofTicker').style.display='block';
+    const card=document.getElementById('proofCard');
+    const text=document.getElementById('proofText');
+    card.style.opacity='0';
+    setTimeout(()=>{
+      text.textContent=entries[idx%entries.length];
+      idx++;
+      card.style.opacity='1';
+      setTimeout(()=>{card.style.opacity='0';},5500);
+    },300);
+  }
+  setTimeout(()=>{showEntry();setInterval(showEntry,8000);},4000);
+})();
 </script>
 </body>
 </html>
