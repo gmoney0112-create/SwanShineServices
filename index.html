@@ -366,6 +366,32 @@ textarea{resize:vertical;min-height:90px;}
 .abandon-dismiss:hover{color:var(--navy);}
 @media(max-width:768px){.abandon-toast{bottom:0;right:0;left:0;max-width:100%;width:100%;border-radius:var(--r) var(--r) 0 0;border-left:none;border-top:4px solid var(--gold);}}
 
+/* ── DYNAMIC PRICING INPUTS ── */
+.addons-section{margin-top:1rem;margin-bottom:1rem;}
+.addons-title{font-size:.75rem;font-weight:600;color:var(--text-mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;}
+.addon-list{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;}
+@media(max-width:480px){.addon-list{grid-template-columns:1fr;}}
+.addon-item{display:flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;cursor:pointer;transition:border-color .18s,background .18s;background:var(--cream);font-size:.84rem;color:var(--text-dark);}
+.addon-item:hover{border-color:var(--gold);}
+.addon-item input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;}
+.addon-item.checked{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.condition-group{margin-top:.85rem;margin-bottom:.85rem;}
+.condition-opts{display:flex;flex-direction:column;gap:.4rem;}
+.condition-opt{display:flex;align-items:flex-start;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;cursor:pointer;background:var(--cream);font-size:.84rem;color:var(--text-dark);transition:border-color .18s,background .18s;}
+.condition-opt:hover{border-color:var(--gold);}
+.condition-opt input[type=radio]{accent-color:var(--gold);margin-top:2px;flex-shrink:0;}
+.condition-opt.selected{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.pets-row{display:flex;align-items:center;gap:.75rem;padding:.6rem .75rem;border:1.5px solid var(--cream-dark);border-radius:10px;background:var(--cream);margin-bottom:.85rem;cursor:pointer;transition:border-color .18s;}
+.pets-row:hover{border-color:var(--gold);}
+.pets-row input[type=checkbox]{accent-color:var(--gold);width:15px;height:15px;}
+.pets-row.checked{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.pets-label{font-size:.84rem;color:var(--text-dark);}
+.estimate-breakdown{font-size:.82rem;color:rgba(255,255,255,.72);line-height:2;margin-bottom:.3rem;}
+.estimate-breakdown .eb-line{display:flex;justify-content:space-between;}
+.estimate-breakdown .eb-line.discount{color:var(--gold-light);}
+.estimate-breakdown .eb-line.total{color:var(--white);font-weight:600;border-top:1px solid rgba(255,255,255,.18);padding-top:.3rem;margin-top:.3rem;}
+.discount-badge{display:inline-block;background:rgba(201,168,76,.18);color:var(--gold-light);font-size:.72rem;padding:.15rem .6rem;border-radius:50px;margin-left:.4rem;vertical-align:middle;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1080px){
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -718,9 +744,51 @@ textarea{resize:vertical;min-height:90px;}
           <div class="form-group"><label>Bedrooms</label><select id="bedrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bedroom</option><option value="2">2 Bedrooms</option><option value="3" selected>3 Bedrooms</option><option value="4">4 Bedrooms</option><option value="5">5+ Bedrooms</option></select></div>
           <div class="form-group"><label>Bathrooms</label><select id="bathrooms" onchange="updateEstimate();saveFormDraft();"><option value="1">1 Bathroom</option><option value="2" selected>2 Bathrooms</option><option value="3">3 Bathrooms</option><option value="4">4+ Bathrooms</option></select></div>
           <div class="form-group"><label>Sq. Footage</label><select id="sqft" onchange="updateEstimate();saveFormDraft();"><option value="800">Under 1,000 sq ft</option><option value="1200" selected>1,000–1,500 sq ft</option><option value="1750">1,500–2,000 sq ft</option><option value="2500">2,000–3,000 sq ft</option><option value="3500">3,000+ sq ft</option></select></div>
-          <div class="form-group"><label>Frequency</label><select id="frequency" onchange="saveFormDraft();"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
+          <div class="form-group"><label>Frequency</label><select id="frequency" onchange="updateEstimate();saveFormDraft();"><option value="onetime">One-Time</option><option value="weekly">Weekly</option><option value="biweekly">Every 2 Weeks</option><option value="monthly">Monthly</option></select></div>
         </div>
-        <div class="estimate-box"><div class="estimate-label">Your Estimated Price</div><div class="estimate-range" id="estimateRange">$130 – $170</div><div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div></div>
+        <div class="addons-section">
+  <div class="addons-title">Add-Ons <span style="color:var(--text-light);font-weight:400;">(optional)</span></div>
+  <div class="addon-list">
+    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+      <input type="checkbox" id="addon-fridge" value="25"> Inside Refrigerator (+$25)
+    </label>
+    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+      <input type="checkbox" id="addon-oven" value="25"> Inside Oven (+$25)
+    </label>
+    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+      <input type="checkbox" id="addon-windows" value="35"> Interior Windows (+$35)
+    </label>
+    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+      <input type="checkbox" id="addon-laundry" value="30"> Laundry (wash+fold, 2 loads) (+$30)
+    </label>
+    <label class="addon-item" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+      <input type="checkbox" id="addon-garage" value="20"> Garage Sweep (+$20)
+    </label>
+  </div>
+</div>
+<div class="condition-group">
+  <div class="addons-title">Home Condition</div>
+  <div class="condition-opts">
+    <label class="condition-opt selected" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
+      <input type="radio" name="condition" id="cond-normal" value="0" checked> Normal condition (baseline)
+    </label>
+    <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
+      <input type="radio" name="condition" id="cond-extra" value="20"> Needs extra attention — not cleaned in 2+ months (+20%)
+    </label>
+    <label class="condition-opt" onclick="document.querySelectorAll('.condition-opt').forEach(o=>o.classList.remove('selected'));this.classList.add('selected');updateEstimate();saveFormDraft();">
+      <input type="radio" name="condition" id="cond-heavy" value="40"> Post-construction or heavy buildup (+40%)
+    </label>
+  </div>
+</div>
+<label class="pets-row" id="petsRow" onclick="this.classList.toggle('checked');updateEstimate();saveFormDraft();">
+  <input type="checkbox" id="addon-pets"> <span class="pets-label">🐾 Pets in home (+$15 pet hair surcharge)</span>
+</label>
+<div class="estimate-box">
+  <div class="estimate-label">Your Estimated Price</div>
+  <div class="estimate-breakdown" id="estimateBreakdown"></div>
+  <div class="estimate-range" id="estimateRange">$130 – $170</div>
+  <div class="estimate-note">Exact price confirmed after walkthrough. No surprises.</div>
+</div>
         <div class="modal-actions"><button class="btn-next" onclick="goToStep(2)">Continue →</button></div>
       </div>
       <!-- Step 2 -->
@@ -867,13 +935,13 @@ function previewDeposit(){if(STRIPE_DEPOSIT_URL){window.open(STRIPE_DEPOSIT_URL,
 function selectService(el,val){document.querySelectorAll('.service-opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');selectedService=val;updateEstimate();saveFormDraft();}
 
 // ── ESTIMATE ──────────────────────────────────────────────────
-function updateEstimate(){const beds=parseInt(document.getElementById('bedrooms')?.value)||1,baths=parseInt(document.getElementById('bathrooms')?.value)||1,sqft=parseInt(document.getElementById('sqft')?.value)||1200;const bases={standard:100,deep:200,moveinout:250,commercial:300};const base=bases[selectedService]||100;const extra=(beds*15)+(baths*20)+(sqft/100*5);const low=Math.round((base+extra)/10)*10,high=Math.round(low*1.3/10)*10;const el=document.getElementById('estimateRange');if(el)el.textContent=selectedService==='commercial'?'Custom Quote':`$${low} – $${high}`;}
+function updateEstimate(){if(selectedService==='commercial'){const el=document.getElementById('estimateRange');if(el)el.textContent='Custom Quote';const bd=document.getElementById('estimateBreakdown');if(bd)bd.innerHTML='';return;}const beds=parseInt(document.getElementById('bedrooms')?.value)||1,baths=parseInt(document.getElementById('bathrooms')?.value)||1,sqft=parseInt(document.getElementById('sqft')?.value)||1200;const bases={standard:100,deep:200,moveinout:250};const base=bases[selectedService]||100;const sizeExtra=(beds*15)+(baths*20)+(sqft/100*5);const condVal=parseInt(document.querySelector('input[name="condition"]:checked')?.value||0);const condPct=condVal/100;const condAdd=Math.round((base+sizeExtra)*condPct/10)*10;const addonMap={['addon-fridge']:25,['addon-oven']:25,['addon-windows']:35,['addon-laundry']:30,['addon-garage']:20};let addonTotal=0,addonLines=[];Object.entries(addonMap).forEach(([id,price])=>{if(document.getElementById(id)?.checked){addonTotal+=price;addonLines.push({name:document.getElementById(id).closest('label')?.textContent?.trim().replace(/\s*\(\+\$\d+\)/,'').trim()||id,price});}});const hasPets=document.getElementById('addon-pets')?.checked;const petAdd=hasPets?15:0;const freqEl=document.getElementById('frequency');const freq=freqEl?.value||'onetime';const discountMap={weekly:15,biweekly:10,monthly:5,onetime:0};const discountPct=discountMap[freq]||0;const subtotal=base+sizeExtra+condAdd+addonTotal+petAdd;const discountAmt=Math.round(subtotal*discountPct/100/5)*5;const total=subtotal-discountAmt;const low=Math.round(total*0.85/5)*5,high=Math.round(total*1.15/5)*5;const el=document.getElementById('estimateRange');if(el)el.textContent=`$${low} – $${high}`;const bd=document.getElementById('estimateBreakdown');if(bd){let html=`<div class="eb-line"><span>Base service (${document.querySelector('.service-opt.selected .opt-name')?.textContent||selectedService})</span><span>$${base+sizeExtra}</span></div>`;if(addonLines.length)addonLines.forEach(a=>html+=`<div class="eb-line"><span>${a.name}</span><span>+$${a.price}</span></div>`);if(condAdd>0){const condLabel=condPct===0.4?'Post-construction':'Extra attention';html+=`<div class="eb-line"><span>Condition (${condLabel})</span><span>+$${condAdd}</span></div>`;}if(petAdd)html+=`<div class="eb-line"><span>Pet surcharge</span><span>+$${petAdd}</span></div>`;if(discountAmt>0)html+=`<div class="eb-line discount"><span>Recurring discount (${discountPct}%)</span><span>-$${discountAmt}</span></div>`;html+=`<div class="eb-line total"><span>Estimated total</span><span>$${low} – $${high}</span></div>`;bd.innerHTML=html;}}
 
 // ── STEPS ─────────────────────────────────────────────────────
 function goToStep(n){document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));document.getElementById('step'+n).classList.add('active');for(let i=1;i<=3;i++){const dot=document.getElementById('dot'+i);dot.classList.remove('active','done');if(i<n)dot.classList.add('done');else if(i===n)dot.classList.add('active');}for(let i=1;i<=2;i++)document.getElementById('line'+i).classList.toggle('done',i<n);if(n===3)buildSummary();document.getElementById('modal').scrollTop=0;}
 
 // ── SUMMARY ───────────────────────────────────────────────────
-function buildSummary(){const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial Cleaning'};const date=document.getElementById('prefDate')?.value||'TBD';const timeEl=document.getElementById('prefTime');const freqEl=document.getElementById('frequency');document.getElementById('summaryText').innerHTML=`<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br><strong style="color:var(--gold)">Frequency:</strong> ${freqEl?freqEl.options[freqEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Date:</strong> ${date} · ${timeEl?timeEl.options[timeEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Address:</strong> ${document.getElementById('address')?.value||'Not provided yet'}<br><strong style="color:var(--gold)">Estimate:</strong> ${document.getElementById('estimateRange')?.textContent||''}`;}
+function buildSummary(){const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial Cleaning'};const date=document.getElementById('prefDate')?.value||'TBD';const timeEl=document.getElementById('prefTime');const freqEl=document.getElementById('frequency');const bkd=document.getElementById('estimateBreakdown')?.innerHTML||'';let html=`<strong style="color:var(--gold)">Service:</strong> ${svcLabels[selectedService]}<br><strong style="color:var(--gold)">Frequency:</strong> ${freqEl?freqEl.options[freqEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Date:</strong> ${date} · ${timeEl?timeEl.options[timeEl.selectedIndex]?.text:''}<br><strong style="color:var(--gold)">Address:</strong> ${document.getElementById('address')?.value||'Not provided yet'}<br><strong style="color:var(--gold)">Estimate:</strong> ${document.getElementById('estimateRange')?.textContent||''}`;if(bkd){html+=`<br><br><span style="font-size:.78rem;opacity:.7;text-transform:uppercase;letter-spacing:.08em;">Price Breakdown</span><div style="font-size:.8rem;line-height:1.9;margin-top:.25rem;">${bkd.replace(/<div class="eb-line[^"]*">/g,'<div style="display:flex;justify-content:space-between;">').replace(/<\/div>/g,'</div>')}</div>`;}document.getElementById('summaryText').innerHTML=html;}
 
 // ── DRAFT ─────────────────────────────────────────────────────
 function saveFormDraft(){try{localStorage.setItem('swanshine_draft',JSON.stringify({service:selectedService,bedrooms:document.getElementById('bedrooms')?.value||'',bathrooms:document.getElementById('bathrooms')?.value||'',sqft:document.getElementById('sqft')?.value||'',frequency:document.getElementById('frequency')?.value||'',date:document.getElementById('prefDate')?.value||'',time:document.getElementById('prefTime')?.value||'',address:document.getElementById('address')?.value||'',notes:document.getElementById('booking-notes')?.value||'',firstName:document.getElementById('firstName')?.value||'',lastName:document.getElementById('lastName')?.value||'',phone:document.getElementById('phone')?.value||'',email:document.getElementById('email')?.value||''}));}catch(e){}}
@@ -897,7 +965,7 @@ function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)
   const firstEl=document.getElementById('firstName'),phoneEl=document.getElementById('phone'),emailEl=document.getElementById('email');
   const missing=[firstEl,phoneEl,emailEl].filter(el=>!(el?.value?.trim()));
   if(missing.length){missing.forEach(markFieldError);missing[0].focus();showFormError('Please fill in your name, phone, and email to continue.');return;}
-  const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');const trackingParams=getPersistedTrackingParams();const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:normalizePhoneToE164(phoneEl?.value||''),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',source:'Swan Shine Website',referral_source:(document.getElementById('referral')?.value||'').trim(),workflow_debug_source:'github-pages-booking-form',submitted_at:new Date().toISOString(),utm_source:trackingParams.utm_source,utm_medium:trackingParams.utm_medium,utm_campaign:trackingParams.utm_campaign,utm_term:trackingParams.utm_term,utm_content:trackingParams.utm_content,google_click_id:trackingParams.gclid,fbclid:trackingParams.fbclid};
+  const svcLabels={standard:'Standard Cleaning',deep:'Deep Cleaning',moveinout:'Move In / Move Out',commercial:'Commercial'};const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');const trackingParams=getPersistedTrackingParams();const payload={firstName:(firstEl?.value||'').trim(),lastName:(document.getElementById('lastName')?.value||'').trim(),phone:normalizePhoneToE164(phoneEl?.value||''),email:(emailEl?.value||'').trim(),address1:(document.getElementById('address')?.value||'').trim(),service_type:svcLabels[selectedService]||selectedService,preferred_date:(document.getElementById('prefDate')?.value||'').trim(),preferred_time:timeEl?(timeEl.options[timeEl.selectedIndex]?.text||'').trim():'',estimate:(document.getElementById('estimateRange')?.textContent||'').trim(),notes:(document.getElementById('booking-notes')?.value||'').trim(),bedrooms:(document.getElementById('bedrooms')?.value||'').trim(),bathrooms:(document.getElementById('bathrooms')?.value||'').trim(),frequency:freqEl?(freqEl.options[freqEl.selectedIndex]?.text||'').trim():'',addons:['addon-fridge','addon-oven','addon-windows','addon-laundry','addon-garage'].filter(id=>document.getElementById(id)?.checked).map(id=>document.getElementById(id)?.closest('label')?.textContent?.trim().replace(/\s*\(\+\$\d+\)/,'').trim()||id).join(', ')||'None',condition:(document.querySelector('input[name="condition"]:checked')?.closest('label')?.textContent?.trim()||'Normal'),pets:document.getElementById('addon-pets')?.checked||false,discount_applied:(({weekly:'15%',biweekly:'10%',monthly:'5%',onetime:'0%'})[document.getElementById('frequency')?.value]||'0%'),source:'Swan Shine Website',referral_source:(document.getElementById('referral')?.value||'').trim(),workflow_debug_source:'github-pages-booking-form',submitted_at:new Date().toISOString(),utm_source:trackingParams.utm_source,utm_medium:trackingParams.utm_medium,utm_campaign:trackingParams.utm_campaign,utm_term:trackingParams.utm_term,utm_content:trackingParams.utm_content,google_click_id:trackingParams.gclid,fbclid:trackingParams.fbclid};
   const timeEl=document.getElementById('prefTime'),freqEl=document.getElementById('frequency');
   submitted_at:new Date().toISOString(), utm_source:trackingParams.utm_source, utm_medium:trackingParams.utm_medium, utm_campaign:trackingParams.utm_campaign, utm_term:trackingParams.utm_term, utm_content:trackingParams.utm_content, google_click_id:trackingParams.gclid, fbclid:trackingParams.fbclid};
   const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
