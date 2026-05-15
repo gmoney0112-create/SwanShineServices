@@ -326,6 +326,25 @@ textarea{resize:vertical;min-height:90px;}
 .upsell-skip:hover{color:var(--navy);}
 
 
+/* ── CALLBACK WIDGET ── */
+.cb-widget{display:none;position:fixed;bottom:5.5rem;right:1rem;z-index:90;flex-direction:column;align-items:flex-end;gap:.4rem;}
+@media(max-width:768px){.cb-widget{display:flex;}}
+.cb-btn{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--white);border:2px solid rgba(201,168,76,.4);cursor:pointer;font-size:1.3rem;box-shadow:0 4px 16px rgba(10,22,40,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s;}
+.cb-btn:active{transform:scale(1.08);}
+.cb-label-tag{font-size:.68rem;font-weight:600;background:var(--navy);color:var(--gold);padding:.2rem .6rem;border-radius:50px;letter-spacing:.04em;white-space:nowrap;}
+.cb-panel{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--white);border-radius:var(--r) var(--r) 0 0;padding:1.5rem 1.5rem 2rem;box-shadow:0 -8px 32px rgba(10,22,40,.16);transform:translateY(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);display:block;}
+.cb-panel.open{transform:translateY(0);}
+.cb-panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;}
+.cb-panel-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--navy);font-weight:600;}
+.cb-close-btn{background:none;border:none;font-size:1.6rem;color:var(--text-light);cursor:pointer;line-height:1;padding:.1rem;}
+.cb-panel .cb-input{width:100%;padding:.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:10px;font-size:.92rem;margin-bottom:.75rem;background:var(--cream);font-family:'DM Sans',sans-serif;display:block;box-sizing:border-box;}
+.cb-panel .cb-input:focus{border-color:var(--gold);outline:none;background:var(--white);}
+.cb-submit-btn{width:100%;padding:1rem;background:var(--gold);color:var(--navy);border:none;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.cb-submit-btn:hover{background:var(--gold-light);}
+.cb-msg{font-size:.88rem;padding:.75rem 1rem;border-radius:10px;margin-top:.75rem;text-align:center;display:none;}
+.cb-msg.success{background:rgba(201,168,76,.12);color:#5a4010;}
+.cb-msg.error{background:#fdf2f2;color:#c0392b;}
+
 /* ── ABANDONMENT TOAST ── */
 .abandon-toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1200;background:var(--white);border-radius:var(--r);box-shadow:0 16px 48px rgba(10,22,40,.18);padding:1.2rem 1.5rem;max-width:320px;width:calc(100% - 3rem);border-left:4px solid var(--gold);transform:translateY(120%);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none;}
 .abandon-toast.show{transform:translateY(0);opacity:1;pointer-events:auto;}
@@ -753,6 +772,23 @@ textarea{resize:vertical;min-height:90px;}
 </div>
 
 
+<!-- ── CALLBACK REQUEST WIDGET ── -->
+<div class="cb-widget" id="cbWidget">
+  <div class="cb-label-tag">Call me back</div>
+  <button class="cb-btn" onclick="openCbPanel()" aria-label="Request a callback">📞</button>
+</div>
+<div class="cb-panel" id="cbPanel">
+  <div class="cb-panel-header">
+    <span class="cb-panel-title">🦢 We'll call you back</span>
+    <button class="cb-close-btn" onclick="closeCbPanel()" aria-label="Close">×</button>
+  </div>
+  <input type="text" id="cbFirstName" class="cb-input" placeholder="Your First Name" autocomplete="given-name">
+  <input type="tel" id="cbPhone" class="cb-input" placeholder="Your Phone Number" autocomplete="tel">
+  <input type="text" id="cb-website" style="position:absolute;left:-9999px;opacity:0;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button class="cb-submit-btn" id="cbSubmitBtn" onclick="submitCallback(this)">Request a Callback</button>
+  <div class="cb-msg" id="cbMsg"></div>
+</div>
+
 <!-- ── ABANDONMENT RECOVERY TOAST ── -->
 <div class="abandon-toast" id="abandonToast" role="alert">
   <p>Still thinking? Your estimate is saved — pick up where you left off.</p>
@@ -878,6 +914,44 @@ const today=new Date().toISOString().split('T')[0];
 const di=document.getElementById('prefDate');if(di){di.min=today;di.value=today;}
 document.getElementById('yr').textContent=new Date().getFullYear();
 updateEstimate();
+
+// ── CALLBACK REQUEST WIDGET ──
+function openCbPanel(){
+  const p=document.getElementById('cbPanel');
+  p.style.display='block';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>p.classList.add('open')));
+  if(typeof gtag==='function')gtag('event','callback_widget_open',{});
+}
+function closeCbPanel(){
+  const p=document.getElementById('cbPanel');
+  p.classList.remove('open');
+  setTimeout(()=>{p.style.display='none';},320);
+}
+document.addEventListener('click',function(e){
+  const panel=document.getElementById('cbPanel'),widget=document.getElementById('cbWidget');
+  if(panel&&panel.classList.contains('open')&&!panel.contains(e.target)&&!widget?.contains(e.target))closeCbPanel();
+});
+async function submitCallback(btn){
+  if((document.getElementById('cb-website')?.value||'')!=='')return;
+  const name=(document.getElementById('cbFirstName')?.value||'').trim();
+  const phone=(document.getElementById('cbPhone')?.value||'').trim();
+  const msgEl=document.getElementById('cbMsg');
+  if(!name||!phone){msgEl.textContent='Please enter your name and phone number.';msgEl.className='cb-msg error';msgEl.style.display='block';return;}
+  const orig=btn?btn.innerHTML:'';
+  if(btn){btn.disabled=true;btn.textContent='Sending…';}
+  try{
+    if(GHL_WEBHOOK_URL){await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:name,phone:normalizePhoneToE164(phone),source:'Callback Widget',callback_request:true,submitted_at:new Date().toISOString()})});}
+    if(typeof gtag==='function')gtag('event','callback_submit_success',{});
+    msgEl.textContent='Got it! We\'ll call you within 2 hours.';
+    msgEl.className='cb-msg success';msgEl.style.display='block';
+    if(document.getElementById('cbFirstName'))document.getElementById('cbFirstName').value='';
+    if(document.getElementById('cbPhone'))document.getElementById('cbPhone').value='';
+  }catch(err){
+    msgEl.textContent='Something went wrong. Call us at (210) 461-3153.';
+    msgEl.className='cb-msg error';msgEl.style.display='block';
+  }
+  if(btn){btn.disabled=false;btn.innerHTML=orig;}
+}
 
 // ── ABANDONMENT RECOVERY TOAST ──
 let _abandonTimer=null;
