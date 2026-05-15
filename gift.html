@@ -86,7 +86,7 @@
     .amounts-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);margin-bottom:.6rem;}
     .amounts-sub{color:rgba(255,255,255,.65);margin-bottom:2rem;font-size:.97rem;}
     .amounts{display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;margin-bottom:1.5rem;}
-    .amount-btn{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;min-width:200px;}
+    .amount-btn{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;min-width:200px;cursor:pointer;background:transparent;font-family:'DM Sans',sans-serif;text-decoration:none;}
     .amount-btn:hover,.amount-btn.primary{background:var(--gold);color:var(--navy);}
     .amounts-note{font-size:.87rem;color:rgba(255,255,255,.5);}
     .amounts-note a{color:var(--gold);}
@@ -197,11 +197,11 @@
 <!-- GIFT AMOUNTS -->
 <section class="amounts-section" id="gift-amounts">
   <div class="amounts-title">Choose Your Gift Amount</div>
-  <div class="amounts-sub">Each option maps to a specific cleaning service — no guessing required.</div>
+  <div class="amounts-sub">Select an amount — we'll contact you to arrange payment and send the certificate.</div>
   <div class="amounts">
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$100 — Standard Cleaning</a>
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn primary">$200 — Deep Cleaning</a>
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$250 — Move-In / Move-Out Clean</a>
+    <button type="button" class="amount-btn" onclick="selectGift('$100','Standard Cleaning',this)">$100 — Standard Cleaning</button>
+    <button type="button" class="amount-btn primary" onclick="selectGift('$200','Deep Cleaning',this)">$200 — Deep Cleaning</button>
+    <button type="button" class="amount-btn" onclick="selectGift('$250','Move-In / Move-Out Clean',this)">$250 — Move-In / Move-Out Clean</button>
   </div>
   <div class="amounts-note">Not sure which to choose? <a href="tel:+12104613153">Call us at (210) 461-3153</a> — we'll help.</div>
 </section>
@@ -209,12 +209,13 @@
 <!-- NOTIFY US FORM -->
 <section class="form-section" id="notify-form">
   <div class="form-wrap">
-    <div class="form-title">Let Us Know Who It's For</div>
-    <p class="form-sub">After purchasing, fill in this form so we can add a personal touch and reach out to the recipient.</p>
+    <div class="form-title" id="form-title">Request a Gift Certificate</div>
+    <p class="form-sub" id="form-sub">Select an amount above, or fill in the form and we'll reach out to confirm and arrange payment.</p>
 
     <form id="gift-form" novalidate>
       <!-- Honeypot -->
       <input type="text" id="gift-website" name="gift-website" class="honeypot" tabindex="-1" autocomplete="off"/>
+      <input type="hidden" id="gift-amount" value=""/>
 
       <div class="form-row">
         <div class="form-group">
@@ -323,6 +324,15 @@
 <script>
   const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609';
 
+  function selectGift(amount, service, btn) {
+    document.getElementById('gift-amount').value = amount + ' — ' + service;
+    document.getElementById('form-title').textContent = 'Request: ' + amount + ' Gift Certificate';
+    document.getElementById('form-sub').textContent = 'Fill in the details below and we’ll contact you within 2 hours to arrange payment and send the certificate.';
+    document.querySelectorAll('.amount-btn').forEach(function(b){ b.classList.remove('primary'); });
+    if(btn) btn.classList.add('primary');
+    document.getElementById('notify-form').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
   document.getElementById('gift-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const honeypot = document.getElementById('gift-website').value;
@@ -352,6 +362,7 @@
       email,
       source: 'Gift Certificate Page',
       referral_source: 'Gift Page',
+      gift_amount: document.getElementById('gift-amount').value || 'Not specified',
       gift_recipient_name: recipientName,
       gift_recipient_phone: recipientPhone,
       gift_occasion: occasion,
