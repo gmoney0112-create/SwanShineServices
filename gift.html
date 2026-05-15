@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gift a Cleaning | Swan Shine San Antonio — Perfect Housewarming Gift</title>
-  <meta name="description" content="Give the gift of a spotless home. Swan Shine cleaning gift certificates for San Antonio — perfect for housewarmings, new babies, Mother's Day, and move-ins."/>
+  <title>Gift a Cleaning | Swan Shine San Antonio &mdash; Perfect Housewarming Gift</title>
+  <meta name="description" content="Give the gift of a spotless home. Swan Shine cleaning gift certificates for San Antonio &mdash; perfect for housewarmings, new babies, Mother's Day, and move-ins."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -86,7 +86,7 @@
     .amounts-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);margin-bottom:.6rem;}
     .amounts-sub{color:rgba(255,255,255,.65);margin-bottom:2rem;font-size:.97rem;}
     .amounts{display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;margin-bottom:1.5rem;}
-    .amount-btn{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;min-width:200px;}
+    .amount-btn{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;min-width:200px;cursor:pointer;background:transparent;font-family:'DM Sans',sans-serif;text-decoration:none;}
     .amount-btn:hover,.amount-btn.primary{background:var(--gold);color:var(--navy);}
     .amounts-note{font-size:.87rem;color:rgba(255,255,255,.5);}
     .amounts-note a{color:var(--gold);}
@@ -122,7 +122,7 @@
 
 <nav>
   <a href="index.html" class="logo">
-    <div class="logo-icon">🦢</div>
+    <div class="logo-icon">&#x1F9A2;</div>
     <div class="logo-text">Swan Shine<span>Cleaning Service</span></div>
   </a>
   <ul class="nav-links">
@@ -132,14 +132,14 @@
     <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
-    <a href="index.html#book" class="nav-cta">✦ Book Now</a>
+    <a href="index.html#book" class="nav-cta">&#x2726; Book Now</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>Give the gift of clean.</h1>
-  <p>A Swan Shine cleaning is the gift people actually want — and never buy themselves. Perfect for new homes, new babies, busy parents, and anyone who deserves a break.</p>
+  <p>A Swan Shine cleaning is the gift people actually want &mdash; and never buy themselves. Perfect for new homes, new babies, busy parents, and anyone who deserves a break.</p>
   <a href="#gift-amounts" class="btn-gold">Buy a Gift Certificate</a>
 </section>
 
@@ -147,22 +147,22 @@
 <section class="section" style="background:var(--cream);">
   <div class="section-inner">
     <h2 class="section-title">Perfect for Every Occasion</h2>
-    <p class="section-sub">When you're not sure what to give — give clean.</p>
+    <p class="section-sub">When you're not sure what to give &mdash; give clean.</p>
     <div class="occasions">
       <div class="occasion">
-        <div class="occasion-icon">🏠</div>
+        <div class="occasion-icon">&#x1F3E0;</div>
         <div class="occasion-name">Housewarming</div>
       </div>
       <div class="occasion">
-        <div class="occasion-icon">👶</div>
+        <div class="occasion-icon">&#x1F476;</div>
         <div class="occasion-name">New Baby</div>
       </div>
       <div class="occasion">
-        <div class="occasion-icon">💐</div>
+        <div class="occasion-icon">&#x1F490;</div>
         <div class="occasion-name">Mother's Day</div>
       </div>
       <div class="occasion">
-        <div class="occasion-icon">📦</div>
+        <div class="occasion-icon">&#x1F4E6;</div>
         <div class="occasion-name">Move-In / Move-Out</div>
       </div>
     </div>
@@ -178,7 +178,7 @@
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-title">Choose an amount</div>
-        <div class="step-desc">Select the cleaning service that fits the occasion — or let us help you decide.</div>
+        <div class="step-desc">Select the cleaning service that fits the occasion &mdash; or let us help you decide.</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -188,7 +188,7 @@
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-title">Recipient books &amp; applies code</div>
-        <div class="step-desc">They use the code at checkout. It's that simple — no expiration, no hassle.</div>
+        <div class="step-desc">They use the code at checkout. It's that simple &mdash; no expiration, no hassle.</div>
       </div>
     </div>
   </div>
@@ -197,24 +197,25 @@
 <!-- GIFT AMOUNTS -->
 <section class="amounts-section" id="gift-amounts">
   <div class="amounts-title">Choose Your Gift Amount</div>
-  <div class="amounts-sub">Each option maps to a specific cleaning service — no guessing required.</div>
+  <div class="amounts-sub">Select an amount &mdash; we'll contact you to arrange payment and send the certificate.</div>
   <div class="amounts">
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$100 — Standard Cleaning</a>
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn primary">$200 — Deep Cleaning</a>
-    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$250 — Move-In / Move-Out Clean</a>
+    <button type="button" class="amount-btn" onclick="selectGift('$100','Standard Cleaning',this)">$100 &mdash; Standard Cleaning</button>
+    <button type="button" class="amount-btn primary" onclick="selectGift('$200','Deep Cleaning',this)">$200 &mdash; Deep Cleaning</button>
+    <button type="button" class="amount-btn" onclick="selectGift('$250','Move-In / Move-Out Clean',this)">$250 &mdash; Move-In / Move-Out Clean</button>
   </div>
-  <div class="amounts-note">Not sure which to choose? <a href="tel:+12104613153">Call us at (210) 461-3153</a> — we'll help.</div>
+  <div class="amounts-note">Not sure which to choose? <a href="tel:+12104613153">Call us at (210) 461-3153</a> &mdash; we'll help.</div>
 </section>
 
 <!-- NOTIFY US FORM -->
 <section class="form-section" id="notify-form">
   <div class="form-wrap">
-    <div class="form-title">Let Us Know Who It's For</div>
-    <p class="form-sub">After purchasing, fill in this form so we can add a personal touch and reach out to the recipient.</p>
+    <div class="form-title" id="form-title">Request a Gift Certificate</div>
+    <p class="form-sub" id="form-sub">Select an amount above, or fill in the form and we'll reach out to confirm and arrange payment.</p>
 
     <form id="gift-form" novalidate>
       <!-- Honeypot -->
       <input type="text" id="gift-website" name="gift-website" class="honeypot" tabindex="-1" autocomplete="off"/>
+      <input type="hidden" id="gift-amount" value=""/>
 
       <div class="form-row">
         <div class="form-group">
@@ -239,7 +240,7 @@
       <div class="form-group">
         <label for="gift-occasion">Occasion</label>
         <select id="gift-occasion">
-          <option value="">Select occasion…</option>
+          <option value="">Select occasion&hellip;</option>
           <option>Housewarming</option>
           <option>New Baby</option>
           <option>Mother's Day</option>
@@ -249,7 +250,7 @@
       </div>
       <div class="form-group">
         <label for="gift-message">Personal Message <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
-        <textarea id="gift-message" placeholder="Add a personal note…"></textarea>
+        <textarea id="gift-message" placeholder="Add a personal note&hellip;"></textarea>
       </div>
 
       <button type="submit" class="submit-btn" id="gift-submit">Notify Swan Shine</button>
@@ -257,7 +258,7 @@
     </form>
 
     <div class="form-success" id="gift-success">
-      <p id="gift-success-msg">🦢 Perfect! We'll reach out with a personal note from Swan Shine.</p>
+      <p id="gift-success-msg">&#x1F9A2; Perfect! We'll reach out with a personal note from Swan Shine.</p>
     </div>
   </div>
 </section>
@@ -266,19 +267,19 @@
 <div class="trust-strip">
   <div class="trust-items">
     <div class="trust-item">
-      <div class="trust-item-icon">🛡️</div>
+      <div class="trust-item-icon">&#x1F6E1;</div>
       <div class="trust-item-label">Fully Insured</div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon">🌿</div>
+      <div class="trust-item-icon">&#x1F33F;</div>
       <div class="trust-item-label">Eco-Friendly</div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon">✅</div>
+      <div class="trust-item-icon">&#x2705;</div>
       <div class="trust-item-label">Background-Checked</div>
     </div>
     <div class="trust-item">
-      <div class="trust-item-icon">⭐</div>
+      <div class="trust-item-icon">&#x2B50;</div>
       <div class="trust-item-label">Satisfaction Guaranteed</div>
     </div>
   </div>
@@ -308,20 +309,29 @@
         <div class="footer-contact">
           <a href="tel:+12104613153">(210) 461-3153</a>
           <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
-          <span>Mon–Sat · 8am–6pm</span>
+          <span>Mon&ndash;Sat &middot; 8am&ndash;6pm</span>
           <span>San Antonio, TX &amp; surrounding neighborhoods</span>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</span>
-      <span>Insured · Bonded · Satisfaction Guaranteed</span>
+      <span>&copy; 2026 Swan Shine Cleaning Service &middot; San Antonio, TX &middot; All rights reserved</span>
+      <span>Insured &middot; Bonded &middot; Satisfaction Guaranteed</span>
     </div>
   </div>
 </footer>
 
 <script>
   const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609';
+
+  function selectGift(amount, service, btn) {
+    document.getElementById('gift-amount').value = amount + ' &mdash; ' + service;
+    document.getElementById('form-title').textContent = 'Request: ' + amount + ' Gift Certificate';
+    document.getElementById('form-sub').textContent = 'Fill in the details below and we’ll contact you within 2 hours to arrange payment and send the certificate.';
+    document.querySelectorAll('.amount-btn').forEach(function(b){ b.classList.remove('primary'); });
+    if(btn) btn.classList.add('primary');
+    document.getElementById('notify-form').scrollIntoView({behavior:'smooth', block:'start'});
+  }
 
   document.getElementById('gift-form').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -338,11 +348,11 @@
     const message = document.getElementById('gift-message').value.trim();
 
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sending&hellip;';
 
     if (honeypot) {
       document.getElementById('gift-form').style.display = 'none';
-      document.getElementById('gift-success-msg').textContent = `🦢 Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
       document.getElementById('gift-success').style.display = 'block';
       return;
     }
@@ -352,6 +362,7 @@
       email,
       source: 'Gift Certificate Page',
       referral_source: 'Gift Page',
+      gift_amount: document.getElementById('gift-amount').value || 'Not specified',
       gift_recipient_name: recipientName,
       gift_recipient_phone: recipientPhone,
       gift_occasion: occasion,
@@ -367,7 +378,7 @@
       });
       if (!res.ok) throw new Error('Bad response');
       document.getElementById('gift-form').style.display = 'none';
-      document.getElementById('gift-success-msg').textContent = `🦢 Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
       document.getElementById('gift-success').style.display = 'block';
     } catch(err) {
       errEl.style.display = 'block';
