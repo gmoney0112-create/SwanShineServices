@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gift a Cleaning | Swan Shine San Antonio — Perfect Housewarming Gift</title>
+  <meta name="description" content="Give the gift of a spotless home. Swan Shine cleaning gift certificates for San Antonio — perfect for housewarmings, new babies, Mother's Day, and move-ins."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+      --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,0.12);
+      --cream:#f8f4ef;--cream-dark:#ede7de;
+      --white:#ffffff;--text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
+      --border:rgba(13,43,62,0.12);
+      --shadow:0 12px 40px rgba(10,22,40,0.10);
+      --r:16px;--r-lg:20px;--r-xl:26px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    button,input,select,textarea{font:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(10,22,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18);}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:.02em;line-height:1.1;}
+    .logo-text span{color:var(--gold);display:block;font-size:.63rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,.8);font-size:.85rem;letter-spacing:.04em;transition:color .2s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:.55rem 1.4rem;border-radius:50px;font-weight:500!important;font-size:.88rem;font-family:'DM Sans',sans-serif;transition:all .2s;}
+    .nav-cta:hover{background:var(--gold-light)!important;}
+    @media(max-width:768px){.nav-links{display:none;}.nav-cta{font-size:.8rem;padding:.45rem 1rem;}}
+    footer{background:var(--navy);padding:3rem 5% 5rem;}
+    .footer-inner{max-width:1100px;margin:0 auto;}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:.8rem;}
+    .footer-logo span{color:var(--gold);}
+    .footer-tagline{font-size:.78rem;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;}
+    .footer-desc{font-size:.87rem;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300;}
+    .footer-col h4{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+    .footer-links a{font-size:.87rem;color:rgba(255,255,255,.6);transition:color .2s;}
+    .footer-links a:hover{color:var(--gold);}
+    .footer-contact{display:flex;flex-direction:column;gap:.55rem;}
+    .footer-contact a,.footer-contact span{font-size:.87rem;color:rgba(255,255,255,.6);}
+    .footer-contact a:hover{color:var(--gold);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+    .footer-bottom span{font-size:.8rem;color:rgba(255,255,255,.3);}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;}}
+
+    /* Page styles */
+    .hero{padding:140px 5% 80px;background:var(--navy);text-align:center;}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:600;color:var(--white);margin-bottom:1rem;line-height:1.15;}
+    .hero p{font-size:1.05rem;color:rgba(255,255,255,.72);max-width:580px;margin:0 auto 2rem;}
+    .btn-gold{display:inline-block;background:var(--gold);color:var(--navy);padding:.8rem 2.2rem;border-radius:50px;font-weight:600;font-size:.97rem;transition:all .2s;}
+    .btn-gold:hover{background:var(--gold-light);}
+
+    .section{padding:4rem 5%;}
+    .section-inner{max-width:1100px;margin:0 auto;}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:600;color:var(--navy);margin-bottom:.5rem;text-align:center;}
+    .section-sub{text-align:center;color:var(--text-mid);font-size:.97rem;margin-bottom:2.5rem;}
+
+    /* Occasion tiles */
+    .occasions{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2rem;}
+    .occasion{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem 1.2rem;text-align:center;transition:box-shadow .2s,transform .2s;}
+    .occasion:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+    .occasion-icon{font-size:2.2rem;margin-bottom:.8rem;}
+    .occasion-name{font-weight:600;color:var(--navy);font-size:.97rem;}
+    @media(max-width:768px){.occasions{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.occasions{grid-template-columns:1fr;}}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem;}
+    .step{text-align:center;padding:2rem 1.5rem;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);}
+    .step-num{width:44px;height:44px;background:var(--gold);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;margin:0 auto 1rem;}
+    .step-title{font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+    .step-desc{font-size:.88rem;color:var(--text-mid);line-height:1.6;}
+    @media(max-width:768px){.steps{grid-template-columns:1fr;}}
+
+    /* Gift amounts */
+    .amounts-section{background:var(--navy);padding:4rem 5%;text-align:center;}
+    .amounts-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--white);margin-bottom:.6rem;}
+    .amounts-sub{color:rgba(255,255,255,.65);margin-bottom:2rem;font-size:.97rem;}
+    .amounts{display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;margin-bottom:1.5rem;}
+    .amount-btn{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:.95rem;transition:all .2s;min-width:200px;}
+    .amount-btn:hover,.amount-btn.primary{background:var(--gold);color:var(--navy);}
+    .amounts-note{font-size:.87rem;color:rgba(255,255,255,.5);}
+    .amounts-note a{color:var(--gold);}
+
+    /* Form */
+    .form-section{background:var(--cream-dark);padding:4rem 5%;}
+    .form-wrap{max-width:640px;margin:0 auto;}
+    .form-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;text-align:center;}
+    .form-sub{text-align:center;color:var(--text-mid);margin-bottom:2rem;font-size:.93rem;}
+    .form-group{margin-bottom:1.2rem;}
+    .form-group label{display:block;font-size:.83rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;letter-spacing:.04em;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--r);font-size:.93rem;color:var(--text-dark);background:var(--white);transition:border-color .2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);}
+    .form-group textarea{resize:vertical;min-height:90px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+    .submit-btn{width:100%;background:var(--gold);color:var(--navy);border:none;padding:.9rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;margin-top:.5rem;}
+    .submit-btn:hover{background:var(--gold-light);}
+    .submit-btn:disabled{opacity:.6;cursor:not-allowed;}
+    .form-success{display:none;text-align:center;padding:2rem;background:var(--white);border-radius:var(--r-lg);border:2px solid var(--gold);}
+    .form-error{display:none;background:#fee;border:1px solid #f99;border-radius:var(--r);padding:1rem;margin-top:1rem;font-size:.9rem;color:#c00;}
+    .honeypot{display:none!important;visibility:hidden!important;}
+
+    /* Trust strip */
+    .trust-strip{background:var(--cream);padding:3rem 5%;}
+    .trust-items{display:flex;justify-content:center;flex-wrap:wrap;gap:2.5rem;max-width:900px;margin:0 auto;}
+    .trust-item{text-align:center;color:var(--text-mid);}
+    .trust-item-icon{font-size:1.6rem;margin-bottom:.4rem;}
+    .trust-item-label{font-size:.83rem;font-weight:500;color:var(--navy);}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">🦢</div>
+    <div class="logo-text">Swan Shine<span>Cleaning Service</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="index.html#book" class="nav-cta">✦ Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Give the gift of clean.</h1>
+  <p>A Swan Shine cleaning is the gift people actually want — and never buy themselves. Perfect for new homes, new babies, busy parents, and anyone who deserves a break.</p>
+  <a href="#gift-amounts" class="btn-gold">Buy a Gift Certificate</a>
+</section>
+
+<!-- OCCASIONS -->
+<section class="section" style="background:var(--cream);">
+  <div class="section-inner">
+    <h2 class="section-title">Perfect for Every Occasion</h2>
+    <p class="section-sub">When you're not sure what to give — give clean.</p>
+    <div class="occasions">
+      <div class="occasion">
+        <div class="occasion-icon">🏠</div>
+        <div class="occasion-name">Housewarming</div>
+      </div>
+      <div class="occasion">
+        <div class="occasion-icon">👶</div>
+        <div class="occasion-name">New Baby</div>
+      </div>
+      <div class="occasion">
+        <div class="occasion-icon">💐</div>
+        <div class="occasion-name">Mother's Day</div>
+      </div>
+      <div class="occasion">
+        <div class="occasion-icon">📦</div>
+        <div class="occasion-name">Move-In / Move-Out</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Simple, fast, and delivered with a personal touch.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Choose an amount</div>
+        <div class="step-desc">Select the cleaning service that fits the occasion — or let us help you decide.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">We send confirmation</div>
+        <div class="step-desc">You'll receive a gift code and confirmation after purchase. We'll also reach out to the recipient.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Recipient books &amp; applies code</div>
+        <div class="step-desc">They use the code at checkout. It's that simple — no expiration, no hassle.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT AMOUNTS -->
+<section class="amounts-section" id="gift-amounts">
+  <div class="amounts-title">Choose Your Gift Amount</div>
+  <div class="amounts-sub">Each option maps to a specific cleaning service — no guessing required.</div>
+  <div class="amounts">
+    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$100 — Standard Cleaning</a>
+    <a href="[STRIPE_GIFT_LINK]" class="amount-btn primary">$200 — Deep Cleaning</a>
+    <a href="[STRIPE_GIFT_LINK]" class="amount-btn">$250 — Move-In / Move-Out Clean</a>
+  </div>
+  <div class="amounts-note">Not sure which to choose? <a href="tel:+12104613153">Call us at (210) 461-3153</a> — we'll help.</div>
+</section>
+
+<!-- NOTIFY US FORM -->
+<section class="form-section" id="notify-form">
+  <div class="form-wrap">
+    <div class="form-title">Let Us Know Who It's For</div>
+    <p class="form-sub">After purchasing, fill in this form so we can add a personal touch and reach out to the recipient.</p>
+
+    <form id="gift-form" novalidate>
+      <!-- Honeypot -->
+      <input type="text" id="gift-website" name="gift-website" class="honeypot" tabindex="-1" autocomplete="off"/>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gift-your-name">Your Name</label>
+          <input type="text" id="gift-your-name" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label for="gift-your-email">Your Email</label>
+          <input type="email" id="gift-your-email" placeholder="you@example.com"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gift-recipient-name">Recipient's Name</label>
+          <input type="text" id="gift-recipient-name" placeholder="Recipient's name"/>
+        </div>
+        <div class="form-group">
+          <label for="gift-recipient-phone">Recipient's Phone <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+          <input type="tel" id="gift-recipient-phone" placeholder="(210) 000-0000"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="gift-occasion">Occasion</label>
+        <select id="gift-occasion">
+          <option value="">Select occasion…</option>
+          <option>Housewarming</option>
+          <option>New Baby</option>
+          <option>Mother's Day</option>
+          <option>Move-In / Move-Out</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gift-message">Personal Message <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+        <textarea id="gift-message" placeholder="Add a personal note…"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="gift-submit">Notify Swan Shine</button>
+      <div class="form-error" id="gift-error">Something went wrong. Call us at (210) 461-3153 and we'll sort it out.</div>
+    </form>
+
+    <div class="form-success" id="gift-success">
+      <p id="gift-success-msg">🦢 Perfect! We'll reach out with a personal note from Swan Shine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-items">
+    <div class="trust-item">
+      <div class="trust-item-icon">🛡️</div>
+      <div class="trust-item-label">Fully Insured</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">🌿</div>
+      <div class="trust-item-label">Eco-Friendly</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">✅</div>
+      <div class="trust-item-label">Background-Checked</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item-icon">⭐</div>
+      <div class="trust-item-label">Satisfaction Guaranteed</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Swan <span>Shine</span> Cleaning</div>
+        <div class="footer-tagline">Spotless. Every Time.</div>
+        <p class="footer-desc">Professional residential and commercial cleaning in San Antonio, TX. Insured, eco-friendly, and satisfaction-guaranteed every visit.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="referral.html">Refer a Friend</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="tel:+12104613153">(210) 461-3153</a>
+          <a href="mailto:mary@inspirebuildmotivate.com">mary@inspirebuildmotivate.com</a>
+          <span>Mon–Sat · 8am–6pm</span>
+          <span>San Antonio, TX &amp; surrounding neighborhoods</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Swan Shine Cleaning Service · San Antonio, TX · All rights reserved</span>
+      <span>Insured · Bonded · Satisfaction Guaranteed</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609';
+
+  document.getElementById('gift-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const honeypot = document.getElementById('gift-website').value;
+    const btn = document.getElementById('gift-submit');
+    const errEl = document.getElementById('gift-error');
+    errEl.style.display = 'none';
+
+    const yourName = document.getElementById('gift-your-name').value.trim();
+    const email = document.getElementById('gift-your-email').value.trim();
+    const recipientName = document.getElementById('gift-recipient-name').value.trim();
+    const recipientPhone = document.getElementById('gift-recipient-phone').value.trim();
+    const occasion = document.getElementById('gift-occasion').value;
+    const message = document.getElementById('gift-message').value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    if (honeypot) {
+      document.getElementById('gift-form').style.display = 'none';
+      document.getElementById('gift-success-msg').textContent = `🦢 Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success').style.display = 'block';
+      return;
+    }
+
+    const payload = {
+      firstName: yourName,
+      email,
+      source: 'Gift Certificate Page',
+      referral_source: 'Gift Page',
+      gift_recipient_name: recipientName,
+      gift_recipient_phone: recipientPhone,
+      gift_occasion: occasion,
+      gift_message: message,
+      submitted_at: new Date().toISOString()
+    };
+
+    try {
+      const res = await fetch(WEBHOOK, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Bad response');
+      document.getElementById('gift-form').style.display = 'none';
+      document.getElementById('gift-success-msg').textContent = `🦢 Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success').style.display = 'block';
+    } catch(err) {
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Notify Swan Shine';
+    }
+  });
+</script>
+</body>
+</html>
