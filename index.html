@@ -776,7 +776,7 @@ textarea{resize:vertical;min-height:90px;}
     </div>
     <div class="upsell-actions">
       <button class="btn-next" onclick="closeUpsellAndRedirect()" style="width:100%;">I'm interested — let's talk →</button>
-      <button class="upsell-skip" onclick="closeUpsellAndRedirect()">No thanks, take me to my confirmation</button>
+      <button class="upsell-skip" onclick="skipUpsell()">No thanks, take me to my confirmation</button>
     </div>
   </div>
 </div>
@@ -891,7 +891,7 @@ function hideFormError(){document.getElementById('formError').style.display='non
 function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)return '';if(input.startsWith('+'))return input;const digits=input.replace(/\D/g,'');if(digits.length===10)return '+1'+digits;if(digits.length===11&&digits.startsWith('1'))return '+'+digits;return input;} function getTrackingParams(){const p=new URLSearchParams(window.location.search);const keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];const t={};keys.forEach(function(k){t[k]=p.get(k)||'';});return t;} function getPersistedTrackingParams(){const keys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];const p=new URLSearchParams(window.location.search);let stored={};try{stored=JSON.parse(localStorage.getItem('swanshine_tracking_params')||'{}');}catch(e){stored={};}let changed=false;keys.forEach(function(k){const v=p.get(k);if(v&&!stored[k]){stored[k]=v;changed=true;}});if(changed){try{localStorage.setItem('swanshine_tracking_params',JSON.stringify(stored));}catch(e){}}const out={};keys.forEach(function(k){out[k]=stored[k]||p.get(k)||'';});return out;}async function submitForm(btn){
   if(!GHL_WEBHOOK_URL){showFormError('No webhook target is configured yet.');return;}
   clearFieldErrors();hideFormError();
-  if((document.getElementById('website')?.value||'')!=='')return;
+  if((document.getElementById('website')?.value||'')!=='')return;if(typeof gtag==='function')gtag('event','form_submit_attempt',{service_type:selectedService});
   const last=parseInt(localStorage.getItem('swanshine_last_submit')||'0',10);
   if(Date.now()-last<60000){showFormError('Please wait a moment before submitting again.');return;}
   const firstEl=document.getElementById('firstName'),phoneEl=document.getElementById('phone'),emailEl=document.getElementById('email');
@@ -903,7 +903,7 @@ function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)
   const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='<span class="btn-spinner"></span>Sending…';
   try{
     console.info('[SwanShine] Sending booking payload',payload);const res=await fetch(GHL_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    console.info('[SwanShine] Webhook response status',res.status);if(!res.ok)throw new Error('Webhook '+res.status);
+    console.info('[SwanShine] Webhook response status',res.status);if(!res.ok)throw new Error('Webhook '+res.status);if(typeof gtag==='function'){const _frq=document.getElementById('frequency');gtag('event','form_submit_success',{service_type:svcLabels[selectedService]||selectedService,estimated_price:document.getElementById('estimateRange')?.textContent||'',frequency:_frq?_frq.options[_frq.selectedIndex]?.text||'':'',source:'Swan Shine Website'});}
     localStorage.setItem('swanshine_last_submit',String(Date.now()));
     localStorage.removeItem('swanshine_draft');
     try{localStorage.setItem('swanshine_booking_summary',JSON.stringify({name:[payload.firstName,payload.lastName].filter(Boolean).join(' '),service:payload.service_type,estimate:payload.estimate,date:payload.preferred_date,time:payload.preferred_time,frequency:payload.frequency,phone:payload.phone,email:payload.email,stripeDepositUrl:STRIPE_DEPOSIT_URL,walkthroughBookingUrl:WALKTHROUGH_BOOKING_URL,walkthroughEmbedUrl:WALKTHROUGH_EMBED_URL}));}catch(e){}
@@ -917,9 +917,9 @@ function normalizePhoneToE164(raw){const input=String(raw||'').trim();if(!input)
     document.getElementById('modal').scrollTop=0;
     pendingRedirect=true;
     const freq=freqEl?freqEl.options[freqEl.selectedIndex]?.value:'';
-    if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');},1800);}
+    if(freq==='onetime'||freq===''){setTimeout(()=>{document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';document.getElementById('upsellOverlay').classList.add('active');if(typeof gtag==='function')gtag('event','upsell_shown',{service_type:svcLabels[selectedService]||selectedService,frequency:'one-time'});},1800);}
     else{setTimeout(doRedirect,2500);}
-  }catch(err){console.error('[SwanShine] Webhook error:',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
+  }catch(err){if(typeof gtag==='function')gtag('event','form_submit_error',{error_status:err.message});console.error('[SwanShine] Webhook error:',err);showFormError('Could not send your request. Please try again or call (210) 461-3153 directly.');btn.disabled=false;btn.innerHTML=orig;}
 }
 
 // ── UPSELL ────────────────────────────────────────────────────
@@ -993,6 +993,20 @@ async function submitCallback(btn){
   }
   if(btn){btn.disabled=false;btn.innerHTML=orig;}
 }
+
+// ── BOOKING FUNNEL ANALYTICS ──
+(function(){
+  function _ga(ev,p){if(typeof gtag==='function')gtag('event',ev,p||{});}
+  const _om=openModal;openModal=function(){_ga('modal_open',{method:'button'});return _om.apply(this,arguments);};
+  const _gs=goToStep;goToStep=function(n){
+    const estEl=document.getElementById('estimateRange'),dateEl=document.getElementById('prefDate'),tEl=document.getElementById('prefTime');
+    if(n===2)_ga('booking_step_1_complete',{service_type:selectedService,estimated_price:estEl?.textContent||''});
+    if(n===3){_ga('booking_step_2_complete',{preferred_date:dateEl?.value||'',preferred_time:tEl?tEl.options[tEl.selectedIndex]?.text||'':''});_ga('booking_step_3_view',{service_type:selectedService});}
+    return _gs.apply(this,arguments);
+  };
+  const _au=acceptUpsell;acceptUpsell=function(plan){_ga('upsell_accepted',{upsell_plan:plan});return _au.apply(this,arguments);};
+})();
+function skipUpsell(){if(typeof gtag==='function')gtag('event','upsell_skipped',{});closeUpsellAndRedirect();}
 
 // ── ABANDONMENT RECOVERY TOAST ──
 let _abandonTimer=null;
