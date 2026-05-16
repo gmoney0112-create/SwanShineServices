@@ -11,6 +11,12 @@
 <meta property="og:description" content="Professional cleaning in San Antonio. Trusted by hundreds of households and businesses. Fast booking, clear pricing, satisfaction guaranteed.">
 <meta property="og:url" content="https://gmoney0112-create.github.io/SwanShineServices/">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://gmoney0112-create.github.io/SwanShineServices/images/swan-shine-banner.jpg">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="788">
+<meta property="og:image:alt" content="Swan Shine Cleaning Services &mdash; Clean Spaces. Happy Places.">
+<meta name="twitter:image" content="https://gmoney0112-create.github.io/SwanShineServices/images/swan-shine-banner.jpg">
+<meta name="twitter:image:alt" content="Swan Shine Cleaning Services &mdash; San Antonio's Premier Cleaning">
 <link rel="canonical" href="https://gmoney0112-create.github.io/SwanShineServices/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-58WE7F11EG"></script>
@@ -60,6 +66,7 @@ button,input,select,textarea{font:inherit;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(10,22,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18);}
 .logo{display:flex;align-items:center;gap:12px;}
 .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.nav-logo-img{height:46px;width:auto;display:block;border-radius:6px;object-fit:contain;}
 .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:.02em;line-height:1.1;}
 .logo-text span{color:var(--gold);display:block;font-size:.63rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;font-family:'DM Sans',sans-serif;}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
@@ -370,6 +377,9 @@ textarea{resize:vertical;min-height:90px;}
 .estimate-breakdown .eb-line.total{color:var(--white);font-weight:600;border-top:1px solid rgba(255,255,255,.18);padding-top:.3rem;margin-top:.3rem;}
 .discount-badge{display:inline-block;background:rgba(201,168,76,.18);color:var(--gold-light);font-size:.72rem;padding:.15rem .6rem;border-radius:50px;margin-left:.4rem;vertical-align:middle;}
 
+/* â”€â”€ HERO BRAND IMAGE â”€â”€ */
+.hero-brand{margin:2.8rem auto 0;max-width:820px;padding:0 1.5rem;width:100%;}
+.hero-brand img{width:100%;height:auto;display:block;border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.08);}
 /* â”€â”€ RESPONSIVE â”€â”€ */
 @media(max-width:1080px){
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -402,8 +412,7 @@ textarea{resize:vertical;min-height:90px;}
 <!-- â”€â”€ NAV â”€â”€ -->
 <nav>
   <a href="#top" class="logo">
-    <div class="logo-icon">&#x1F9A2;</div>
-    <div class="logo-text">Swan Shine<span>Cleaning Service</span></div>
+    <img src="images/swan-shine-banner.jpg" alt="Swan Shine Cleaning Services" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -450,6 +459,9 @@ textarea{resize:vertical;min-height:90px;}
       <div class="trust-item">Eco-Friendly Products</div>
       <div class="trust-item">Satisfaction Guaranteed</div>
       <div class="trust-item">Background-Checked Staff</div>
+    </div>
+    <div class="hero-brand">
+      <img src="images/swan-shine-banner.jpg" alt="Swan Shine Cleaning Services &mdash; Clean Spaces. Happy Places." loading="eager" fetchpriority="high">
     </div>
   </div>
 </section>

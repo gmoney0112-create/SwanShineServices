@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>About Swan Shine | San Antonio's Trusted Cleaning Team</title>
   <meta name="description" content="Meet Mary and the Swan Shine team. San Antonio's detail-obsessed, background-checked, insured cleaning service. Real people who care about your home."/>
+  <meta property="og:image" content="https://gmoney0112-create.github.io/SwanShineServices/images/swan-shine-banner.jpg">
+  <meta property="og:image:width" content="1500">
+  <meta property="og:image:height" content="788">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://gmoney0112-create.github.io/SwanShineServices/images/swan-shine-banner.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -66,6 +71,7 @@
     .story-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;align-items:start;margin-top:2rem;}
     @media(max-width:768px){.story-grid{grid-template-columns:1fr;}}
     .photo-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(145deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:var(--r-xl);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden;}
+    .brand-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:5% center;border-radius:var(--r-xl);box-shadow:var(--shadow);display:block;}
     .photo-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 30%,rgba(201,168,76,.15),transparent 70%);}
     .photo-initial{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:600;color:var(--gold);line-height:1;position:relative;z-index:1;}
     .photo-name{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.2em;text-transform:uppercase;position:relative;z-index:1;}
@@ -138,11 +144,7 @@
 <section class="section" style="background:var(--cream);">
   <div class="section-inner">
     <div class="story-grid">
-      <div class="photo-placeholder">
-        <div class="photo-initial">M</div>
-        <div class="photo-name">Mary &mdash; Founder</div>
-        <div class="photo-swan">&#x1F9A2;</div>
-      </div>
+      <img src="images/swan-shine-banner.jpg" alt="Swan Shine Cleaning Services" class="brand-photo" loading="lazy">
       <div class="story-text">
         <h3>Hi, I'm Mary.</h3>
         <p>I started Swan Shine because I kept hearing the same thing from San Antonio homeowners: they didn't trust the last service they hired. Either someone didn't show up, something went missing, or the clean just wasn't what they expected.</p>
