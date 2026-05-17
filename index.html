@@ -707,20 +707,20 @@ textarea{resize:vertical;min-height:80px;}
     <div class="upsell-state" id="upsellState">
       <div class="upsell-badge">One-Time Offer</div>
       <div class="upsell-icon">&#x2728;</div>
-      <h3>Save 15% on Every Visit</h3>
-      <p>Switch to a recurring schedule and lock in a permanent discount &mdash; no contracts, cancel anytime.</p>
+      <h3 id="upsellHeading">Save 15% on Every Visit</h3>
+      <p>Pick your schedule and lock in a permanent discount &mdash; no contracts, cancel anytime.</p>
       <div class="upsell-savings">
-        <div class="upsell-big-num">15% OFF</div>
-        <div class="upsell-big-label">every recurring clean</div>
+        <div class="upsell-big-num" id="upsellPct">15% OFF</div>
+        <div class="upsell-big-label" id="upsellLabel">every weekly clean</div>
       </div>
       <p class="upsell-freq-label">How often would you like us?</p>
       <div class="upsell-freq">
-        <button class="upsell-freq-btn selected" id="freqWeekly" onclick="selectFreq('weekly')">Weekly</button>
-        <button class="upsell-freq-btn" id="freqBiweekly" onclick="selectFreq('biweekly')">Bi-Weekly</button>
-        <button class="upsell-freq-btn" id="freqMonthly" onclick="selectFreq('monthly')">Monthly</button>
+        <button class="upsell-freq-btn selected" id="freqWeekly" onclick="selectFreq('weekly')">Weekly<br><small>15% off</small></button>
+        <button class="upsell-freq-btn" id="freqBiweekly" onclick="selectFreq('biweekly')">Bi-Weekly<br><small>10% off</small></button>
+        <button class="upsell-freq-btn" id="freqMonthly" onclick="selectFreq('monthly')">Monthly<br><small>5% off</small></button>
       </div>
       <div class="upsell-actions">
-        <button class="btn-upsell-yes" onclick="acceptUpsell()">&#x2713;&nbsp; Yes &mdash; Lock In My 15% Discount</button>
+        <button class="btn-upsell-yes" id="upsellYesBtn" onclick="acceptUpsell()">&#x2713;&nbsp; Yes &mdash; Lock In My 15% Discount</button>
         <button class="btn-upsell-no" onclick="declineUpsell()">No thanks, keep it one-time</button>
       </div>
     </div>
@@ -887,35 +887,44 @@ function submitForm(btn) {
 }
 
 // ── UPSELL ────────────────────────────────────────────────────────────────────
-var upsellFrequency = 'weekly';
+var upsellFrequency = ‘weekly’;
+var upsellDiscounts = { weekly: ‘15%’, biweekly: ‘10%’, monthly: ‘5%’ };
+var upsellFreqLabels = { weekly: ‘weekly clean’, biweekly: ‘bi-weekly clean’, monthly: ‘monthly clean’ };
+var upsellFreqDisplay = { weekly: ‘Weekly’, biweekly: ‘Bi-Weekly’, monthly: ‘Monthly’ };
 
 function selectFreq(f) {
   upsellFrequency = f;
-  ['Weekly','Biweekly','Monthly'].forEach(function(id) {
-    var el = document.getElementById('freq' + id);
-    if (el) el.classList.toggle('selected', id.toLowerCase() === f);
+  [‘Weekly’,’Biweekly’,’Monthly’].forEach(function(id) {
+    var el = document.getElementById(‘freq’ + id);
+    if (el) el.classList.toggle(‘selected’, id.toLowerCase() === f);
   });
+  var pct = upsellDiscounts[f];
+  document.getElementById(‘upsellPct’).textContent = pct + ‘ OFF’;
+  document.getElementById(‘upsellLabel’).textContent = ‘every ‘ + upsellFreqLabels[f];
+  document.getElementById(‘upsellHeading’).textContent = ‘Save ‘ + pct + ‘ on Every Visit’;
+  document.getElementById(‘upsellYesBtn’).textContent = ‘✓  Yes — Lock In My ‘ + pct + ‘ Discount’;
 }
 
 function acceptUpsell() {
+  var pct = upsellDiscounts[upsellFrequency];
   fetch(WEBHOOK, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: ‘POST’,
+    headers: { ‘Content-Type’: ‘application/json’ },
     body: JSON.stringify({
-      firstName:          document.getElementById('firstName').value.trim(),
-      lastName:           document.getElementById('lastName').value.trim(),
-      phone:              document.getElementById('phone').value.trim(),
-      email:              document.getElementById('email').value.trim(),
-      recurringInterest:  'yes',
+      firstName:          document.getElementById(‘firstName’).value.trim(),
+      lastName:           document.getElementById(‘lastName’).value.trim(),
+      phone:              document.getElementById(‘phone’).value.trim(),
+      email:              document.getElementById(‘email’).value.trim(),
+      recurringInterest:  ‘yes’,
       recurringFrequency: upsellFrequency,
-      recurringDiscount:  '15%',
-      notes:              'UPSELL: Recurring ' + upsellFrequency + ' — 15% discount requested'
+      recurringDiscount:  pct,
+      notes:              ‘UPSELL: Recurring ‘ + upsellFreqDisplay[upsellFrequency] + ‘ — ‘ + pct + ‘ discount requested’
     })
   }).catch(function(){});
-  gtag('event', 'upsell_accept', { event_category: 'booking', frequency: upsellFrequency });
-  document.getElementById('upsellState').classList.remove('show');
-  document.getElementById('successMsg').textContent = "We’ll confirm your recurring schedule and 15% discount within 2 hours. We can’t wait to make your home shine every " + upsellFrequency + "!";
-  document.getElementById('successState').classList.add('show');
+  gtag(‘event’, ‘upsell_accept’, { event_category: ‘booking’, frequency: upsellFrequency, discount: pct });
+  document.getElementById(‘upsellState’).classList.remove(‘show’);
+  document.getElementById(‘successMsg’).textContent = "We’ll confirm your " + upsellFreqDisplay[upsellFrequency].toLowerCase() + " schedule and " + pct + " discount within 2 hours. We can’t wait to make your home shine!";
+  document.getElementById(‘successState’).classList.add(‘show’);
 }
 
 function declineUpsell() {
@@ -947,8 +956,10 @@ function declineUpsell() {
 .upsell-big-label{font-size:.83rem;color:#388e3c;margin-top:.25rem;}
 .upsell-freq-label{font-size:.82rem;color:var(--text-mid);margin-bottom:.5rem !important;}
 .upsell-freq{display:flex;gap:.7rem;margin-bottom:1.2rem;}
-.upsell-freq-btn{flex:1;padding:.65rem .3rem;border:2px solid #d4b875;border-radius:9px;background:#fff;cursor:pointer;font-size:.84rem;font-weight:600;color:var(--navy);transition:all .18s;}
+.upsell-freq-btn{flex:1;padding:.65rem .3rem;border:2px solid #d4b875;border-radius:9px;background:#fff;cursor:pointer;font-size:.84rem;font-weight:600;color:var(--navy);transition:all .18s;line-height:1.3;}
+.upsell-freq-btn small{display:block;font-size:.72rem;font-weight:400;opacity:.75;margin-top:.15rem;}
 .upsell-freq-btn.selected{background:var(--gold);border-color:var(--gold);color:#fff;}
+.upsell-freq-btn.selected small{opacity:.85;}
 .upsell-actions{display:flex;flex-direction:column;gap:.65rem;}
 .btn-upsell-yes{background:var(--gold);color:#fff;border:none;border-radius:9px;padding:.9rem 1.5rem;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s;letter-spacing:.01em;}
 .btn-upsell-yes:hover{background:#b8923e;}
