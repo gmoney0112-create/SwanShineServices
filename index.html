@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-58WE7F11EG"></script>
+<script></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-58WE7F11EG');</script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -887,44 +887,44 @@ function submitForm(btn) {
 }
 
 // ── UPSELL ────────────────────────────────────────────────────────────────────
-var upsellFrequency = ‘weekly’;
-var upsellDiscounts = { weekly: ‘15%’, biweekly: ‘10%’, monthly: ‘5%’ };
-var upsellFreqLabels = { weekly: ‘weekly clean’, biweekly: ‘bi-weekly clean’, monthly: ‘monthly clean’ };
-var upsellFreqDisplay = { weekly: ‘Weekly’, biweekly: ‘Bi-Weekly’, monthly: ‘Monthly’ };
+var upsellFrequency = 'weekly';
+var upsellDiscounts = { weekly: '15%', biweekly: '10%', monthly: '5%' };
+var upsellFreqLabels = { weekly: 'weekly clean', biweekly: 'bi-weekly clean', monthly: 'monthly clean' };
+var upsellFreqDisplay = { weekly: 'Weekly', biweekly: 'Bi-Weekly', monthly: 'Monthly' };
 
 function selectFreq(f) {
   upsellFrequency = f;
-  [‘Weekly’,’Biweekly’,’Monthly’].forEach(function(id) {
-    var el = document.getElementById(‘freq’ + id);
-    if (el) el.classList.toggle(‘selected’, id.toLowerCase() === f);
+  ['Weekly','Biweekly','Monthly'].forEach(function(id) {
+    var el = document.getElementById('freq' + id);
+    if (el) el.classList.toggle('selected', id.toLowerCase() === f);
   });
   var pct = upsellDiscounts[f];
-  document.getElementById(‘upsellPct’).textContent = pct + ‘ OFF’;
-  document.getElementById(‘upsellLabel’).textContent = ‘every ‘ + upsellFreqLabels[f];
-  document.getElementById(‘upsellHeading’).textContent = ‘Save ‘ + pct + ‘ on Every Visit’;
-  document.getElementById(‘upsellYesBtn’).textContent = ‘✓  Yes — Lock In My ‘ + pct + ‘ Discount’;
+  document.getElementById('upsellPct').textContent = pct + ' OFF';
+  document.getElementById('upsellLabel').textContent = 'every ' + upsellFreqLabels[f];
+  document.getElementById('upsellHeading').textContent = 'Save ' + pct + ' on Every Visit';
+  document.getElementById('upsellYesBtn').textContent = '✓  Yes — Lock In My ' + pct + ' Discount';
 }
 
 function acceptUpsell() {
   var pct = upsellDiscounts[upsellFrequency];
   fetch(WEBHOOK, {
-    method: ‘POST’,
-    headers: { ‘Content-Type’: ‘application/json’ },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      firstName:          document.getElementById(‘firstName’).value.trim(),
-      lastName:           document.getElementById(‘lastName’).value.trim(),
-      phone:              document.getElementById(‘phone’).value.trim(),
-      email:              document.getElementById(‘email’).value.trim(),
-      recurringInterest:  ‘yes’,
+      firstName:          document.getElementById('firstName').value.trim(),
+      lastName:           document.getElementById('lastName').value.trim(),
+      phone:              document.getElementById('phone').value.trim(),
+      email:              document.getElementById('email').value.trim(),
+      recurringInterest:  'yes',
       recurringFrequency: upsellFrequency,
       recurringDiscount:  pct,
-      notes:              ‘UPSELL: Recurring ‘ + upsellFreqDisplay[upsellFrequency] + ‘ — ‘ + pct + ‘ discount requested’
+      notes:              'UPSELL: Recurring ' + upsellFreqDisplay[upsellFrequency] + ' — ' + pct + ' discount requested'
     })
   }).catch(function(){});
-  gtag(‘event’, ‘upsell_accept’, { event_category: ‘booking’, frequency: upsellFrequency, discount: pct });
-  document.getElementById(‘upsellState’).classList.remove(‘show’);
-  document.getElementById(‘successMsg’).textContent = "We’ll confirm your " + upsellFreqDisplay[upsellFrequency].toLowerCase() + " schedule and " + pct + " discount within 2 hours. We can’t wait to make your home shine!";
-  document.getElementById(‘successState’).classList.add(‘show’);
+  gtag('event', 'upsell_accept', { event_category: 'booking', frequency: upsellFrequency, discount: pct });
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successMsg').textContent = "We'll confirm your " + upsellFreqDisplay[upsellFrequency].toLowerCase() + " schedule and " + pct + " discount within 2 hours. We can't wait to make your home shine!";
+  document.getElementById('successState').classList.add('show');
 }
 
 function declineUpsell() {
