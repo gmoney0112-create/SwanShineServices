@@ -703,11 +703,33 @@ textarea{resize:vertical;min-height:80px;}
       </div>
     </div>
 
+    <!-- UPSELL -->
+    <div class="upsell-state" id="upsellState">
+      <div class="upsell-badge">One-Time Offer</div>
+      <div class="upsell-icon">&#x2728;</div>
+      <h3>Save 15% on Every Visit</h3>
+      <p>Switch to a recurring schedule and lock in a permanent discount &mdash; no contracts, cancel anytime.</p>
+      <div class="upsell-savings">
+        <div class="upsell-big-num">15% OFF</div>
+        <div class="upsell-big-label">every recurring clean</div>
+      </div>
+      <p class="upsell-freq-label">How often would you like us?</p>
+      <div class="upsell-freq">
+        <button class="upsell-freq-btn selected" id="freqWeekly" onclick="selectFreq('weekly')">Weekly</button>
+        <button class="upsell-freq-btn" id="freqBiweekly" onclick="selectFreq('biweekly')">Bi-Weekly</button>
+        <button class="upsell-freq-btn" id="freqMonthly" onclick="selectFreq('monthly')">Monthly</button>
+      </div>
+      <div class="upsell-actions">
+        <button class="btn-upsell-yes" onclick="acceptUpsell()">&#x2713;&nbsp; Yes &mdash; Lock In My 15% Discount</button>
+        <button class="btn-upsell-no" onclick="declineUpsell()">No thanks, keep it one-time</button>
+      </div>
+    </div>
+
     <!-- SUCCESS -->
     <div class="success-state" id="successState">
       <div class="success-icon">&#x1F9A2;</div>
       <h3>You&rsquo;re All Set!</h3>
-      <p>We&rsquo;ll confirm your appointment within 2 hours via phone and text. We can&rsquo;t wait to make your home shine.</p>
+      <p id="successMsg">We&rsquo;ll confirm your appointment within 2 hours via phone and text. We can&rsquo;t wait to make your home shine.</p>
       <button class="btn-primary" style="margin:1.5rem auto 0;" onclick="closeModal()">&#x2190; Back to Home</button>
     </div>
   </div>
@@ -773,6 +795,9 @@ function openModal(svc) {
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successState').classList.remove('show');
+  document.getElementById('bookingForm').style.display = '';
 }
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
@@ -847,13 +872,56 @@ function submitForm(btn) {
       gtag('event', 'booking_submit', { event_category: 'booking', service: selectedService });
       try{if(window.fbq)fbq('track','Lead',{content_name:'booking_form',currency:'USD'});}catch(e){}
       document.getElementById('bookingForm').style.display = 'none';
-      document.getElementById('successState').classList.add('show');
+      var upsellEligible = selectedService === 'standard' || selectedService === 'deep';
+      if (upsellEligible) {
+        document.getElementById('upsellState').classList.add('show');
+      } else {
+        document.getElementById('successState').classList.add('show');
+      }
     })
     .catch(function() {
       btn.disabled = false;
       btn.innerHTML = orig;
       alert('Something went wrong. Please call us at (210) 461-3153 or try again.');
     });
+}
+
+// ── UPSELL ────────────────────────────────────────────────────────────────────
+var upsellFrequency = 'weekly';
+
+function selectFreq(f) {
+  upsellFrequency = f;
+  ['Weekly','Biweekly','Monthly'].forEach(function(id) {
+    var el = document.getElementById('freq' + id);
+    if (el) el.classList.toggle('selected', id.toLowerCase() === f);
+  });
+}
+
+function acceptUpsell() {
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      firstName:          document.getElementById('firstName').value.trim(),
+      lastName:           document.getElementById('lastName').value.trim(),
+      phone:              document.getElementById('phone').value.trim(),
+      email:              document.getElementById('email').value.trim(),
+      recurringInterest:  'yes',
+      recurringFrequency: upsellFrequency,
+      recurringDiscount:  '15%',
+      notes:              'UPSELL: Recurring ' + upsellFrequency + ' — 15% discount requested'
+    })
+  }).catch(function(){});
+  gtag('event', 'upsell_accept', { event_category: 'booking', frequency: upsellFrequency });
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successMsg').textContent = "We’ll confirm your recurring schedule and 15% discount within 2 hours. We can’t wait to make your home shine every " + upsellFrequency + "!";
+  document.getElementById('successState').classList.add('show');
+}
+
+function declineUpsell() {
+  gtag('event', 'upsell_decline', { event_category: 'booking' });
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successState').classList.add('show');
 }
 
 // ── SET MIN DATE ──────────────────────────────────────────────────────────────
@@ -868,6 +936,23 @@ function submitForm(btn) {
 </script>
 <style>
 @keyframes spin{to{transform:rotate(360deg);}}
+.upsell-state{text-align:center;padding:2rem 1.8rem 2.5rem;display:none;}
+.upsell-state.show{display:block;}
+.upsell-badge{display:inline-block;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;margin-bottom:1rem;}
+.upsell-icon{font-size:2.4rem;margin-bottom:.7rem;}
+.upsell-state h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
+.upsell-state p{color:var(--text-mid);font-size:.9rem;line-height:1.65;margin-bottom:.8rem;}
+.upsell-savings{background:linear-gradient(135deg,#f4fbf4,#e9f7e9);border:2px solid #66bb6a;border-radius:12px;padding:1rem 1.2rem;margin:1rem 0 1.1rem;}
+.upsell-big-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#2e7d32;line-height:1;}
+.upsell-big-label{font-size:.83rem;color:#388e3c;margin-top:.25rem;}
+.upsell-freq-label{font-size:.82rem;color:var(--text-mid);margin-bottom:.5rem !important;}
+.upsell-freq{display:flex;gap:.7rem;margin-bottom:1.2rem;}
+.upsell-freq-btn{flex:1;padding:.65rem .3rem;border:2px solid #d4b875;border-radius:9px;background:#fff;cursor:pointer;font-size:.84rem;font-weight:600;color:var(--navy);transition:all .18s;}
+.upsell-freq-btn.selected{background:var(--gold);border-color:var(--gold);color:#fff;}
+.upsell-actions{display:flex;flex-direction:column;gap:.65rem;}
+.btn-upsell-yes{background:var(--gold);color:#fff;border:none;border-radius:9px;padding:.9rem 1.5rem;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s;letter-spacing:.01em;}
+.btn-upsell-yes:hover{background:#b8923e;}
+.btn-upsell-no{background:none;border:none;color:var(--text-light);font-size:.83rem;cursor:pointer;padding:.35rem;text-decoration:underline;}
 </style>
 <script>
 document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
