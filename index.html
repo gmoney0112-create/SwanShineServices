@@ -881,104 +881,109 @@ function submitForm(btn) {
   };
   var orig = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span>Sending\u2026';
-  fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-    .then(function() {
-      gtag('event', 'booking_submit', { event_category: 'booking', service: selectedService });
-      try{if(window.fbq)fbq('track','Lead',{content_name:'booking_form',currency:'USD'});}catch(e){}
-      document.getElementById('bookingForm').style.display = 'none';
-      var upsellEligible = selectedService === 'standard' || selectedService === 'deep';
-      if (upsellEligible) {
-        document.getElementById('upsellState').classList.add('show');
-      } else {
-        document.getElementById('successState').classList.add('show');
-      }
-    })
-    .catch(function() {
-      btn.disabled = false;
-      btn.innerHTML = orig;
-      alert('Something went wrong. Please call us at (210) 461-3153 or try again.');
-    });
-}
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span> Sending…';
 
-// ── UPSELL ────────────────────────────────────────────────────────────────────
-var upsellFrequency = 'weekly';
-var upsellDiscounts = { weekly: '15%', biweekly: '10%', monthly: '5%' };
-var upsellFreqLabels = { weekly: 'weekly clean', biweekly: 'bi-weekly clean', monthly: 'monthly clean' };
-var upsellFreqDisplay = { weekly: 'Weekly', biweekly: 'Bi-Weekly', monthly: 'Monthly' };
-
-function selectFreq(f) {
-  upsellFrequency = f;
-  ['Weekly','Biweekly','Monthly'].forEach(function(id) {
-    var el = document.getElementById('freq' + id);
-    if (el) el.classList.toggle('selected', id.toLowerCase() === f);
-  });
-  var pct = upsellDiscounts[f];
-  document.getElementById('upsellPct').textContent = pct + ' OFF';
-  document.getElementById('upsellLabel').textContent = 'every ' + upsellFreqLabels[f];
-  document.getElementById('upsellHeading').textContent = 'Save ' + pct + ' on Every Visit';
-  document.getElementById('upsellYesBtn').textContent = '\u2713  Yes \u2014 Lock In My ' + pct + ' Discount';
-}
-
-function acceptUpsell() {
-  var pct = upsellDiscounts[upsellFrequency];
   fetch(WEBHOOK, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      firstName:          document.getElementById('firstName').value.trim(),
-      lastName:           document.getElementById('lastName').value.trim(),
-      phone:              document.getElementById('phone').value.trim(),
-      email:              document.getElementById('email').value.trim(),
-      recurringInterest:  'yes',
-      recurringFrequency: upsellFrequency,
-      recurringDiscount:  pct,
-      notes:              'UPSELL: Recurring ' + upsellFreqDisplay[upsellFrequency] + ' \u2014 ' + pct + ' discount requested'
-    })
-  }).catch(function(){});
-  gtag('event', 'upsell_accept', { event_category: 'booking', frequency: upsellFrequency, discount: pct });
-  document.getElementById('upsellState').classList.remove('show');
-  document.getElementById('successMsg').textContent = "We'll confirm your " + upsellFreqDisplay[upsellFrequency].toLowerCase() + " schedule and " + pct + " discount within 2 hours. We can't wait to make your home shine!";
-  document.getElementById('successState').classList.add('show');
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r;
+  })
+  .then(function() {
+    gtag('event', 'booking_submit', {
+      event_category: 'booking',
+      service: payload.serviceType,
+      value: payload.estimatedPrice
+    });
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('upsellState').classList.add('show');
+  })
+  .catch(function(err) {
+    console.error('Webhook error:', err);
+    btn.disabled = false;
+    btn.innerHTML = orig;
+    alert('Something went wrong. Please call us at (210) 461-3153 or try again.');
+  });
+}
+
+// ── UPSELL ───────────────────────────────────────────────────────────────────────────────
+var selectedFreq = 'weekly';
+var freqData = {
+  weekly:    { pct: '15% OFF', label: 'every weekly clean',    heading: 'Save 15% on Every Visit',     btnText: 'Yes — Lock In My 15% Discount' },
+  biweekly:  { pct: '10% OFF', label: 'every bi-weekly clean', heading: 'Save 10% Every Other Visit',  btnText: 'Yes — Lock In My 10% Discount' },
+  monthly:   { pct: '5% OFF',  label: 'every monthly clean',   heading: 'Save 5% on Every Visit',      btnText: 'Yes — Lock In My 5% Discount'  }
+};
+
+function selectFreq(f) {
+  selectedFreq = f;
+  ['weekly','biweekly','monthly'].forEach(function(k) {
+    document.getElementById('freq' + k.charAt(0).toUpperCase() + k.slice(1)).classList.toggle('selected', k === f);
+  });
+  var d = freqData[f];
+  document.getElementById('upsellPct').textContent   = d.pct;
+  document.getElementById('upsellLabel').textContent = d.label;
+  document.getElementById('upsellHeading').textContent = d.heading;
+  document.getElementById('upsellYesBtn').textContent = '✓  ' + d.btnText;
+}
+
+function acceptUpsell() {
+  var upsellPayload = {
+    firstName:     document.getElementById('firstName').value.trim(),
+    lastName:      document.getElementById('lastName').value.trim(),
+    phone:         document.getElementById('phone').value.trim(),
+    email:         document.getElementById('email').value.trim(),
+    recurringPlan: selectedFreq,
+    discount:      freqData[selectedFreq].pct,
+    source:        'upsell-recurring',
+    submittedAt:   new Date().toISOString()
+  };
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(upsellPayload)
+  }).catch(function(e) { console.error('Upsell webhook error:', e); });
+  gtag('event', 'upsell_accept', { event_category: 'booking', plan: selectedFreq });
+  showSuccess('Recurring plan locked in! We’ll confirm your schedule and discount within 2 hours.');
 }
 
 function declineUpsell() {
   gtag('event', 'upsell_decline', { event_category: 'booking' });
-  document.getElementById('upsellState').classList.remove('show');
-  document.getElementById('successState').classList.add('show');
+  showSuccess('We’ll confirm your appointment within 2 hours via phone and text. We can’t wait to make your home shine.');
 }
 
-// ── SET MIN DATE ──────────────────────────────────────────────────────────────
-(function() {
-  var d = new Date();
-  d.setDate(d.getDate() + 1);
-  var iso = d.toISOString().split('T')[0];
-  var el = document.getElementById('prefDate');
-  if (el) { el.min = iso; el.value = iso; }
-  updateEstimate();
-})();
+function showSuccess(msg) {
+  document.getElementById('upsellState').classList.remove('show');
+  document.getElementById('successMsg').textContent = msg;
+  document.getElementById('successState').classList.add('show');
+}
 </script>
+
 <style>
-@keyframes spin{to{transform:rotate(360deg);}}
-.upsell-state{text-align:center;padding:2rem 1.8rem 2.5rem;display:none;}
-.upsell-state.show{display:block;}
-.upsell-badge{display:inline-block;background:var(--gold);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;margin-bottom:1rem;}
-.upsell-icon{font-size:2.4rem;margin-bottom:.7rem;}
-.upsell-state h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:.5rem;}
-.upsell-state p{color:var(--text-mid);font-size:.9rem;line-height:1.65;margin-bottom:.8rem;}
-.upsell-savings{background:linear-gradient(135deg,#f4fbf4,#e9f7e9);border:2px solid #66bb6a;border-radius:12px;padding:1rem 1.2rem;margin:1rem 0 1.1rem;}
-.upsell-big-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#2e7d32;line-height:1;}
-.upsell-big-label{font-size:.83rem;color:#388e3c;margin-top:.25rem;}
-.upsell-freq-label{font-size:.82rem;color:var(--text-mid);margin-bottom:.5rem !important;}
-.upsell-freq{display:flex;gap:.7rem;margin-bottom:1.2rem;}
-.upsell-freq-btn{flex:1;padding:.65rem .3rem;border:2px solid #d4b875;border-radius:9px;background:#fff;cursor:pointer;font-size:.84rem;font-weight:600;color:var(--navy);transition:all .18s;line-height:1.3;}
-.upsell-freq-btn small{display:block;font-size:.72rem;font-weight:400;opacity:.75;margin-top:.15rem;}
-.upsell-freq-btn.selected{background:var(--gold);border-color:var(--gold);color:#fff;}
-.upsell-freq-btn.selected small{opacity:.85;}
-.upsell-actions{display:flex;flex-direction:column;gap:.65rem;}
-.btn-upsell-yes{background:var(--gold);color:#fff;border:none;border-radius:9px;padding:.9rem 1.5rem;font-size:1rem;font-weight:700;cursor:pointer;width:100%;transition:background .2s;letter-spacing:.01em;}
-.btn-upsell-yes:hover{background:#b8923e;}
-.btn-upsell-no{background:none;border:none;color:var(--text-light);font-size:.83rem;cursor:pointer;padding:.35rem;text-decoration:underline;}
+@keyframes spin { to { transform: rotate(360deg); } }
+.upsell-state { display:none; text-align:center; padding:2rem 1.8rem 2.5rem; }
+.upsell-state.show { display:block; }
+.upsell-badge { display:inline-block; background:var(--gold-pale); border:1px solid rgba(201,168,76,.3); color:var(--gold); font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.3rem .9rem; border-radius:50px; margin-bottom:1rem; }
+.upsell-icon { font-size:2.5rem; margin-bottom:.6rem; }
+.upsell-state h3 { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; color:var(--navy); margin-bottom:.5rem; }
+.upsell-state p { color:var(--text-mid); font-size:.93rem; line-height:1.7; max-width:340px; margin:0 auto .8rem; }
+.upsell-savings { background:var(--gold-pale); border-radius:var(--r); padding:.9rem 1.2rem; margin:.8rem auto 1.4rem; max-width:220px; }
+.upsell-big-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:600; color:var(--navy); line-height:1; }
+.upsell-big-label { font-size:.78rem; color:var(--text-mid); margin-top:.2rem; }
+.upsell-freq-label { font-size:.82rem; font-weight:600; color:var(--text-mid); margin-bottom:.7rem; }
+.upsell-freq { display:flex; gap:.6rem; justify-content:center; margin-bottom:1.4rem; }
+.upsell-freq-btn { flex:1; max-width:110px; padding:.65rem .5rem; border:2px solid var(--cream-dark); border-radius:var(--r); background:var(--white); cursor:pointer; font-size:.82rem; font-weight:600; color:var(--text-mid); line-height:1.4; transition:all .2s; }
+.upsell-freq-btn small { font-weight:400; color:var(--text-light); font-size:.75rem; }
+.upsell-freq-btn.selected { border-color:var(--gold); background:var(--gold-pale); color:var(--navy); }
+.upsell-freq-btn:hover { border-color:rgba(201,168,76,.5); }
+.upsell-actions { display:flex; flex-direction:column; gap:.7rem; align-items:center; }
+.btn-upsell-yes { background:var(--gold); color:var(--navy); padding:.85rem 2rem; border-radius:50px; border:none; font-weight:700; font-size:.95rem; cursor:pointer; width:100%; max-width:340px; transition:background .2s; }
+.btn-upsell-yes:hover { background:var(--gold-light); }
+.btn-upsell-no { background:none; border:none; color:var(--text-light); font-size:.84rem; cursor:pointer; text-decoration:underline; transition:color .2s; }
+.btn-upsell-no:hover { color:var(--text-mid); }
 </style>
 <script>
 document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
