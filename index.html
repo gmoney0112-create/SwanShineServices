@@ -649,9 +649,9 @@ textarea{resize:vertical;min-height:80px;}
             <div class="field-group">
               <label class="field-label" for="prefTime">Preferred Time</label>
               <select id="prefTime">
-                <option value="morning">Morning (8am&ndash;12pm)</option>
-                <option value="afternoon">Afternoon (12&ndash;4pm)</option>
-                <option value="evening">Evening (4&ndash;7pm)</option>
+                <option value="Morning (8am-12pm)">Morning (8am&ndash;12pm)</option>
+                <option value="Afternoon (12-4pm)">Afternoon (12&ndash;4pm)</option>
+                <option value="Evening (4-7pm)">Evening (4&ndash;7pm)</option>
               </select>
             </div>
           </div>
@@ -767,7 +767,7 @@ function updateEstimate() {
   var mid = base + extra;
   var low = Math.round(mid * 0.88 / 5) * 5;
   var high = Math.round(mid * 1.18 / 5) * 5;
-  el.textContent = '$' + low + ' – $' + high;
+  el.textContent = '$' + low + ' \u2013 $' + high;
 }
 
 // ── NAV ───────────────────────────────────────────────────────────────────────
@@ -814,7 +814,7 @@ function goStep(n, silent) {
     prog.classList.toggle('active', i === n);
     prog.classList.toggle('done', i < n);
   });
-  var labels = ['Step 1 of 3 — Select Your Service', 'Step 2 of 3 — Schedule & Address', 'Step 3 of 3 — Your Contact Info'];
+  var labels = ['Step 1 of 3 \u2014 Select Your Service', 'Step 2 of 3 \u2014 Schedule & Address', 'Step 3 of 3 \u2014 Your Contact Info'];
   document.getElementById('progLabel').textContent = labels[n - 1];
   document.getElementById('modal').scrollTop = 0;
   if (!silent) gtag('event', 'booking_step', { event_category: 'booking', step: n });
@@ -851,21 +851,27 @@ function submitForm(btn) {
   }
   if (!validateStep3()) return;
   var svcLabels = { standard: 'Standard Cleaning', deep: 'Deep Cleaning', moveinout: 'Move In / Move Out', commercial: 'Commercial Cleaning' };
+  var bedroomsEl = document.getElementById('bedrooms');
+  var bathroomsEl = document.getElementById('bathrooms');
+  var bedroomsText = bedroomsEl ? bedroomsEl.options[bedroomsEl.selectedIndex].text : 'Not specified';
+  var bathroomsText = bathroomsEl ? bathroomsEl.options[bathroomsEl.selectedIndex].text : 'Not specified';
   var payload = {
-    firstName: document.getElementById('firstName').value.trim(),
-    lastName:  document.getElementById('lastName').value.trim(),
-    phone:     document.getElementById('phone').value.trim(),
-    email:     document.getElementById('email').value.trim(),
-    service:   svcLabels[selectedService] || selectedService,
-    date:      document.getElementById('prefDate').value || 'Flexible',
-    time:      document.getElementById('prefTime').value,
-    address:   document.getElementById('address').value.trim() || 'Not provided',
-    notes:     document.getElementById('notes').value.trim(),
+    firstName:      document.getElementById('firstName').value.trim(),
+    lastName:       document.getElementById('lastName').value.trim(),
+    phone:          document.getElementById('phone').value.trim(),
+    email:          document.getElementById('email').value.trim(),
+    service:        svcLabels[selectedService] || selectedService,
+    preferredDate:  document.getElementById('prefDate').value || 'Flexible',
+    preferredTime:  document.getElementById('prefTime').value,
+    bedrooms:       bedroomsText,
+    bathrooms:      bathroomsText,
+    address:        document.getElementById('address').value.trim() || 'Not provided',
+    notes:          document.getElementById('notes').value.trim(),
     estimatedPrice: document.getElementById('estimateDisplay').textContent
   };
   var orig = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span>Sending&hellip;';
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span>Sending\u2026';
   fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
     .then(function() {
       localStorage.setItem('ss_last_submit', Date.now().toString());
@@ -902,7 +908,7 @@ function selectFreq(f) {
   document.getElementById('upsellPct').textContent = pct + ' OFF';
   document.getElementById('upsellLabel').textContent = 'every ' + upsellFreqLabels[f];
   document.getElementById('upsellHeading').textContent = 'Save ' + pct + ' on Every Visit';
-  document.getElementById('upsellYesBtn').textContent = '✓  Yes — Lock In My ' + pct + ' Discount';
+  document.getElementById('upsellYesBtn').textContent = '\u2713  Yes \u2014 Lock In My ' + pct + ' Discount';
 }
 
 function acceptUpsell() {
@@ -918,7 +924,7 @@ function acceptUpsell() {
       recurringInterest:  'yes',
       recurringFrequency: upsellFrequency,
       recurringDiscount:  pct,
-      notes:              'UPSELL: Recurring ' + upsellFreqDisplay[upsellFrequency] + ' — ' + pct + ' discount requested'
+      notes:              'UPSELL: Recurring ' + upsellFreqDisplay[upsellFrequency] + ' \u2014 ' + pct + ' discount requested'
     })
   }).catch(function(){});
   gtag('event', 'upsell_accept', { event_category: 'booking', frequency: upsellFrequency, discount: pct });
