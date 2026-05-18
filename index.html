@@ -842,39 +842,48 @@ var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/w
 
 function submitForm(btn) {
   if (document.getElementById('website').value) return; // honeypot
-  var last = localStorage.getItem('ss_last_submit');
-  if (last && Date.now() - parseInt(last) < 60000) {
-    goStep(1);
-    document.getElementById('bookingForm').style.display = 'none';
-    document.getElementById('successState').classList.add('show');
-    return;
-  }
   if (!validateStep3()) return;
+
+  // Double-click guard only — does NOT skip the webhook
+  if (btn.disabled) return;
+
   var svcLabels = { standard: 'Standard Cleaning', deep: 'Deep Cleaning', moveinout: 'Move In / Move Out', commercial: 'Commercial Cleaning' };
+  var timeLabels = { morning: 'Morning (8am-12pm)', afternoon: 'Afternoon (12-4pm)', evening: 'Evening (4-7pm)' };
+  var prefTime = document.getElementById('prefTime').value;
   var bedroomsEl = document.getElementById('bedrooms');
   var bathroomsEl = document.getElementById('bathrooms');
   var bedroomsText = bedroomsEl ? bedroomsEl.options[bedroomsEl.selectedIndex].text : 'Not specified';
   var bathroomsText = bathroomsEl ? bathroomsEl.options[bathroomsEl.selectedIndex].text : 'Not specified';
   var payload = {
+    // Contact
     firstName:      document.getElementById('firstName').value.trim(),
     lastName:       document.getElementById('lastName').value.trim(),
     phone:          document.getElementById('phone').value.trim(),
     email:          document.getElementById('email').value.trim(),
-    service:        svcLabels[selectedService] || selectedService,
+    // Booking details (explicit names for new GHL mappings)
+    serviceType:    svcLabels[selectedService] || selectedService,
     preferredDate:  document.getElementById('prefDate').value || 'Flexible',
-    preferredTime:  document.getElementById('prefTime').value,
+    preferredTime:  timeLabels[prefTime] || prefTime,
     bedrooms:       bedroomsText,
     bathrooms:      bathroomsText,
+    serviceAddress: document.getElementById('address').value.trim() || 'Not provided',
+    specialNotes:   document.getElementById('notes').value.trim() || 'None',
+    estimatedPrice: document.getElementById('estimateDisplay').textContent,
+    // Legacy names (keeps existing GHL field mappings working)
+    service:        svcLabels[selectedService] || selectedService,
+    date:           document.getElementById('prefDate').value || 'Flexible',
+    time:           timeLabels[prefTime] || prefTime,
     address:        document.getElementById('address').value.trim() || 'Not provided',
-    notes:          document.getElementById('notes').value.trim(),
-    estimatedPrice: document.getElementById('estimateDisplay').textContent
+    notes:          document.getElementById('notes').value.trim() || 'None',
+    // Meta
+    source:         'website-booking-form',
+    submittedAt:    new Date().toISOString()
   };
   var orig = btn.innerHTML;
   btn.disabled = true;
   btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span>Sending\u2026';
   fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
     .then(function() {
-      localStorage.setItem('ss_last_submit', Date.now().toString());
       gtag('event', 'booking_submit', { event_category: 'booking', service: selectedService });
       try{if(window.fbq)fbq('track','Lead',{content_name:'booking_form',currency:'USD'});}catch(e){}
       document.getElementById('bookingForm').style.display = 'none';
