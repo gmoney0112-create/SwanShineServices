@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Cleaning Cost Calculator | Swan Shine San Antonio</title>
+<meta name="description" content="Find out exactly what your San Antonio facility should be paying for commercial cleaning. Get an instant cost estimate — free, no obligation.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Facility Cleaning Cost Calculator | Swan Shine San Antonio">
+<meta property="og:description" content="Get an instant monthly cost estimate for your San Antonio facility. Takes 60 seconds. No sales calls unless you want one.">
+<meta property="og:url" content="https://www.swanshinecleaningservices.com/commercial-cleaning-audit">
+<meta property="og:image" content="https://www.swanshinecleaningservices.com/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.swanshinecleaningservices.com/images/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F9A2;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-58WE7F11EG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-58WE7F11EG');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+  --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,.12);
+  --cream:#f8f4ef;--cream-dark:#ede7de;--white:#fff;
+  --text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
+  --green:#2e7d32;--green-light:#f4fbf4;--green-border:#66bb6a;
+  --r:10px;--r-lg:16px;--shadow:0 12px 40px rgba(10,22,40,.10);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;}
+img{max-width:100%;display:block;}
+
+/* HEADER */
+.site-header{background:var(--navy);padding:.9rem 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,168,76,.15);}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white);letter-spacing:.02em;}
+.logo-text span{color:var(--gold);}
+.header-phone{font-size:.85rem;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:.4rem;}
+.header-phone:hover{color:var(--gold-light);}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#061420 0%,var(--navy) 60%,#0d2035 100%);padding:4rem 5% 3rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.08),transparent 60%);}
+.hero-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.hero-tag{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.4rem;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:1rem;letter-spacing:-.01em;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:560px;margin:0 auto 2rem;}
+.trust-row{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;justify-content:center;}
+.trust-item{font-size:.78rem;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:.3rem;}
+.trust-item::before{content:'&#10003;';color:var(--gold);font-weight:700;}
+
+/* CALCULATOR CARD */
+.calc-section{padding:3rem 5%;background:var(--cream);}
+.calc-card{max-width:680px;margin:0 auto;background:var(--white);border-radius:20px;box-shadow:0 24px 80px rgba(10,22,40,.12);overflow:hidden;}
+.calc-header{background:var(--navy);padding:1.6rem 2rem;}
+.calc-header h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--white);margin-bottom:.3rem;}
+.calc-header p{font-size:.84rem;color:rgba(255,255,255,.55);}
+.step-tabs{display:flex;background:rgba(255,255,255,.06);border-radius:8px;padding:.25rem;margin-top:1.2rem;gap:.25rem;}
+.step-tab{flex:1;text-align:center;padding:.5rem;border-radius:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.04em;text-transform:uppercase;transition:all .2s;}
+.step-tab.active{background:var(--gold);color:var(--navy);}
+.step-tab.done{background:rgba(201,168,76,.2);color:var(--gold);}
+.calc-body{padding:2rem;}
+
+/* FACILITY TYPE GRID */
+.ftype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem;margin-bottom:1.6rem;}
+.ftype-btn{border:2px solid var(--cream-dark);border-radius:var(--r);padding:1rem .75rem;cursor:pointer;text-align:center;background:var(--white);transition:all .2s;}
+.ftype-btn:hover{border-color:rgba(201,168,76,.5);}
+.ftype-btn.selected{border-color:var(--gold);background:var(--gold-pale);}
+.ftype-icon{font-size:1.5rem;margin-bottom:.4rem;}
+.ftype-name{font-size:.8rem;font-weight:600;color:var(--navy);}
+
+/* FORM ELEMENTS */
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+.field-group{margin-bottom:1.2rem;}
+.field-label{font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:.5rem;}
+select,input[type=text],input[type=email],input[type=tel]{width:100%;padding:.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:var(--r);font-size:.94rem;color:var(--text-dark);background:var(--white);outline:none;transition:border-color .2s;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;}
+input[type=text],input[type=email],input[type=tel]{background-image:none;}
+select:focus,input:focus{border-color:var(--gold);}
+.error-msg{color:#c0392b;font-size:.78rem;margin-top:.35rem;display:none;}
+.error-msg.show{display:block;}
+
+/* ESTIMATE DISPLAY */
+.estimate-reveal{background:linear-gradient(135deg,var(--green-light),#e9f7e9);border:2px solid var(--green-border);border-radius:var(--r-lg);padding:1.4rem 1.6rem;margin-bottom:1.6rem;text-align:center;display:none;}
+.estimate-reveal.show{display:block;}
+.estimate-tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem;}
+.estimate-range{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--green);line-height:1;}
+.estimate-period{font-size:.85rem;color:var(--green);margin-top:.25rem;opacity:.8;}
+.estimate-note{font-size:.78rem;color:var(--text-mid);margin-top:.7rem;line-height:1.5;}
+
+/* DIVIDER */
+.step-divider{border:none;border-top:1px solid var(--cream-dark);margin:1.6rem 0;}
+
+/* BUTTONS */
+.btn-primary{width:100%;background:var(--gold);color:var(--navy);padding:.9rem 1.5rem;border-radius:50px;border:none;cursor:pointer;font-weight:700;font-size:1rem;transition:background .2s;letter-spacing:.01em;}
+.btn-primary:hover{background:var(--gold-light);}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed;}
+.btn-back{background:none;border:1.5px solid var(--cream-dark);color:var(--text-mid);padding:.7rem 1.4rem;border-radius:50px;cursor:pointer;font-size:.9rem;margin-right:.75rem;transition:all .2s;}
+.btn-back:hover{border-color:var(--navy);color:var(--navy);}
+.actions-row{display:flex;align-items:center;margin-top:1.4rem;}
+.btn-next-full{flex:1;background:var(--navy);color:var(--white);padding:.8rem 1.5rem;border-radius:50px;border:none;cursor:pointer;font-weight:600;font-size:.95rem;transition:background .2s;}
+.btn-next-full:hover{background:var(--navy-mid,#152244);}
+.privacy-note{font-size:.75rem;color:var(--text-light);text-align:center;margin-top:.9rem;line-height:1.6;}
+
+/* SUCCESS STATE */
+.success-state{display:none;text-align:center;padding:3rem 2rem;}
+.success-state.show{display:block;}
+.success-icon{font-size:3rem;margin-bottom:1rem;}
+.success-state h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy);margin-bottom:.6rem;}
+.success-state p{color:var(--text-mid);line-height:1.7;font-size:.94rem;margin-bottom:1.5rem;}
+.success-details{background:var(--cream);border-radius:var(--r);padding:1rem 1.2rem;margin:1rem 0 1.5rem;text-align:left;}
+.success-details p{font-size:.85rem;margin-bottom:.3rem;}
+.success-details strong{color:var(--navy);}
+
+/* WHY SWAN SHINE */
+.why-section{background:var(--navy);padding:4rem 5%;text-align:center;}
+.why-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;color:var(--white);margin-bottom:.6rem;}
+.why-section .sub{color:rgba(255,255,255,.6);font-size:.94rem;max-width:520px;margin:.5rem auto 2.5rem;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:960px;margin:0 auto;}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:1.6rem;text-align:left;}
+.why-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--gold);line-height:1;margin-bottom:.5rem;}
+.why-card h3{font-size:.92rem;font-weight:600;color:var(--white);margin-bottom:.4rem;}
+.why-card p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.6;}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--white);padding:4rem 5%;}
+.testimonials h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;color:var(--navy);text-align:center;margin-bottom:2rem;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;max-width:960px;margin:0 auto;}
+.testi-card{border:1px solid var(--cream-dark);border-radius:var(--r-lg);padding:1.6rem;}
+.testi-stars{color:var(--gold);font-size:.85rem;margin-bottom:.8rem;}
+.testi-text{font-size:.92rem;color:var(--text-mid);line-height:1.75;font-style:italic;margin-bottom:1rem;}
+.testi-author{font-size:.82rem;font-weight:700;color:var(--navy);}
+.testi-company{font-size:.78rem;color:var(--text-light);}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--cream);padding:3.5rem 5%;text-align:center;}
+.bottom-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);margin-bottom:.5rem;}
+.bottom-cta p{color:var(--text-mid);font-size:.94rem;margin-bottom:1.5rem;}
+.bottom-cta a{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--navy);padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;transition:background .2s;}
+.bottom-cta a:hover{background:var(--gold-light);}
+
+/* FOOTER */
+.site-footer{background:#060e1a;padding:1.5rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.site-footer span{font-size:.78rem;color:rgba(255,255,255,.25);}
+.site-footer a{font-size:.78rem;color:rgba(255,255,255,.35);transition:color .2s;}
+.site-footer a:hover{color:var(--gold);}
+
+/* HONEYPOT */
+.hp{display:none!important;visibility:hidden;position:absolute;left:-9999px;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .field-row{grid-template-columns:1fr;}
+  .calc-body{padding:1.4rem;}
+  .ftype-grid{grid-template-columns:repeat(3,1fr);}
+  .hero{padding:3rem 5% 2.5rem;}
+  .actions-row{flex-direction:column;gap:.75rem;}
+  .btn-back{width:100%;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo-text">Swan <span>Shine</span> | Cleaning Service</div>
+  <a href="tel:+12104613153" class="header-phone">&#x260E; (210) 461-3153</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Free Tool for San Antonio Business Owners</div>
+    <h1>What Should Your Facility <em>Actually</em> Be Paying for Cleaning?</h1>
+    <p class="hero-sub">Most San Antonio businesses overpay — or underget what they pay for. Get an instant monthly cost estimate customized to your facility. Takes 60 seconds.</p>
+    <div class="trust-row">
+      <span class="trust-item">Insured &amp; Bonded</span>
+      <span class="trust-item">Background-Checked Staff</span>
+      <span class="trust-item">Custom Commercial Contracts</span>
+      <span class="trust-item">No Long-Term Lock-In</span>
+    </div>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="calc-card">
+    <div class="calc-header">
+      <h2>Facility Cleaning Cost Calculator</h2>
+      <p>Get your personalized monthly estimate in 2 steps</p>
+      <div class="step-tabs">
+        <div class="step-tab active" id="tab1">1. Your Facility</div>
+        <div class="step-tab" id="tab2">2. Get Estimate</div>
+      </div>
+    </div>
+
+    <div class="calc-body" id="calcBody">
+
+      <!-- STEP 1 -->
+      <div id="step1Panel">
+        <div class="field-group">
+          <span class="field-label">Facility Type</span>
+          <div class="ftype-grid" id="ftypeGrid">
+            <button type="button" class="ftype-btn" data-type="office" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F3E2;</div>
+              <div class="ftype-name">Office</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="retail" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F6CD;</div>
+              <div class="ftype-name">Retail</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="medical" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F3E5;</div>
+              <div class="ftype-name">Medical</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="restaurant" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F37D;</div>
+              <div class="ftype-name">Restaurant</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="warehouse" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F3ED;</div>
+              <div class="ftype-name">Warehouse</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="gym" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F4AA;</div>
+              <div class="ftype-name">Gym / Fitness</div>
+            </button>
+            <button type="button" class="ftype-btn" data-type="educational" onclick="selectFtype(this)">
+              <div class="ftype-icon">&#x1F3EB;</div>
+              <div class="ftype-name">School / Edu</div>
+            </button>
+          </div>
+          <span class="error-msg" id="errFtype">Please select your facility type.</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="sqft">Square Footage</label>
+            <select id="sqft" onchange="updateCalc()">
+              <option value="">Select size</option>
+              <option value="under1000">Under 1,000 sq ft</option>
+              <option value="1000-2500">1,000 &ndash; 2,500 sq ft</option>
+              <option value="2500-5000">2,500 &ndash; 5,000 sq ft</option>
+              <option value="5000-10000">5,000 &ndash; 10,000 sq ft</option>
+              <option value="10000plus">10,000+ sq ft</option>
+            </select>
+            <span class="error-msg" id="errSqft">Please select your square footage.</span>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="restrooms">Restrooms</label>
+            <select id="restrooms" onchange="updateCalc()">
+              <option value="">Select</option>
+              <option value="1-2">1 &ndash; 2</option>
+              <option value="3-5">3 &ndash; 5</option>
+              <option value="6-10">6 &ndash; 10</option>
+              <option value="10plus">10+</option>
+            </select>
+            <span class="error-msg" id="errRestrooms">Please select restroom count.</span>
+          </div>
+        </div>
+
+        <div class="field-group" style="margin-top:1.2rem;">
+          <label class="field-label" for="frequency">Cleaning Frequency</label>
+          <select id="frequency" onchange="updateCalc()">
+            <option value="">Select frequency</option>
+            <option value="daily">Daily (5x per week)</option>
+            <option value="3x">3 Times Per Week</option>
+            <option value="2x">2 Times Per Week</option>
+            <option value="weekly">Weekly</option>
+            <option value="biweekly">Bi-Weekly</option>
+          </select>
+          <span class="error-msg" id="errFreq">Please select a cleaning frequency.</span>
+        </div>
+
+        <div class="estimate-reveal" id="estimateReveal">
+          <div class="estimate-tag">Your Estimated Monthly Investment</div>
+          <div class="estimate-range" id="estimateRange">$0 &ndash; $0</div>
+          <div class="estimate-period">per month</div>
+          <div class="estimate-note">Based on <span id="estimateDesc">your facility</span>. Enter your details below to receive a precise custom quote from Mary at Swan Shine.</div>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn-next-full" onclick="goStep2()">Get My Custom Quote &rarr;</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div id="step2Panel" style="display:none;">
+        <p style="font-size:.88rem;color:var(--text-mid);margin-bottom:1.4rem;line-height:1.6;">Your estimate is ready. Enter your details and we&rsquo;ll send you a full breakdown plus a custom quote from Mary within 2 hours.</p>
+
+        <div class="field-row">
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="firstName">First Name *</label>
+            <input type="text" id="firstName" placeholder="First name">
+            <span class="error-msg" id="errFirst">Required.</span>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="lastName">Last Name *</label>
+            <input type="text" id="lastName" placeholder="Last name">
+            <span class="error-msg" id="errLast">Required.</span>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="companyName">Business / Facility Name *</label>
+          <input type="text" id="companyName" placeholder="Company or facility name">
+          <span class="error-msg" id="errCompany">Required.</span>
+        </div>
+        <div class="field-row">
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="(210) 000-0000">
+            <span class="error-msg" id="errPhone">Enter a valid phone.</span>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label class="field-label" for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="you@company.com">
+            <span class="error-msg" id="errEmail">Enter a valid email.</span>
+          </div>
+        </div>
+        <input type="text" id="website" class="hp" tabindex="-1" autocomplete="off">
+
+        <div class="actions-row">
+          <button class="btn-back" onclick="goStep1()">&#x2190; Back</button>
+          <button class="btn-next-full" id="submitBtn" onclick="submitForm(this)">&#x2726; Send My Custom Quote</button>
+        </div>
+        <p class="privacy-note">&#x1F512; Your info is private and never sold. We&rsquo;ll only contact you about your quote.</p>
+      </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-state" id="successState">
+      <div class="success-icon">&#x1F9A2;</div>
+      <h3>You&rsquo;re All Set!</h3>
+      <p>Mary will reach out within 2 hours with your custom quote and full cost breakdown.</p>
+      <div class="success-details">
+        <p><strong>Estimated Range:</strong> <span id="successEstimate"></span>/month</p>
+        <p><strong>Next Step:</strong> Watch for a call or text from (210) 461-3153</p>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-mid);">Questions in the meantime? Call or text Mary directly:</p>
+      <a href="tel:+12104613153" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:.75rem;background:var(--gold);color:var(--navy);padding:.8rem 1.8rem;border-radius:50px;font-weight:700;font-size:.95rem;">&#x260E; (210) 461-3153</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <h2>Why San Antonio Businesses Choose <em style="color:var(--gold);font-style:italic;">Swan Shine</em></h2>
+  <p class="sub">We specialize in commercial cleaning that actually holds up to inspection &mdash; not just surface-level tidy.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <h3>Flexible Scheduling</h3>
+      <p>Early morning, evenings, weekends — we work around your business hours, not ours.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <h3>Consistent Staff</h3>
+      <p>Same trained team every visit. No strangers walking through your facility.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <h3>No Long-Term Contracts</h3>
+      <p>Month-to-month service. We earn your business every single visit.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <h3>Fully Insured</h3>
+      <p>General liability and workers&rsquo; comp. Zero risk to your business if something happens.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>What San Antonio Businesses Say</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="testi-text">&ldquo;We&rsquo;ve tried three commercial cleaners in two years. Swan Shine is the first team that actually shows up consistently and does what they say. Our office has never looked this good.&rdquo;</p>
+      <div class="testi-author">David R.</div>
+      <div class="testi-company">Property Manager, Stone Oak Office Park</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="testi-text">&ldquo;Running a medical office means I can&rsquo;t compromise on cleanliness. Swan Shine understands that. They hit every checkpoint, every time, without me having to follow up.&rdquo;</p>
+      <div class="testi-author">Dr. Patricia M.</div>
+      <div class="testi-company">Dental Practice, Alamo Heights</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+      <p class="testi-text">&ldquo;The cost calculator on this page is what made me reach out. Turned out we were overpaying by 30%. Switched to Swan Shine and got better service for less.&rdquo;</p>
+      <div class="testi-author">Kevin T.</div>
+      <div class="testi-company">Gym Owner, Northwest San Antonio</div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom-cta">
+  <h2>Ready to Get Your Custom Quote?</h2>
+  <p>Scroll back up and use the calculator &mdash; takes 60 seconds and Mary will call within 2 hours.</p>
+  <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">&#x2726; Calculate My Cost</a>
+</section>
+
+<footer class="site-footer">
+  <span>&copy; 2026 Swan Shine Cleaning Service. All rights reserved.</span>
+  <a href="../privacy.html">Privacy Policy</a>
+</footer>
+
+<script>
+var WEBHOOK = 'https://services.leadconnectorhq.com/hooks/uoI2kRMGyVb8DjPA7mAa/webhook-trigger/5fd51982-26c7-42cf-9e84-4bd575b0f609';
+
+var selectedFtype = '';
+var rates = {
+  office:      { low: 0.08, high: 0.15 },
+  retail:      { low: 0.06, high: 0.12 },
+  medical:     { low: 0.12, high: 0.20 },
+  restaurant:  { low: 0.10, high: 0.18 },
+  warehouse:   { low: 0.04, high: 0.08 },
+  gym:         { low: 0.10, high: 0.16 },
+  educational: { low: 0.07, high: 0.12 }
+};
+var sqftMid = { 'under1000': 750, '1000-2500': 1750, '2500-5000': 3750, '5000-10000': 7500, '10000plus': 13000 };
+var visitsPerMonth = { daily: 22, '3x': 13, '2x': 9, weekly: 4, biweekly: 2 };
+var restroomMonthly = { '1-2': 0, '3-5': 90, '6-10': 180, '10plus': 300 };
+var ftypeLabels = { office: 'Office', retail: 'Retail', medical: 'Medical / Dental', restaurant: 'Restaurant / Food Service', warehouse: 'Warehouse / Industrial', gym: 'Gym / Fitness', educational: 'School / Educational' };
+
+function selectFtype(btn) {
+  document.querySelectorAll('.ftype-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  selectedFtype = btn.getAttribute('data-type');
+  updateCalc();
+}
+
+function updateCalc() {
+  var sqft = document.getElementById('sqft').value;
+  var freq = document.getElementById('frequency').value;
+  var rest = document.getElementById('restrooms').value;
+  if (!selectedFtype || !sqft || !freq || !rest) {
+    document.getElementById('estimateReveal').classList.remove('show');
+    return;
+  }
+  var rate = rates[selectedFtype];
+  var sf = sqftMid[sqft] || 1000;
+  var visits = visitsPerMonth[freq] || 4;
+  var restCost = restroomMonthly[rest] || 0;
+  var low = Math.round((sf * rate.low * visits + restCost) / 10) * 10;
+  var high = Math.round((sf * rate.high * visits + restCost) / 10) * 10;
+  document.getElementById('estimateRange').textContent = '$' + low.toLocaleString() + ' – $' + high.toLocaleString();
+  var sqftLabels = { 'under1000': 'under 1,000 sq ft', '1000-2500': '1,000–2,500 sq ft', '2500-5000': '2,500–5,000 sq ft', '5000-10000': '5,000–10,000 sq ft', '10000plus': '10,000+ sq ft' };
+  var freqLabels = { daily: 'daily cleaning', '3x': '3x/week cleaning', '2x': '2x/week cleaning', weekly: 'weekly cleaning', biweekly: 'bi-weekly cleaning' };
+  document.getElementById('estimateDesc').textContent = (ftypeLabels[selectedFtype] || '') + ', ' + (sqftLabels[sqft] || '') + ', ' + (freqLabels[freq] || '');
+  document.getElementById('estimateReveal').classList.add('show');
+}
+
+function showErr(id, show) {
+  document.getElementById(id).classList.toggle('show', show);
+}
+
+function goStep2() {
+  var ok = true;
+  if (!selectedFtype) { showErr('errFtype', true); ok = false; } else { showErr('errFtype', false); }
+  if (!document.getElementById('sqft').value) { showErr('errSqft', true); ok = false; } else { showErr('errSqft', false); }
+  if (!document.getElementById('restrooms').value) { showErr('errRestrooms', true); ok = false; } else { showErr('errRestrooms', false); }
+  if (!document.getElementById('frequency').value) { showErr('errFreq', true); ok = false; } else { showErr('errFreq', false); }
+  if (!ok) return;
+  document.getElementById('step1Panel').style.display = 'none';
+  document.getElementById('step2Panel').style.display = 'block';
+  document.getElementById('tab1').classList.remove('active');
+  document.getElementById('tab1').classList.add('done');
+  document.getElementById('tab2').classList.add('active');
+  document.getElementById('calcCard');
+  window.scrollTo({ top: document.querySelector('.calc-card').offsetTop - 80, behavior: 'smooth' });
+}
+
+function goStep1() {
+  document.getElementById('step2Panel').style.display = 'none';
+  document.getElementById('step1Panel').style.display = 'block';
+  document.getElementById('tab1').classList.add('active');
+  document.getElementById('tab1').classList.remove('done');
+  document.getElementById('tab2').classList.remove('active');
+}
+
+function submitForm(btn) {
+  if (document.getElementById('website').value) return;
+  if (btn.disabled) return;
+  var fn = document.getElementById('firstName').value.trim();
+  var ln = document.getElementById('lastName').value.trim();
+  var co = document.getElementById('companyName').value.trim();
+  var ph = document.getElementById('phone').value.trim();
+  var em = document.getElementById('email').value.trim();
+  var ok = true;
+  showErr('errFirst', !fn);   if (!fn) ok = false;
+  showErr('errLast', !ln);    if (!ln) ok = false;
+  showErr('errCompany', !co); if (!co) ok = false;
+  showErr('errPhone', ph.replace(/\D/g,'').length < 10); if (ph.replace(/\D/g,'').length < 10) ok = false;
+  showErr('errEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)); if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) ok = false;
+  if (!ok) return;
+
+  var estText = document.getElementById('estimateRange').textContent;
+  var sqftLabels = { 'under1000': 'Under 1,000 sq ft', '1000-2500': '1,000-2,500 sq ft', '2500-5000': '2,500-5,000 sq ft', '5000-10000': '5,000-10,000 sq ft', '10000plus': '10,000+ sq ft' };
+  var freqLabels = { daily: 'Daily (5x/week)', '3x': '3x Per Week', '2x': '2x Per Week', weekly: 'Weekly', biweekly: 'Bi-Weekly' };
+  var restLabels = { '1-2': '1-2', '3-5': '3-5', '6-10': '6-10', '10plus': '10+' };
+
+  var payload = {
+    firstName:          fn,
+    lastName:           ln,
+    phone:              ph,
+    email:              em,
+    companyName:        co,
+    facilityType:       ftypeLabels[selectedFtype] || selectedFtype,
+    squareFootage:      sqftLabels[document.getElementById('sqft').value] || '',
+    cleaningFrequency:  freqLabels[document.getElementById('frequency').value] || '',
+    restrooms:          restLabels[document.getElementById('restrooms').value] || '',
+    estimatedMonthlyRange: estText + '/month',
+    source:             'commercial-cleaning-audit',
+    leadMagnet:         'facility-cost-calculator',
+    submittedAt:        new Date().toISOString()
+  };
+
+  var orig = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;"></span>Sending...';
+
+  fetch(WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    .then(function() {
+      gtag('event', 'lead_capture', { event_category: 'commercial', facility_type: selectedFtype });
+      document.getElementById('successEstimate').textContent = estText;
+      document.querySelector('.calc-body').style.display = 'none';
+      document.getElementById('successState').classList.add('show');
+      window.scrollTo({ top: document.querySelector('.calc-card').offsetTop - 80, behavior: 'smooth' });
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.innerHTML = orig;
+      btn.insertAdjacentHTML('afterend', '<p style="color:#c0392b;font-size:.82rem;margin-top:.5rem;">Something went wrong. Please call us at (210) 461-3153.</p>');
+    });
+}
+</script>
+<style>@keyframes spin{to{transform:rotate(360deg);}}</style>
+</body>
+</html>
