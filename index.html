@@ -110,19 +110,14 @@ h1 em{font-style:italic;color:var(--gold);}
 .hero-banner img{width:100%;border-radius:var(--r-lg);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);loading:eager;}
 
 /* VIDEO HERO */
-.video-hero{background:linear-gradient(135deg,#0a1628 0%,#152244 50%,#0d2035 100%);padding:6rem 5%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.video-hero{background:linear-gradient(135deg,#0a1628 0%,#152244 50%,#0d2035 100%);padding:5rem 5%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .video-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(201,168,76,.08),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(91,164,207,.07),transparent 60%);}
-.video-hero-bg{position:relative;z-index:2;text-align:center;width:100%;max-width:900px;}
+.video-hero-bg{position:relative;z-index:2;text-align:center;width:100%;max-width:1100px;}
 .video-hero h2{color:var(--white);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:.6rem;}
 .video-hero p{color:rgba(255,255,255,.65);font-size:.97rem;line-height:1.7;margin-bottom:2rem;}
-.video-thumb-wrap{position:relative;display:block;border-radius:var(--r-lg);overflow:hidden;cursor:pointer;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);transition:transform .3s;}
-.video-thumb-wrap:hover{transform:scale(1.015);}
-.video-thumb-wrap img{width:100%;display:block;}
-.video-play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,14,26,.35);transition:background .3s;}
-.video-thumb-wrap:hover .video-play-overlay{background:rgba(6,14,26,.2);}
-.video-play-circle{width:80px;height:80px;background:rgba(201,168,76,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(201,168,76,.4);transition:transform .3s,background .3s;}
-.video-thumb-wrap:hover .video-play-circle{transform:scale(1.1);background:var(--gold);}
-.video-play-circle svg{margin-left:5px;}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--r-lg);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
 
 /* STATS */
 .stats-bar{background:var(--white);padding:2.2rem 5%;border-bottom:1px solid var(--cream-dark);}
@@ -275,7 +270,7 @@ textarea{resize:vertical;min-height:80px;}
   h1{font-size:clamp(2.8rem,9vw,4rem);}
   .video-hero h2{font-size:clamp(1.5rem,5vw,2.5rem);}
   .video-hero p{font-size:.95rem;}
-  .video-play-btn{width:70px;height:70px;}
+  .video-grid{grid-template-columns:1fr;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
   .section{padding:4rem 5%;}
   .svc-grid{grid-template-columns:1fr 1fr;}
@@ -332,20 +327,14 @@ textarea{resize:vertical;min-height:80px;}
   <div class="video-hero-bg">
     <h2>See Swan Shine in Action</h2>
     <p>Watch how we transform spaces with precision and care</p>
-    <a class="video-thumb-wrap"
-       href="https://drive.google.com/file/d/1yOrejYzgLAyx0_rVTP6J-Hv7ci2Fuk4Z/view"
-       target="_blank" rel="noopener"
-       onclick="gtag('event','video_play',{event_category:'engagement'})"
-       aria-label="Watch Swan Shine video">
-      <img src="images/og-image.png" alt="Swan Shine Cleaning Services — watch our video">
-      <div class="video-play-overlay">
-        <div class="video-play-circle">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="8,4 8,24 24,14" fill="#0a1628"/>
-          </svg>
-        </div>
+    <div class="video-grid">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/nxIoddsuuFE" title="Swan Shine Cleaning Services" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
       </div>
-    </a>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/hhpLNSUGE0o" title="Swan Shine Cleaning Services" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
