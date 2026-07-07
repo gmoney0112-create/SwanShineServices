@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gift a Cleaning | Swan Shine San Antonio &mdash; Perfect Housewarming Gift</title>
-  <meta name="description" content="Give the gift of a spotless home. Swan Shine cleaning gift certificates for San Antonio &mdash; perfect for housewarmings, new babies, Mother's Day, and move-ins."/>
+  <title>Gift a Cleaning | Swanshine San Antonio &mdash; Perfect Housewarming Gift</title>
+  <meta name="description" content="Give the gift of a spotless home. Swanshine cleaning gift certificates for San Antonio &mdash; perfect for housewarmings, new babies, Mother's Day, and move-ins."/>
   <meta property="og:image" content="https://www.swanshinecleaningservices.com/images/og-image.png">
   <meta property="og:image:width" content="1731">
   <meta property="og:image:height" content="909">
@@ -15,19 +15,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root{
-      --navy:#0a1628;--navy-mid:#152244;--navy-light:#1e3257;
+      --navy:#3d2966;--navy-mid:#4a3875;--navy-light:#5a4885;
       --gold:#c9a84c;--gold-light:#e8cc7e;--gold-pale:rgba(201,168,76,0.12);
       --cream:#f8f4ef;--cream-dark:#ede7de;
       --white:#ffffff;--text-dark:#1a1a2e;--text-mid:#4a4a6a;--text-light:#8a8aaa;
       --border:rgba(13,43,62,0.12);
-      --shadow:0 12px 40px rgba(10,22,40,0.10);
+      --shadow:0 12px 40px rgba(61,41,102,0.10);
       --r:16px;--r-lg:20px;--r-xl:26px;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
     a{color:inherit;text-decoration:none;}
     button,input,select,textarea{font:inherit;}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(10,22,40,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18);}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(61,41,102,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.18);}
     .logo{display:flex;align-items:center;gap:12px;}
     .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
     .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:.02em;line-height:1.1;}
@@ -128,7 +128,7 @@
 <nav>
   <a href="index.html" class="logo">
     <div class="logo-icon">&#x1F9A2;</div>
-    <div class="logo-text">Swan Shine<span>Cleaning Service</span></div>
+    <div class="logo-text">Swanshine<span>Cleaning Service</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html#services">Services</a></li>
@@ -144,7 +144,7 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Give the gift of clean.</h1>
-  <p>A Swan Shine cleaning is the gift people actually want &mdash; and never buy themselves. Perfect for new homes, new babies, busy parents, and anyone who deserves a break.</p>
+  <p>A Swanshine cleaning is the gift people actually want &mdash; and never buy themselves. Perfect for new homes, new babies, busy parents, and anyone who deserves a break.</p>
   <a href="#gift-amounts" class="btn-gold">Buy a Gift Certificate</a>
 </section>
 
@@ -258,12 +258,12 @@
         <textarea id="gift-message" placeholder="Add a personal note&hellip;"></textarea>
       </div>
 
-      <button type="submit" class="submit-btn" id="gift-submit">Notify Swan Shine</button>
+      <button type="submit" class="submit-btn" id="gift-submit">Notify Swanshine</button>
       <div class="form-error" id="gift-error">Something went wrong. Call us at (210) 461-3153 and we'll sort it out.</div>
     </form>
 
     <div class="form-success" id="gift-success">
-      <p id="gift-success-msg">&#x1F9A2; Perfect! We'll reach out with a personal note from Swan Shine.</p>
+      <p id="gift-success-msg">&#x1F9A2; Perfect! We'll reach out with a personal note from Swanshine.</p>
     </div>
   </div>
 </section>
@@ -320,7 +320,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Swan Shine Cleaning Service &middot; San Antonio, TX &middot; All rights reserved</span>
+      <span>&copy; 2026 Swanshine Cleaning Service &middot; San Antonio, TX &middot; All rights reserved</span>
       <span>Insured &middot; Bonded &middot; Satisfaction Guaranteed</span>
     </div>
   </div>
@@ -357,7 +357,7 @@
 
     if (honeypot) {
       document.getElementById('gift-form').style.display = 'none';
-      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swanshine.`;
       document.getElementById('gift-success').style.display = 'block';
       return;
     }
@@ -383,12 +383,12 @@
       });
       if (!res.ok) throw new Error('Bad response');
       document.getElementById('gift-form').style.display = 'none';
-      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swan Shine.`;
+      document.getElementById('gift-success-msg').textContent = `&#x1F9A2; Perfect! We'll reach out to ${recipientName || 'your recipient'} with a personal note from Swanshine.`;
       document.getElementById('gift-success').style.display = 'block';
     } catch(err) {
       errEl.style.display = 'block';
       btn.disabled = false;
-      btn.textContent = 'Notify Swan Shine';
+      btn.textContent = 'Notify Swanshine';
     }
   });
 </script>
