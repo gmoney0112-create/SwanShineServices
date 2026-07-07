@@ -332,7 +332,7 @@
   function selectGift(amount, service, btn) {
     document.getElementById('gift-amount').value = amount + ' &mdash; ' + service;
     document.getElementById('form-title').textContent = 'Request: ' + amount + ' Gift Certificate';
-    document.getElementById('form-sub').textContent = 'Fill in the details below and we’ll contact you within 2 hours to arrange payment and send the certificate.';
+    document.getElementById('form-sub').textContent = 'Fill in the details below and we’ll contact you within 24 hours to arrange payment and send the certificate.';
     document.querySelectorAll('.amount-btn').forEach(function(b){ b.classList.remove('primary'); });
     if(btn) btn.classList.add('primary');
     document.getElementById('notify-form').scrollIntoView({behavior:'smooth', block:'start'});

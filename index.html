@@ -484,7 +484,7 @@ textarea{resize:vertical;min-height:80px;}
       <div class="why-card">
         <div class="why-icon">&#x1F4F1;</div>
         <h3>Fast Response</h3>
-        <p>We confirm every booking within 2 hours via call and text. No waiting around wondering if you're on the schedule.</p>
+        <p>We confirm every booking within 24 hours via call and text. No waiting around wondering if you're on the schedule.</p>
       </div>
     </div>
   </div>
@@ -505,7 +505,7 @@ textarea{resize:vertical;min-height:80px;}
       <div class="step">
         <div class="step-num">2</div>
         <h3>We Confirm &amp; Schedule</h3>
-        <p>Within 2 hours we confirm your booking by phone and text, and lock in your preferred date and time.</p>
+        <p>Within 24 hours we confirm your booking by phone and text, and lock in your preferred date and time.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -567,7 +567,7 @@ textarea{resize:vertical;min-height:80px;}
 <!-- CTA -->
 <section class="cta-section" id="book">
   <h2>Ready for a spotless home?</h2>
-  <p>Get your free, no-obligation estimate in under 2 minutes. We confirm within 2 hours.</p>
+  <p>Get your free, no-obligation estimate in under 2 minutes. We confirm within 24 hours.</p>
   <div class="cta-actions">
     <button class="btn-primary" onclick="openModal()">&#x2726; Book Your Cleaning</button>
     <a href="tel:+12104613153" class="btn-outline" onclick="gtag('event','call_click',{event_category:'engagement',event_label:'cta'});">&#x260E; Call (210) 461-3153</a>
@@ -638,7 +638,7 @@ textarea{resize:vertical;min-height:80px;}
       <div class="modal-header">
         <div>
           <div class="modal-title">Get Your Free Estimate</div>
-          <div class="modal-sub">No obligation &mdash; we&rsquo;ll confirm within 2 hours</div>
+          <div class="modal-sub">No obligation &mdash; we&rsquo;ll confirm within 24 hours</div>
         </div>
         <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
       </div>
@@ -802,7 +802,7 @@ textarea{resize:vertical;min-height:80px;}
     <div class="success-state" id="successState">
       <div class="success-icon">&#x1F9A2;</div>
       <h3>You&rsquo;re All Set!</h3>
-      <p id="successMsg">We&rsquo;ll confirm your appointment within 2 hours via phone and text. We can&rsquo;t wait to make your home shine.</p>
+      <p id="successMsg">We&rsquo;ll confirm your appointment within 24 hours via phone and text. We can&rsquo;t wait to make your home shine.</p>
       <button class="btn-primary" style="margin:1.5rem auto 0;" onclick="closeModal()">&#x2190; Back to Home</button>
     </div>
   </div>
@@ -1020,12 +1020,12 @@ function acceptUpsell() {
     body: JSON.stringify(upsellPayload)
   }).catch(function(e) { console.error('Upsell webhook error:', e); });
   gtag('event', 'upsell_accept', { event_category: 'booking', plan: selectedFreq });
-  showSuccess('Recurring plan locked in! We’ll confirm your schedule and discount within 2 hours.');
+  showSuccess('Recurring plan locked in! We’ll confirm your schedule and discount within 24 hours.');
 }
 
 function declineUpsell() {
   gtag('event', 'upsell_decline', { event_category: 'booking' });
-  showSuccess('We’ll confirm your appointment within 2 hours via phone and text. We can’t wait to make your home shine.');
+  showSuccess('We’ll confirm your appointment within 24 hours via phone and text. We can’t wait to make your home shine.');
 }
 
 function showSuccess(msg) {
