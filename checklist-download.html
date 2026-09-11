@@ -616,6 +616,129 @@
   </style>
 </head>
 <body>
+<!-- Cookie Consent Banner -->
+<div id="cookieConsent" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <strong>We use cookies to improve your experience</strong>
+      <p>This website uses Google Analytics to understand how visitors use our site. No personal data is collected without your consent. <a href="/privacy.html">Learn more</a></p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookieAccept" class="cookie-btn accept">Accept All</button>
+      <button id="cookieReject" class="cookie-btn reject">Reject</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;background:rgba(61,41,102,0.95);
+  backdrop-filter:blur(8px);padding:16px;z-index:9999;display:none;
+}
+.cookie-banner.show{display:flex}
+.cookie-content{
+  max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.cookie-text{color:#fff;font-size:0.9rem;line-height:1.5;flex:1;min-width:250px}
+.cookie-text strong{color:#C9A84C;display:block;margin-bottom:4px}
+.cookie-text p{margin:0;font-size:0.85rem;opacity:0.9}
+.cookie-text a{color:#C9A84C;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-btn{padding:10px 20px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;
+  transition:all 0.2s;white-space:nowrap}
+.cookie-btn.accept{background:#C9A84C;color:#3d2966}
+.cookie-btn.accept:hover{background:#e8cc7e;transform:translateY(-2px)}
+.cookie-btn.reject{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.3)}
+.cookie-btn.reject:hover{background:rgba(255,255,255,0.2)}
+@media(max-width:768px){
+  .cookie-content{flex-direction:column;align-items:flex-start}
+  .cookie-actions{width:100%}
+  .cookie-btn{flex:1;min-width:120px}
+}
+</style>
+
+<script>
+(function(){
+  const CONSENT_KEY = 'swanshine_cookie_consent';
+  const CONSENT_EXPIRY = 365 * 24 * 60 * 60 * 1000; // 1 year
+  
+  // Check if consent is already given
+  function getConsent(){
+    const stored = localStorage.getItem(CONSENT_KEY);
+    if(!stored) return null;
+    const data = JSON.parse(stored);
+    if(Date.now() > data.expiry) {
+      localStorage.removeItem(CONSENT_KEY);
+      return null;
+    }
+    return data.accepted;
+  }
+  
+  // Set consent preference
+  function setConsent(accepted){
+    const data = {
+      accepted: accepted,
+      expiry: Date.now() + CONSENT_EXPIRY,
+      timestamp: new Date().toISOString()
+    };
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(data));
+  }
+  
+  // Load GA4 if consent is given
+  function loadGA4(){
+    if(getConsent() === true){
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-58WE7F11EG';
+      document.head.appendChild(script);
+      
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-58WE7F11EG', {'anonymize_ip': true});
+    }
+  }
+  
+  // Initialize consent banner
+  function initConsent(){
+    const consent = getConsent();
+    const banner = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const rejectBtn = document.getElementById('cookieReject');
+    
+    if(consent === null && banner){
+      // Show banner if no consent decision made yet
+      banner.classList.add('show');
+    } else if(consent === true){
+      loadGA4();
+    }
+    
+    if(acceptBtn){
+      acceptBtn.addEventListener('click', function(){
+        setConsent(true);
+        if(banner) banner.classList.remove('show');
+        loadGA4();
+      });
+    }
+    
+    if(rejectBtn){
+      rejectBtn.addEventListener('click', function(){
+        setConsent(false);
+        if(banner) banner.classList.remove('show');
+      });
+    }
+  }
+  
+  // Run when DOM is ready
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initConsent);
+  } else {
+    initConsent();
+  }
+})();
+</script>
 
   <!-- ── Site Header (screen only) ── -->
   <header class="site-header">
