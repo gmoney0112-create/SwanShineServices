@@ -1143,21 +1143,21 @@ function acceptUpsell() {
     submittedAt:   new Date().toISOString()
   };
   fetch(WEBHOOK, {
-    method: ‘POST’,
-    headers: { ‘Content-Type’: ‘application/json’ },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(upsellPayload)
-  }).catch(function(e) { console.error(‘Upsell webhook error:’, e); });
-  if (typeof gtag !== ‘undefined’) {
-    gtag(‘event’, ‘upsell_accept’, { event_category: ‘booking’, plan: selectedFreq });
+  }).catch(function(e) { console.error('Upsell webhook error:', e); });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'upsell_accept', { event_category: 'booking', plan: selectedFreq });
   }
-  showSuccess(‘Recurring plan locked in! We’ll confirm your schedule and discount within 24 hours.’);
+  showSuccess('Recurring plan locked in! We’ll confirm your schedule and discount within 24 hours.');
 }
 
 function declineUpsell() {
-  if (typeof gtag !== ‘undefined’) {
-    gtag(‘event’, ‘upsell_decline’, { event_category: ‘booking’ });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'upsell_decline', { event_category: 'booking' });
   }
-  showSuccess(‘We’ll confirm your appointment within 24 hours via phone and text. We can’t wait to make your home shine.’);
+  showSuccess('We’ll confirm your appointment within 24 hours via phone and text. We can’t wait to make your home shine.');
 }
 
 function showSuccess(msg) {
